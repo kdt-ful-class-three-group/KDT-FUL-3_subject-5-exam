@@ -1,0 +1,52 @@
+.w-128px {width: 128px;}
+.h-128px {height: 128px;}
+.p-0 {padding: 0;}
+.p-5px {padding: 5px;}
+.m-0 {margin: 0;}
+.font-14px {font-size: 14px;}
+.d-flex {display: flex;}
+.column {flex-direction: column;}
+.j-center { justify-content: center;}
+.gap-5px {gap: 5px;}
+.text-center {text-align: center;}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#red {
+  width: 20vw;
+  background-color: red;
+}
+
+#event {
+  width: 60vw;
+}
+
+#blue {
+  width: 20vw;
+  background-color: blue;
+}
+
+#event {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#champList {
+  display: flex;
+  flex-wrap: wrap;
+  
+  width: 40vw;
+  height: 80vh;
+  overflow-y: scroll;
+}
