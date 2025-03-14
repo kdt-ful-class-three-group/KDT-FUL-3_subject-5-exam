@@ -38,19 +38,19 @@ Array.from(list).forEach(div=>{
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
     //click한 div의 속성값 배열에 넣기
-    clickData.push({id : div.getAttribute('id'), name : div.getAttribute('name')})
+    CHAMPOBJ.clickData.push({id : div.getAttribute('id'), name : div.getAttribute('name')})
     //마지막 요소만 남기기
-    if(clickData.length>1){
-      clickData.shift()
-      console.log('click',clickData)
+    if(CHAMPOBJ.clickData.length>1){
+      CHAMPOBJ.clickData.shift()
+      console.log('click',CHAMPOBJ.clickData)
     }
-    console.log(count)
+    console.log(CHAMPOBJ.count)
 
     //div태그 안에 넣어주기
-    if(count.all%2===0){
-      blueDiv[count.blue].textContent = clickData[0].name
+    if(CHAMPOBJ.count.all%2===0){
+      blueDiv[CHAMPOBJ.count.blue].textContent = CHAMPOBJ.clickData[0].name
     } else {
-      redDiv[count.red].textContent = clickData[0].name
+      redDiv[CHAMPOBJ.count.red].textContent = CHAMPOBJ.clickData[0].name
     }
   })
 })
@@ -59,58 +59,39 @@ const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트
 choiceBtn.addEventListener('click',()=>{
   //div를 클릭했을 때 선택버튼 누르면 최종 배열에 추가 + 클릭데이터 비우기
-  if(count.total<9){
-    if(clickData[0]){
-      finalClick.push(clickData[0])
-      console.log(clickData[0].id)
-      Array.from(list).filter(div => {
-        if (div.getAttribute('id') === clickData[0].id) {
-          console.log("divtest", div);
-          div.style.pointerEvents='none'
-          div.style.color='red'
-          return
-        }
-      })
-      clickData = []
-    }else {
-      //div를 클릭하지 않고 그냥 넘어갔을 경우
-      finalClick.push({id:'ban',name:'ban'})
-    }
-    //blue red 번갈아가며 진행
-    if(count.total%2===0){
-      count.blue++
-    } else {
-      count.red++
-    }
-    count.total++;
-  } 
-  else if(count.total=9) {
-    if(clickData[0]){
-      finalClick.push(clickData[0])
-      clickData = []
-    }else {
-      //div를 클릭하지 않고 그냥 넘어갔을 경우
-      finalClick.push({id:'ban',name:'ban'})
-    }
-    //blue red 번갈아가며 진행
-    if(count.total%2===0){
-      count.blue++
-    } else {
-      count.red++
-    }
-    count.total++;
+  if(CHAMPOBJ.count.total<9){
+    if(CHAMPOBJ.clickData[0]){
+      CHAMPOBJ.finalClickData.push(CHAMPOBJ.clickData[0])
 
-    CHAMPOBJ.banPickData.blue.ban = finalClick.filter((a,i)=>i%2===0)
-    CHAMPOBJ.banPickData.red.ban = finalClick.filter((a,i)=>i%2!==0)
-    console.log('최종',CHAMPOBJ.banPickData)
+      CHAMPOBJ.clickData = []
+    }else {
+      //div를 클릭하지 않고 그냥 넘어갔을 경우
+      CHAMPOBJ.finalClickData.push({id:'ban',name:'ban'})
+    }
+    //blue red 번갈아가며 진행
+    if(CHAMPOBJ.count.total%2===0){
+      CHAMPOBJ.count.blue++
+    } else {
+      CHAMPOBJ.count.red++
+    }
+    CHAMPOBJ.count.total++;
+  }
+  //11번 - 20번 : pick
+  else {
     alert('밴 완료했습니다')
   }
   //11번 - 20번 : pick
-  else if(count.total>10){
+  else if(count.total>9){
     alert('11번째 입니다.')
   }
   //console로 확인
-  console.log('last',finalClick)
+  console.log('last',CHAMPOBJ.finalClickData)
+
+  CHAMPOBJ.finalClickData.forEach((data)=>{
+    console.log(data.name)
+  })
+
+  //아 왜안돼
 
 })
 
