@@ -6,7 +6,11 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = {
     blue:0,
-    red:0
+    red:0,
+    get all() {
+      return this.blue+this.red
+    } ,
+    total: 0
 };
 
 // let finallCount = 10;
@@ -39,6 +43,14 @@ Array.from(list).forEach(div=>{
       clickData.shift()
       console.log('click',clickData)
     }
+    console.log(count)
+
+    //div태그 안에 넣어주기
+    if(count.all%2===0){
+      blueDiv[count.blue].textContent = clickData[0].name
+    } else {
+      redDiv[count.red].textContent = clickData[0].name
+    }
   })
 })
 //버튼
@@ -46,12 +58,25 @@ const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트
 choiceBtn.addEventListener('click',()=>{
   //div를 클릭했을 때 선택버튼 누르면 최종 배열에 추가 + 클릭데이터 비우기
-  if(clickData[0]){
-    finalClick.push(clickData[0])
-    clickData = []
-  }else {
-    //div를 클릭하지 않고 그냥 넘어갔을 경우
-    finalClick.push({id:'ban',name:'ban'})
+  if(count.total<10){
+    if(clickData[0]){
+      finalClick.push(clickData[0])
+      clickData = []
+    }else {
+      //div를 클릭하지 않고 그냥 넘어갔을 경우
+      finalClick.push({id:'ban',name:'ban'})
+    }
+    //blue red 번갈아가며 진행
+    if(count.total%2===0){
+      count.blue++
+    } else {
+      count.red++
+    }
+    count.total++;
+  } 
+  //11번 - 20번 : pick
+  else {
+    alert('밴 완료했습니다')
   }
   //console로 확인
   console.log('last',finalClick)
