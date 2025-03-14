@@ -23,6 +23,7 @@ let finalClick = [];
 //10개 값이 다 확정되면 > 배열에 넣기
 //배열 length
 
+//밴 선택한 캐릭터 넣어줄 div 요소
 const blueDiv = document.querySelectorAll('div#blue > div')
 const redDiv = document.querySelectorAll('div#red > div')
 
@@ -58,7 +59,32 @@ const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트
 choiceBtn.addEventListener('click',()=>{
   //div를 클릭했을 때 선택버튼 누르면 최종 배열에 추가 + 클릭데이터 비우기
-  if(count.total<10){
+  if(count.total<9){
+    if(clickData[0]){
+      finalClick.push(clickData[0])
+      console.log(clickData[0].id)
+      Array.from(list).filter(div => {
+        if (div.getAttribute('id') === clickData[0].id) {
+          console.log("divtest", div);
+          div.style.pointerEvents='none'
+          div.style.color='red'
+          return
+        }
+      })
+      clickData = []
+    }else {
+      //div를 클릭하지 않고 그냥 넘어갔을 경우
+      finalClick.push({id:'ban',name:'ban'})
+    }
+    //blue red 번갈아가며 진행
+    if(count.total%2===0){
+      count.blue++
+    } else {
+      count.red++
+    }
+    count.total++;
+  } 
+  else if(count.total=9) {
     if(clickData[0]){
       finalClick.push(clickData[0])
       clickData = []
@@ -73,10 +99,11 @@ choiceBtn.addEventListener('click',()=>{
       count.red++
     }
     count.total++;
-  } 
-  //11번 - 20번 : pick
-  else {
     alert('밴 완료했습니다')
+  }
+  //11번 - 20번 : pick
+  else if(count.total>10){
+    alert('11번째 입니다.')
   }
   //console로 확인
   console.log('last',finalClick)
