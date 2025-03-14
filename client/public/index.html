@@ -10,6 +10,10 @@
     <article id="blue">blue</article>
     <article id="red">red</article>
   </div>
+  <div id="selectBtn">
+    <button id="blueBtn">blue</button>
+    <button id="redBtn">red</button>
+  </div>
   <script>
     const root = document.querySelector('#root');
       console.log(root);
@@ -20,34 +24,32 @@
       xhr.addEventListener('load', () => {
         if (xhr.status == 200) {
           const data = JSON.parse(xhr.responseText);
-          console.log(data)
-
+          console.log(data);
         }
       });
 
       xhr.send();
-  </script>
-  <!-- <script type="module" src="../../server/services/banPickService.js"></script> -->
+      </script>
+  <!-- <script src="../../server/services/banPickService.js"></script> -->
   <script>
-    const banPickService = {
-      blue : {ban:[], pick:[]},
-      red:{ban:[], pick:[]}
+    const CHAMPOBJ = {
+      banPickData: {
+        blue: { ban: [], pick: [] },
+        red: { ban: [], pick: [] }
+      }
     }
-
-    const articles = document.getElementsByTagName('article');
-    // console.log(articles[0].getAttribute('id'))
-
-    Array.from(articles).forEach(article => {
-
-      article.addEventListener('click',()=>{
-        console.log(article.getAttribute('id'))
-        console.log(banPickService[article.getAttribute('id')])
-        banPickService[article.getAttribute('id')].ban.push(article.textContent)
-      })
-
-    })
-
-
+  
+      const blueBtn = document.querySelector('#blueBtn');
+      const redBtn = document.querySelector('#redBtn');
+    
+      blueBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
+      redBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
   </script>
 </body>
 </html>
