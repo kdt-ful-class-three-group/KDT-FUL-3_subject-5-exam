@@ -17,24 +17,24 @@ xhr.addEventListener('load', () => {
   });
   // console.log(xhr.responseText);
 // }
-// const rootDiv = document.getElementById('root'); // HTML에 id가 root인 div가 있어야 합니다.
-const root = document.body.querySelector('#root');
-console.log(root);
-const ul = document.createElement('ul');
-ul.appendChild(root);
+const rootDiv = document.getElementById('root'); // HTML에 id가 root인 div가 있어야 합니다.
+// const root = document.body.querySelector('#root');
+// console.log(root);
+// const ul = document.createElement('ul');
+// ul.appendChild(root);
 if (rootDiv) {
     rootDiv.innerHTML = championData.join('<br>'); // 챔피언 이름을 줄바꿈으로 표시
 
 
 
-    championData.forEach((element) => {
-      const li = document.createElement('li')
+    // championData.forEach((element) => {
+    //   const li = document.createElement('li')
     
-      li.textContent = element
+    //   li.textContent = element
     
     
-      li.appendChild(ul);
-    });
+    //   li.appendChild(ul);
+    // });
 }
 
 });
