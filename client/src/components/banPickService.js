@@ -99,6 +99,10 @@ choiceBtn.addEventListener('click',()=>{
       count.red++
     }
     count.total++;
+
+    CHAMPOBJ.banPickData.blue.ban = finalClick.filter((a,i)=>i%2===0)
+    CHAMPOBJ.banPickData.red.ban = finalClick.filter((a,i)=>i%2!==0)
+    console.log('최종',CHAMPOBJ.banPickData)
     alert('밴 완료했습니다')
   }
   //11번 - 20번 : pick
@@ -109,6 +113,7 @@ choiceBtn.addEventListener('click',()=>{
   console.log('last',finalClick)
 
 })
+
 
 
 
