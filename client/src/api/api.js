@@ -25,10 +25,9 @@ xhr.addEventListener('load', () => {
   apiData.forEach((element, index) => {
     let championName = element.name
     championData.push(championName);
-    championData.sort();
     const ul = document.getElementById('champList');
     ul.innerHTML+=`<div id = "championList${index}" class= "w-128 d-flex j-center column p-5px">
-    <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${apiImg[index].full} class= "w-128 h-128;">
+    <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${apiImg[index].full} class= "w-100 m-w object-fit ">
     <p class="p-0 m-0 font-14px text-center">${championData[index]}</p></div>`
   });
 }

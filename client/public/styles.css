@@ -1,4 +1,4 @@
-.w-128px {width: 128px;}
+.w-100 {width: 100%;}
 .h-128px {height: 128px;}
 .p-0 {padding: 0;}
 .p-5px {padding: 5px;}
@@ -9,6 +9,13 @@
 .j-center { justify-content: center;}
 .gap-5px {gap: 5px;}
 .text-center {text-align: center;}
+.m-w {max-width: 80px;}
+.m-h {max-height: 100%;}
+.pointer {cursor: pointer;}
+.object-fit {object-fit: cover};
+
+
+.bg-color-blue {background-color: blue;}
 
 
 body {
@@ -28,6 +35,8 @@ main {
 }
 
 #event {
+  display: flex;
+  flex-direction: column;
   width: 60vw;
 }
 
@@ -43,10 +52,9 @@ main {
 }
 
 #champList {
-  display: flex;
-  flex-wrap: wrap;
-  
-  width: 40vw;
-  height: 80vh;
-  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+  height: 100%;
+  overflow: auto;
 }
