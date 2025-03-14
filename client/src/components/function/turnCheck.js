@@ -44,6 +44,7 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
     finalClick.push({id:'ban',name:'ban'})
   }
   //blue red 번갈아가며 진행
+  //? 이것도 분리?
   if(count.total%2===0){
     count.blue++
   } else {
