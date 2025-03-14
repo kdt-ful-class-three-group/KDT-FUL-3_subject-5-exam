@@ -9,6 +9,7 @@
   <div id="root"></div>
 
   <script>
+    let championData = [];
     const root = document.querySelector('#root');
     console.log(root);
 
@@ -19,17 +20,21 @@
     xhr.addEventListener('load', () => {
       if(xhr.status === 200);{
       let data = JSON.parse(xhr.responseText);
-      console.dir(data);
-      console.log(Object.values(data.data));
-      let championName = Object.values(data.data)
-      championName.forEach((element, i) => {
-        console.log(element.name);
-      })
+      // console.dir(data);
+      // console.log(Object.values(data.data));
+      let apiData = Object.values(data.data)
+      apiData.forEach((element, i) => {
+        // console.log(element.name);
+        let championName = element.name
+        // console.log(championName);
+        championData.push(championName);
+      });
       // console.log(xhr.responseText);
     }
     });
 
     xhr.send();
+    console.log(championData);
 
   </script>
   
