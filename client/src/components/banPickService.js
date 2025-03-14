@@ -4,6 +4,8 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let clickCount = 0;
+let finallCount = 10;
+let clickData;
 
 //id, name을 객체로 담기
 
@@ -17,13 +19,14 @@ const redDiv = document.querySelectorAll('div#red > div')
 const list = document.getElementById('list').children
 console.log(list)
 //section#list
-Array.from(list).forEach((div,index)=>{
-  div.addEventListener('click',()=>{
-    if(index%2===0){
-      //짝수일 때는 blueDiv에
+//짝수일 때는 blueDiv에
+//홀수 일 때는 redDiv에
+//숫자 사용을 위해 for문 사용
 
-      //홀수 일 때는 redDiv에
-    }
+Array.from(list).forEach(div=>{
+  div.addEventListener('click',()=>{
+    clickData = {id : div.getAttribute('id'), name : div.getAttribute('name')}
+    console.log(clickData)
   })
 })
 
