@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>League of Legend</title>
+</head>
+<body>
+  <div id="root">
+    <article id="blue">blue</article>
+    <article id="red">red</article>
+  </div>
+  <div id="selectBtn">
+    <button id="blueBtn">blue</button>
+    <button id="redBtn">red</button>
+  </div>
+  <script>
+    const root = document.querySelector('#root');
+      console.log(root);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json")
+
+      xhr.addEventListener('load', () => {
+        if (xhr.status == 200) {
+          const data = JSON.parse(xhr.responseText);
+          console.log(data);
+        }
+      });
+
+      xhr.send();
+      </script>
+  <!-- <script src="../../server/services/banPickService.js"></script> -->
+  <script>
+    const CHAMPOBJ = {
+      banPickData: {
+        blue: { ban: [], pick: [] },
+        red: { ban: [], pick: [] }
+      }
+    }
+  
+      const blueBtn = document.querySelector('#blueBtn');
+      const redBtn = document.querySelector('#redBtn');
+    
+      blueBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
+      redBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
+  </script>
+</body>
+</html>
