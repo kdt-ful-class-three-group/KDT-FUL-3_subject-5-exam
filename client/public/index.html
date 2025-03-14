@@ -27,6 +27,27 @@
 
       xhr.send();
   </script>
-  <script src="../../server/services/banPickService.js"></script>
+  <!-- <script type="module" src="../../server/services/banPickService.js"></script> -->
+  <script>
+    const banPickService = {
+      blue : {ban:[], pick:[]},
+      red:{ban:[], pick:[]}
+    }
+
+    const articles = document.getElementsByTagName('article');
+    // console.log(articles[0].getAttribute('id'))
+
+    Array.from(articles).forEach(article => {
+
+      article.addEventListener('click',()=>{
+        console.log(article.getAttribute('id'))
+        console.log(banPickService[article.getAttribute('id')])
+        banPickService[article.getAttribute('id')].ban.push(article.textContent)
+      })
+
+    })
+
+
+  </script>
 </body>
 </html>
