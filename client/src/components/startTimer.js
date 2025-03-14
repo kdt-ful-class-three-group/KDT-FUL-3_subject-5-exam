@@ -1,25 +1,21 @@
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_yunjonghwan.js"
 
+/**
+ * @description 타이머가 동작하며 초가 0이 되면 다시 동작한다.
+ */
 function startTimer() {
-  let timer;
   const time = CHAMPOBJ.time;
-  console.log('end?');
+  if(time.intervalName !== '') {
+    clearInterval(time.intervalName);
+    time.second = 30;
+  }
   
-  timer = setInterval(() => {
-    time.count--;
-    console.log(time.count + "초");
-    if (time.count === 25) {
-      clearInterval(timer);
-      test();
+  time.intervalName = setInterval(() => {
+    time.second--;
+    if(time.second === 0) {
+      startTimer();
     }
-    // return time.count;
-  }, time.second);
-}
-
-startTimer();
-
-function test() {
-  startTimer();
+  }, time.intervalTime);
 }
 
 export { startTimer }
