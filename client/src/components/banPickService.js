@@ -11,3 +11,23 @@ console.log("연결됬니?")
 //[ ] 선택 안하면?
 
 //[ ] 최대 10번
+ const CHAMPOBJ = {
+      banPickData: {
+        blue: { ban: [], pick: [] },
+        red: { ban: [], pick: [] }
+      }
+    }
+
+
+
+//     const blueBtn = document.querySelector('#blueBtn');
+//     const redBtn = document.querySelector('#redBtn');
+
+//     blueBtn.addEventListener('click', () => {
+//       CHAMPOBJ.banPickData.blue.ban.push();
+//       console.log(CHAMPOBJ.banPickData.blue.ban);
+//     });
+//     redBtn.addEventListener('click', () => {
+//       CHAMPOBJ.banPickData.blue.ban.push();
+//       console.log(CHAMPOBJ.banPickData.blue.ban);
+//     });
