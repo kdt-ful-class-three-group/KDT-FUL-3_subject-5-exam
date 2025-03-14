@@ -3,9 +3,10 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
-let clickCount = 0;
-let finallCount = 10;
+// let clickCount = 0;
+// let finallCount = 10;
 let clickData=[];
+let finalClick = [];
 
 //id, name을 객체로 담기
 
@@ -25,11 +26,30 @@ console.log(list)
 
 Array.from(list).forEach(div=>{
   div.addEventListener('click',()=>{
-    clickData.push( {id : div.getAttribute('id'), name : div.getAttribute('name')})
+    // console.log('1',clickData)
+    clickData.push({id : div.getAttribute('id'), name : div.getAttribute('name')})
+
+    if(clickData.length>1){
+      clickData.shift()
+      console.log('2',clickData)
+    }
   })
 })
+//버튼
+const choiceBtn = document.getElementById('choice')
+choiceBtn.addEventListener('click',()=>{
+  if(clickData[0]){
+    finalClick.push(clickData[0])
+    clickData = []
+  }else {
+    finalClick.push({id:'ban',name:'ban'})
+  }
+  console.log('last',finalClick)
 
-console.log(clickData)
+})
+
+
+// console.log(clickData)
 
 
 
