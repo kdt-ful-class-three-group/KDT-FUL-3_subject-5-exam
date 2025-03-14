@@ -18,5 +18,8 @@
     "url": "https://github.com/kdt-ful-class-three-group/KDT-FUL-3_subject-5-exam/issues"
   },
   "homepage": "https://github.com/kdt-ful-class-three-group/KDT-FUL-3_subject-5-exam#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
