@@ -10,6 +10,10 @@
     <article id="blue">blue</article>
     <article id="red">red</article>
   </div>
+  <div id="selectBtn">
+    <button id="blueBtn">blue</button>
+    <button id="redBtn">red</button>
+  </div>
   <script>
     const root = document.querySelector('#root');
       console.log(root);
@@ -25,7 +29,27 @@
       });
 
       xhr.send();
+      </script>
+  <!-- <script src="../../server/services/banPickService.js"></script> -->
+  <script>
+    const CHAMPOBJ = {
+      banPickData: {
+        blue: { ban: [], pick: [] },
+        red: { ban: [], pick: [] }
+      }
+    }
+  
+      const blueBtn = document.querySelector('#blueBtn');
+      const redBtn = document.querySelector('#redBtn');
+    
+      blueBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
+      redBtn.addEventListener('click', () => {
+        CHAMPOBJ.banPickData.blue.ban.push();
+        console.log(CHAMPOBJ.banPickData.blue.ban);
+      });
   </script>
-  <script src="../../server/services/banPickService.js"></script>
 </body>
 </html>
