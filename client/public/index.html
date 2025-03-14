@@ -14,12 +14,12 @@
       console.log(root);
 
       const xhr = new XMLHttpRequest();
-      xhr.open("GET", "")
+      xhr.open("GET", "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json")
 
       xhr.addEventListener('load', () => {
         if (xhr.status == 200) {
           const data = JSON.parse(xhr.responseText);
-
+          console.log(data);
         }
       });
 
