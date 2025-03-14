@@ -24,7 +24,7 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
   }
   //div선택하지 않고 버튼 눌렀을 때
   else {
-
+    fincalClickData.push(CHAMPOBJ.noneClick)
   }
 }
   if(clickData[0]){
