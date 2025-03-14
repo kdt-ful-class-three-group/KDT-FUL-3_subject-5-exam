@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get("/client/src/api/api.js", (req, res) => {
+  res.sendFile(path.join(__dirname,"/client/src/api/api.js"));
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`loading... http://localhost:${process.env.PORT}`);
 });
