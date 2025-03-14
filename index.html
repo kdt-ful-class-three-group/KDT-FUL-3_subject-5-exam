@@ -9,13 +9,30 @@
 
 <body>
   <div id="root">
-    <article id="blue">blue</article>
-    <article id="red">red</article>
+    <section>
+      <div id="blue">
+        <p>blue</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="red">
+        <p>red</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section id="list"></section>
+    <button type="button">선택</button>
   </div>
-  <div id="selectBtn">
-    <button id="blueBtn">blue</button>
-    <button id="redBtn">red</button>
-  </div>
+  <!-- script -->
+  <script type="module" src="/client/src/components/banPickService.js"></script>
+  <!-- api -->
   <script>
     const root = document.querySelector('#root');
     console.log(root);
@@ -27,12 +44,15 @@
       if (xhr.status == 200) {
         const data = JSON.parse(xhr.responseText);
         console.log(data);
+
+        //[ ] data로 section#list 안에 div 구성
+        //data의 id, name 가져옴
       }
     });
 
     xhr.send();
   </script>
-  <script src="/client/src/components/banPickService.js"></script>
+
 </body>
 
 </html>

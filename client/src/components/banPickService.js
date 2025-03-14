@@ -1,21 +1,6 @@
-import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js";
+// import { CHAMPOBJ } from "./obj/CHAMPOBJ_hyunjoon.js";
 
-let data = CHAMPOBJ.banPickData;
+console.log("연결됬니?")
 
-
-console.log(data.blue.ban); // []
-console.log(data.blue.pick); // []
-console.log(data.red.ban); // []
-console.log(data.red.pick); // []
-
-const blueBtn = document.querySelector('#blueBtn');
-const redBtn = document.querySelector('#redBtn');
-
-blueBtn.addEventListener('click', () => {
-  CHAMPOBJ.banPickData.blue.ban.push();
-  console.log(CHAMPOBJ.banPickData.blue.ban);
-});
-redBtn.addEventListener('click', () => {
-  CHAMPOBJ.banPickData.blue.ban.push();
-  console.log(CHAMPOBJ.banPickData.blue.ban);
-});
+//[ ] section#list > div 선택하면 id,name 가져와서 배열에 담기
+//[ ] ban[] 에 담은 데이터 div#color > div 
