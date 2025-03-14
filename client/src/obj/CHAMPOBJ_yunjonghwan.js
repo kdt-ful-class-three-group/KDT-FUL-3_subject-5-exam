@@ -1,6 +1,6 @@
 export const CHAMPOBJ = {
   time : {
     second : 1000,
-    count : 0,
+    count : 30,
   }
 }
