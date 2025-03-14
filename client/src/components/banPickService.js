@@ -5,7 +5,7 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let clickCount = 0;
 let finallCount = 10;
-let clickData;
+let clickData=[];
 
 //id, name을 객체로 담기
 
@@ -25,15 +25,15 @@ console.log(list)
 
 Array.from(list).forEach(div=>{
   div.addEventListener('click',()=>{
-    clickData = {id : div.getAttribute('id'), name : div.getAttribute('name')}
-    console.log(clickData)
+    clickData.push( {id : div.getAttribute('id'), name : div.getAttribute('name')})
   })
 })
 
+console.log(clickData)
+
+
 
 //[ ] 일단) 무조건 번갈아가면서 담기 blue -> red -> blue -> red
-
-//[ ] ban[] 에 담은 데이터 div#color > div에 넣기
 
 //[ ] 중복 안됨
 
