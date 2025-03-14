@@ -27,6 +27,9 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
     fincalClickData.push(CHAMPOBJ.noneClick)
   }
 }
+
+
+
   if(clickData[0]){
     finalClick.push(clickData[0])
     console.log(clickData[0].id)
