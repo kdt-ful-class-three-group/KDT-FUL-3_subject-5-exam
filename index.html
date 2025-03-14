@@ -43,7 +43,7 @@
       if (xhr.status == 200) {
         const data = JSON.parse(xhr.responseText);
 
-        //[ ] data로 section#list 안에 div 구성
+        //[x] data로 section#list 안에 div 구성
         for(let key in data.data){
           let id = data.data[key].id
           let name = data.data[key].name
