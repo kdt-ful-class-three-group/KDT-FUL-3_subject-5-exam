@@ -1,42 +1,61 @@
-let championData = [];
 
 function dataHandle() {
-const xhr = new XMLHttpRequest();
-// console.dir(xhr);
-xhr.open("GET", 'https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json');
-xhr.send();
-xhr.addEventListener('load', () => {
-  if(xhr.status === 200);{
-  let data = JSON.parse(xhr.responseText);
-  
-  // 
-  let apiData = Object.values(data.data)
-  console.log(Object.keys(data.data));
-  // apiData에서 img 이름 가져오기 위함  
-  let apiImg = [];
-  let apiSplash =[]
-  for(let i = 0 ; i < apiData.length ; i++){
-    apiImg.push(apiData[i].image)
-    apiSplash.push(Object.keys(data.data)[i])
-  }
-  
-  console.log(apiData[0].image)
+  const xhr = new XMLHttpRequest();
+  // 챔피언 특성이 담긴 JSON 한글 버전
+  xhr.open("GET", 'https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json');
+  xhr.send();
+  xhr.addEventListener('load', () => {
+    if (xhr.status === 200); {
+      let data = JSON.parse(xhr.responseText);
 
-  apiData.forEach((element, index) => {
-    let championName = element.name
-    championData.push(championName);
-    const ul = document.getElementById('champList');
-    ul.innerHTML+=`<div>
-    <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${apiImg[index].full}>
-    <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${apiSplash[index]}_0.jpg>
-    <p>${championData[index]}</p></div>`
+      /* JSON 챔피언 특성 파일 구조
+        data : {
+          Aatrox : {
+            name : 아트록스
+          }
+        }  
+      }
+      */
+
+      // JSON 챔피언 특성 파일 구조 내에 data 객체 접근하여 values로 전부 배열로 만듬
+      /*
+        data 내에 각 챔피언 마다 Object를 가져옴
+        
+          상세 구조
+
+          0 = {id : 'Aatrox' , name : "아트록스", img : { full : "Aatrox.png"}},
+          1 = {id : 'Ahri' , name : "아리", img : {full : "Ahri.png"}},
+      */
+
+      // apiData = JSON API의 data 객체까지 접근
+      // champPotrait = 챔피언 초상화 -> Aatrox.png
+      // champSplash = 챔피언 스플래쉬 아트 이름 -> Aatrox_0.jpg
+      // champName = 챔피언의 한글 이름 -> 아트록스
+      let apiData = Object.values(data.data)
+      let champPotrait = [];
+      let champSplash = [];
+      let champKorName = [];
+
+      console.log(apiData)
+      //* console.log(apiData[0].image.full) -> 초상화 이미지의 이름 확인 "Aatrox.png"
+
+      // 챔피언의 초상화, 챔피언의 스플래쉬 아트, 챔피언의 한글 이름을 처리
+      for (let index = 0; index < apiData.length; index++) {
+        champPotrait.push(apiData[index].image.full)
+        champKorName.push(apiData[index].name)
+        champSplash.push(apiData[index].id)
+        const ul = document.getElementById('champList');
+        /*
+          첫번째 img => 챔피언 초상화 표출
+          두번째 img => 챔피언 스플래쉬 아트 표출
+          p태그 => 챔피언의 한글이름 표출
+        */
+        ul.innerHTML += `<div>
+        <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champPotrait[index]}>
+        <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champSplash[index]}_0.jpg>
+        <p>${champKorName[index]}</p></div>`
+      }
+    }
   });
-}
-
-}
-
-);
-
-console.log(championData);
 }
 dataHandle();
