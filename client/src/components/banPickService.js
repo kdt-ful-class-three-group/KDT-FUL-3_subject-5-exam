@@ -7,6 +7,8 @@ import { commitClickData } from "./function/commitClickData.js";
 import { saveFinalBanData } from "./function/saveFinalBanData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { changeBtn } from "./function/changeBtn.js";
+import { showList } from "./function/showList.js";
+import { divListClick } from "./function/divListClick.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -20,7 +22,6 @@ const blueDiv = document.querySelectorAll('#ban > div#blue > div') //blue팀 ban
 const redDiv = document.querySelectorAll('#ban > div#red > div') //red팀 ban리스트 목록
 const list = document.getElementById('list').children //중앙 챔피언 리스트
 
-
 //중앙챔피언리스트 클릭이벤트
 Array.from(list).forEach(div=>{
   div.setAttribute('style','cursor:pointer')
@@ -28,23 +29,13 @@ Array.from(list).forEach(div=>{
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
 
-    //click한 div의 속성값 배열에 넣기
-    clickData.push({id : div.getAttribute('id'), name : div.getAttribute('name')})
-
-
-    //중앙 리스트 선택할 때 실시간으로 핸들링 하는 로직 : 마지막 요소만 남기기
-    if(clickData.length>1){
-      clickData.shift()
-      console.log('click',clickData)
-    }
+    divListClick(div,clickData)
+    
+    //클릭 카운트 확인
     console.log('count',count)
 
     //각 팀 ban리스트 보여주기
-    if(count.all%2===0){
-      blueDiv[count.blue].innerHTML = `<img src = 'https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${clickData[0].id}.png'>`
-    } else {
-      redDiv[count.red].innerHTML = `<img src = 'https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${clickData[0].id}.png'>`
-    }
+    showList(count, clickData, blueDiv, redDiv)
   })
 })
 
