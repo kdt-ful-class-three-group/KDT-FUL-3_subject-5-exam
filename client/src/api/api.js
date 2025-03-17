@@ -48,7 +48,7 @@ function champLoad(data) {
     localStorage.setItem(champCombine[index].engName, `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg`)
 
     // <div id="champlist"></div> 
-    const ul = document.getElementById('champList');
+    const section = document.getElementById('list');
 
     /*
     <div>
@@ -57,7 +57,7 @@ function champLoad(data) {
     <p></p> => 챔피언 한글이름 표출
     </div>
     */
-    ul.innerHTML += `<div>
+    section.innerHTML += `<div id='${champCombine[index].engName}' name='${champCombine[index].korName}'>
         <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png>
         <p>${champCombine[index].korName}</p></div>`
       }
