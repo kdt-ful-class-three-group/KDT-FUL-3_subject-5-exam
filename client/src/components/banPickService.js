@@ -39,7 +39,21 @@ Array.from(list).forEach(div=>{
   })
 })
 
-
+function banPickClickEvent(button,count,type,listDiv,clickData,finalClick){
+  button.addEventListener('click',()=>{
+    if(count.total < 9) {
+      commitClickData(listDiv, clickData, finalClick);
+      nextTurn(count);
+    } 
+    else if(count.total === 9){
+      commitClickData(listDiv,clickData, finalClick);
+      nextTurn(count);
+      saveFinalData(CHAMPOBJ,type,finalClick);
+      alert('완료했습니다');
+      changeBtn('choice','select','pick선택')
+    }
+  })
+}
 //버튼
 const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트

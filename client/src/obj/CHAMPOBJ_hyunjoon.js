@@ -11,7 +11,5 @@ export const CHAMPOBJ = {
     },
     total:0
   },
-  clickLiveData : [],
-  finalClickData : [],
-  noneClick: {id:'ban',name:'ban'}
+  noneClick: {id:'ban',name:'ban'},
 }
