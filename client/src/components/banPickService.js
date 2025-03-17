@@ -2,6 +2,10 @@ console.log("연결")
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
+// src/function에 들어있는 모듈
+import { turnCheck } from "./function/turnCheck.js";
+import { putDataToArray } from "./function/putDataToArray.js";
+
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = {
@@ -60,45 +64,50 @@ const choiceBtn = document.getElementById('choice')
 choiceBtn.addEventListener('click',()=>{
   //div를 클릭했을 때 선택버튼 누르면 최종 배열에 추가 + 클릭데이터 비우기
   if(count.total<9){
-    if(clickData[0]){
-      finalClick.push(clickData[0])
-      console.log(clickData[0].id)
-      Array.from(list).filter(div => {
-        if (div.getAttribute('id') === clickData[0].id) {
-          console.log("divtest", div);
-          div.style.pointerEvents='none'
-          div.style.color='red'
-          return
-        }
-      })
-      clickData = []
-    }else {
-      //div를 클릭하지 않고 그냥 넘어갔을 경우
-      finalClick.push({id:'ban',name:'ban'})
-    }
-    //blue red 번갈아가며 진행
-    if(count.total%2===0){
-      count.blue++
-    } else {
-      count.red++
-    }
-    count.total++;
+    turnCheck(list, CHAMPOBJ.clickLiveData,CHAMPOBJ.finalClickData)
+    //함수 사용
+    // if(clickData[0]){
+    //   finalClick.push(clickData[0])
+    //   console.log(clickData[0].id)
+    //   Array.from(list).filter(div => {
+    //     if (div.getAttribute('id') === clickData[0].id) {
+    //       console.log("divtest", div);
+    //       div.style.pointerEvents='none'
+    //       div.style.color='red'
+    //       return
+    //     }
+    //   })
+    //   clickData = []
+    // }else {
+    //   //div를 클릭하지 않고 그냥 넘어갔을 경우
+    //   finalClick.push({id:'ban',name:'ban'})
+    // }
+    // //blue red 번갈아가며 진행
+    // if(count.total%2===0){
+    //   count.blue++
+    // } else {
+    //   count.red++
+    // }
+    // count.total++;
   } 
   else if(count.total=9) {
-    if(clickData[0]){
-      finalClick.push(clickData[0])
-      clickData = []
-    }else {
-      //div를 클릭하지 않고 그냥 넘어갔을 경우
-      finalClick.push({id:'ban',name:'ban'})
-    }
-    //blue red 번갈아가며 진행
-    if(count.total%2===0){
-      count.blue++
-    } else {
-      count.red++
-    }
-    count.total++;
+    turnCheck(list, CHAMPOBJ.clickLiveData,CHAMPOBJ.finalClickData)
+    // if(clickData[0]){
+    //   finalClick.push(clickData[0])
+    //   clickData = []
+    // }else {
+    //   //div를 클릭하지 않고 그냥 넘어갔을 경우
+    //   finalClick.push({id:'ban',name:'ban'})
+    // }
+    // //blue red 번갈아가며 진행
+    // if(count.total%2===0){
+    //   count.blue++
+    // } else {
+    //   count.red++
+    // }
+    // count.total++;
+
+    putDataToArray()
 
     CHAMPOBJ.banPickData.blue.ban = finalClick.filter((a,i)=>i%2===0)
     CHAMPOBJ.banPickData.red.ban = finalClick.filter((a,i)=>i%2!==0)
