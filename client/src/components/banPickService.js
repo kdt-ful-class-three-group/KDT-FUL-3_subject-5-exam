@@ -4,7 +4,7 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
 import { commitClickData } from "./function/commitClickData.js";
-import { saveFinalBanData } from "./function/saveFinalBanData.js";
+import { saveFinalData } from "./function/saveFinalData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { changeBtn } from "./function/changeBtn.js";
 import { showList } from "./function/showList.js";
@@ -50,12 +50,12 @@ choiceBtn.addEventListener('click', () => {
     commitClickData(list, clickData, finalClick);
     nextTurn(count);
   }
-  
+
   //10번 : 최종 ban리스트 데이터 (CHAMPOBJ.banpickData.color.ban)에 담기
   else if (count.total === 9) {
     commitClickData(list,clickData, finalClick);
     nextTurn(count);
-    saveFinalBanData(CHAMPOBJ, finalClick);
+    saveFinalData(CHAMPOBJ,'ban',finalClick);
     alert('밴 완료했습니다');
     changeBtn('choice','select','pick선택')
   } 
