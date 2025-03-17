@@ -8,6 +8,7 @@ xhr.send();
 xhr.addEventListener('load', () => {
   if(xhr.status === 200);{
   let data = JSON.parse(xhr.responseText);
+  console.log(data);
   
   // 
   let apiData = Object.values(data.data)
@@ -26,12 +27,13 @@ xhr.addEventListener('load', () => {
     let championName = element.name
     championData.push(championName);
     const ul = document.getElementById('champList');
-    ul.innerHTML+=`<div id = "championList${index}" class= "w-128 d-flex j-center column p-5px">
-    <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${apiImg[index].full} class= "w-100 m-w object-fit ">
-    <p class="p-0 m-0 font-14px text-center">${championData[index]}</p></div>`
+    ul.innerHTML+=`<div id = "championList${index}" class= "w-full flex justify-center flex-col cursor-pointer">
+    <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${apiImg[index].full} class= "w-full max-w-[80px] object-fit ">
+    <p class="p-0 pb-[5px] m-0 font-[14px] text-center max-w object-fit">${championData[index]}</p></div>`
   });
 }
 
+{/* <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${apiSplash[index]}_0.jpg>  */}
 }
 
 );

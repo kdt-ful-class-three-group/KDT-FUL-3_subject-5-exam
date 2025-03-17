@@ -1,21 +1,27 @@
 .w-100 {width: 100%;}
 .h-128px {height: 128px;}
+.pt-30px {padding-top: 30px;}
 .p-0 {padding: 0;}
 .p-5px {padding: 5px;}
+.pt-5px {padding-top: 5px;}
+.pb-5px {padding-bottom: 5px;}
+.pb-30px {padding-bottom: 30px;}
 .m-0 {margin: 0;}
+.mt-30px {margin-top: 30px;}
 .font-14px {font-size: 14px;}
 .d-flex {display: flex;}
 .column {flex-direction: column;}
 .j-center { justify-content: center;}
 .gap-5px {gap: 5px;}
 .text-center {text-align: center;}
-.m-w {max-width: 80px;}
-.m-h {max-height: 100%;}
+.max-w {max-width: 80px;}
+.max-h {max-height: 100%;}
 .pointer {cursor: pointer;}
 .object-fit {object-fit: cover};
+.white-space-nowrap {white-space: nowrap;}
 
 
-.bg-color-blue {background-color: blue;}
+.bg-color-blue {background-color: rgba(44, 44, 255, 0.641)}
 
 
 body {
@@ -38,6 +44,9 @@ main {
   display: flex;
   flex-direction: column;
   width: 60vw;
+  padding: 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 #blue {
@@ -48,13 +57,13 @@ main {
 #event {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
 }
 
 #champList {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  align-items: flex-start;
   height: 100%;
   overflow: auto;
 }
