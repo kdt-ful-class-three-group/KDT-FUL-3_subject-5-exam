@@ -1,12 +1,13 @@
 import {autoRender} from "./function/renderHandler.js";
+import {commitClickData} from "./function/commitClickData.js";
 
 console.log("연결")
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
-import { turnCheck } from "./function/turnCheck.js";
-import { putDataToArray } from "./function/putDataToArray.js";
+
+// import { putDataToArray } from "./function/putDataToArray.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 
@@ -27,30 +28,8 @@ const redDiv = document.querySelectorAll('div#red > div')
 
 const list = document.getElementById('list').children
 
-function deactivateClickedDiv(id) {
-  Array.from(list).forEach(div => {
-    if (div.getAttribute('id') === id) {
-      div.style.pointerEvents = 'none';
-      div.style.color = 'red';
-    }
-  });
-}
 
-function commitClickData() {
-  const data = clickData || { id: 'ban', name: 'ban' };
-  finalClick.push(data);
 
-  if (clickData.length >0) {
-    const id = clickData[0].id;
-    deactivateClickedDiv(id);
-    clickData = [];
-  }
-}
-
-function saveFinalBanData() {
-  CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
-  CHAMPOBJ.banPickData.red.ban = finalClick.filter((_, i) => i % 2 !== 0);
-}
 
 function nextTurn() {
   if (count.total % 2 === 0) {
@@ -103,7 +82,7 @@ choiceBtn.addEventListener('click', () => {
   else if (count.total === 9) {
     commitClickData();
     nextTurn();
-    putDataToArray();
+    // putDataToArray();
     saveFinalBanData();
     autoRender();
     alert('밴 완료했습니다');
