@@ -107,10 +107,10 @@ choiceBtn.addEventListener('click',()=>{
     // }
     // count.total++;
 
-    putDataToArray()
+    putDataToArray(CHAMPOBJ.banPickData.blue.ban,CHAMPOBJ.banPickData.red.ban,CHAMPOBJ.finalClickData)
 
-    CHAMPOBJ.banPickData.blue.ban = finalClick.filter((a,i)=>i%2===0)
-    CHAMPOBJ.banPickData.red.ban = finalClick.filter((a,i)=>i%2!==0)
+    // CHAMPOBJ.banPickData.blue.ban = finalClick.filter((a,i)=>i%2===0)
+    // CHAMPOBJ.banPickData.red.ban = finalClick.filter((a,i)=>i%2!==0)
     console.log('최종',CHAMPOBJ.banPickData)
     alert('밴 완료했습니다')
   }

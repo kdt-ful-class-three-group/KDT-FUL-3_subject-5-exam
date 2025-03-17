@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.use("/public", express.static("public"));
 app.use("/src", express.static("src"));
+app.use("/function", express.static("function"));
 app.use(express.static(path.join(__dirname, 'client')));
 
 
