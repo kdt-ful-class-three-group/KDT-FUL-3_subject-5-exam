@@ -38,11 +38,12 @@ function divClick(div) {
 
 // 밴 리스트 추가 함수
 function addBanList() {
+  let mainImg = div.querySelector("img");
   if (clickData.length > 0) {
     if (count.all % 2 === 0) {
-      blueBan[count.blue].textContent = clickData[0].name;
+      blueBan[count.blue].src = clickData[0].name;
     } else {
-      redBan[count.red].textContent = clickData[0].name;
+      redBan[count.red].src = clickData[0].name;
     }
   }
 }
