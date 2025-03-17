@@ -3,7 +3,7 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
-import { showList } from "./function/showList.js";
+import { showBanList, showPickList } from "./function/showList.js";
 import { divListClick } from "./function/divListClick.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
@@ -39,7 +39,7 @@ Array.from(list).forEach(div=>{
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
 
-    div.setAttribute('style','opacity:0.5')
+    // div.setAttribute('style','opacity:0.5')
 
     //clickData에 선택한 목록 넣기
     divListClick(div,clickData)
@@ -52,9 +52,9 @@ Array.from(list).forEach(div=>{
     //pick 버튼 > pick리스트
     if(!document.getElementById('banBtn').classList.contains('display-none')){
       //각 팀 ban리스트 보여주기
-      showList(count, clickData, blueDiv, redDiv)
+      showBanList(count, clickData, blueDiv, redDiv)
     } else{
-      showList(count,clickData, bluePickDiv, redPickDiv)
+      showPickList(count,clickData, bluePickDiv, redPickDiv)
     }
   })
 })
@@ -126,6 +126,11 @@ pickBtn.addEventListener('click',()=>{
 
     resetCount(count)
   }
+})
+
+restartBtn.addEventListener('click', () => {
+  //리스트 초기화
+  location.reload();
 })
 
 
