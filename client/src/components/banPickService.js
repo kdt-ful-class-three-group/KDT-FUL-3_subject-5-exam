@@ -52,15 +52,17 @@ const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트
 choiceBtn.addEventListener('click', () => {
   if (count.total < 9) {
-    commitClickData(list, [...clickData], finalClick);
+    commitClickData(list, clickData, finalClick);
     nextTurn(count);
   }
   else if (count.total === 9) {
-    commitClickData(list, [...clickData], finalClick);
+    commitClickData(list,clickData, finalClick);
     nextTurn(count);
     saveFinalBanData(CHAMPOBJ, finalClick);
     autoRender();
     alert('밴 완료했습니다');
+  } else {
+    alert('완료')
   }
   console.log('last', finalClick);
 });
