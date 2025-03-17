@@ -8,15 +8,12 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 import { turnCheck } from "./function/turnCheck.js";
 import { putDataToArray } from "./function/putDataToArray.js";
 
-
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 
 let count = CHAMPOBJ.count
 // let finallCount = 10;
 let clickData=[];
 let finalClick = [];
-
-
 
 //id, name을 객체로 담기
 
@@ -45,11 +42,10 @@ function commitClickData() {
 
   if (clickData.length >0) {
     const id = clickData[0].id;
-    deactivateClickedDiv(clickData.id);
+    deactivateClickedDiv(id);
     clickData = [];
   }
 }
-
 
 function saveFinalBanData() {
   CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
@@ -65,7 +61,6 @@ function nextTurn() {
   count.total++;
 }
 
-
 console.log(list)
 //section#list
 //짝수일 때는 blueDiv에
@@ -75,7 +70,6 @@ console.log(list)
 Array.from(list).forEach(div=>{
 
   div.setAttribute('style','cursor:pointer')
-
 
   //div 클릭 이벤트
   div.addEventListener('click',()=>{

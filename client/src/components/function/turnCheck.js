@@ -8,7 +8,11 @@ import { turn } from "./turn.js";
  * @param {Array} finalClickData 최종 선택이 담길 배열
  * @returns {Array} finalClickData 최종 선택이 담긴 배열
  */
+
+
+
 export function turnCheck(listElement,clickLiveData, finalClickData ){
+
   //clickLiveData의 값이 있을 때
   if(clickLiveData[0]){
 
@@ -17,11 +21,13 @@ export function turnCheck(listElement,clickLiveData, finalClickData ){
 
     //최종 값에 해당하는 div를 선택하지 못하도록 함
     Array.from(listElement).filter(div => {
+
+
       if(div.getAttribute('id')===clickLiveData[0].id){
         console.log('choiceDiv',div);
         div.style.pointerEvents='none'
         div.style.color='red'
-        return
+
       }
     })
     //다음 단계를 위해 비워줌
