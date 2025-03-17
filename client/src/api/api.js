@@ -59,11 +59,11 @@ function champLoad(data) {
     */
     ul.innerHTML += `<div>
         <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png>
-        <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg>
-        <p>${champCombine[index].korName}}</p></div>`
-  }
-}
-
+        <p>${champCombine[index].korName}</p></div>`
+      }
+    }
+    // <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg>
+    
   /* JSON 챔피언 특성 파일 구조
     data : {
       {id : Aatrox
