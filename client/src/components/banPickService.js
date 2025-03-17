@@ -1,5 +1,6 @@
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js";
-
+import { divClick } from "./divClick.js";
+import { choiceBtnEvent } from "./choiceBtnEvent.js";
 // 클릭 데이터 저장 객체
 let count = {
   blue: 0,
