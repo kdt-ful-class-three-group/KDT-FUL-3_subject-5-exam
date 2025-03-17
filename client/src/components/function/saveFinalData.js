@@ -9,8 +9,10 @@ export function saveFinalData(CHAMPOBJ,type,finalClick){
   if(type === 'ban'){
     CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
     CHAMPOBJ.banPickData.red.ban = finalClick.filter((_, i) => i % 2 !== 0);
+    console.log('ban',CHAMPOBJ.banPickData)
   } else if(type === 'pick'){
     CHAMPOBJ.banPickData.blue.pick = finalClick.filter((_, i) => i % 2 === 0);
     CHAMPOBJ.banPickData.red.pick = finalClick.filter((_, i) => i % 2 !== 0);
+    console.log('pick',CHAMPOBJ.banPickData)
   }
 }

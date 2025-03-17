@@ -2,6 +2,7 @@ import { commitClickData } from "./commitClickData.js";
 import { nextTurn } from "./nextTurn.js";
 import { saveFinalData } from "./saveFinalData.js";
 import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
+import { changeBtn } from "./changeBtn.js";
 
 
 export function banPickClickEvent(button,count,type,listDiv,clickData,finalClick){
