@@ -50,6 +50,7 @@ choiceBtn.addEventListener('click', () => {
     commitClickData(list, clickData, finalClick);
     nextTurn(count);
   }
+  
   //10번 : 최종 ban리스트 데이터 (CHAMPOBJ.banpickData.color.ban)에 담기
   else if (count.total === 9) {
     commitClickData(list,clickData, finalClick);
