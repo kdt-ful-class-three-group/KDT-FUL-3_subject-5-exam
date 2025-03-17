@@ -2,7 +2,10 @@ import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
 import { turn } from "./turn.js";
 
 /**
- * 
+ * 선택버튼을 눌렀을 때 최종선택이 데이터에 담길 수 있게 해주는 함수
+ * @param {*} listElement  목록에 해당하는 요소
+ * @param {Array} clickLiveData 선택한 목록이 담길 배열
+ * @param {Array} fincalClickData 최종 선택이 담길 배열
  */
 export function turnCheck(listElement,clickLiveData, fincalClickData ){
   //clickLiveData의 값이 있을 때
@@ -30,30 +33,3 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
   
   turn();
 }
-
-
-
-  if(clickData[0]){
-    finalClick.push(clickData[0])
-    console.log(clickData[0].id)
-    Array.from(list).filter(div => {
-      if (div.getAttribute('id') === clickData[0].id) {
-        console.log("divtest", div);
-        div.style.pointerEvents='none'
-        div.style.color='red'
-        return
-      }
-    })
-    clickData = []
-  }else {
-    //div를 클릭하지 않고 그냥 넘어갔을 경우
-    finalClick.push({id:'ban',name:'ban'})
-  }
-  //blue red 번갈아가며 진행
-  //? 이것도 분리?
-  if(count.total%2===0){
-    count.blue++
-  } else {
-    count.red++
-  }
-  count.total++;
