@@ -43,7 +43,7 @@ Array.from(list).forEach(div=>{
 
     //clickData에 선택한 목록 넣기
     divListClick(div,clickData)
-    
+
     //클릭 카운트 확인
     console.log('count',count)
 
@@ -62,6 +62,7 @@ Array.from(list).forEach(div=>{
 //ban버튼 클릭 이벤트
 const banBtn = document.getElementById('banBtn')
 
+
 banBtn.addEventListener('click',()=>{
 
     //1-9번
@@ -70,7 +71,7 @@ banBtn.addEventListener('click',()=>{
       commitClickData(list, clickData, finalClick);
       //blue, red 번갈아 진행
       nextTurn(count);
-    } 
+    }
     //10번
     else if(count.total === 9){
       //마지막으로 선택한 요소 담기
@@ -83,11 +84,12 @@ banBtn.addEventListener('click',()=>{
       //ban버튼 안보임 + pick버튼 보임
       banBtn.classList.toggle('display-none')
       pickBtn.classList.toggle('display-none')
-      alert('완료했습니다');
+        alert('ban 완료했습니다')
 
       //변수 초기화
       resetCount(count)
     }
+
 })
 
 
@@ -97,13 +99,19 @@ const restartBtn = document.getElementById('restart')
 //pick버튼 클릭
 pickBtn.addEventListener('click',()=>{
 
+  if(clickData.length === 0){
+    alert('픽을 진행해주세요')
+    return
+  }
+
+
   //1-9번
   if(count.total < 9) {
     //마지막으로 선택한 요소 담기
     commitClickData(list, clickData, finalClick);
     //blue, red 번갈아 진행
     nextTurn(count);
-  } 
+  }
   //10번
   else if(count.total === 9){
 

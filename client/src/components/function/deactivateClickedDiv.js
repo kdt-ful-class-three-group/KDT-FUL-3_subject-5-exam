@@ -8,6 +8,8 @@ export function deactivateClickedDiv(id,list) {
     if (div.getAttribute('id') === id) {
       div.style.pointerEvents = 'none';
       div.style.color = 'red';
+
+
     }
   });
 }
