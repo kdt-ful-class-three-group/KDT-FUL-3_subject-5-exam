@@ -15,8 +15,8 @@ let clickData=[]; //실시간으로 담기는 배열
 let finalClick = []; //최종 배열
 
 //div 요소
-const blueDiv = document.querySelectorAll('div#blue > div') //blue팀 ban리스트 목록
-const redDiv = document.querySelectorAll('div#red > div') //red팀 ban리스트 목록
+const blueDiv = document.querySelectorAll('#ban > div#blue > div') //blue팀 ban리스트 목록
+const redDiv = document.querySelectorAll('#ban > div#red > div') //red팀 ban리스트 목록
 const list = document.getElementById('list').children //중앙 챔피언 리스트
 
 //중앙챔피언리스트 클릭이벤트
@@ -39,9 +39,9 @@ Array.from(list).forEach(div=>{
 
     //각 팀 ban리스트 보여주기
     if(count.all%2===0){
-      blueDiv[count.blue].textContent = clickData[0].name
+      blueDiv[count.blue].textContent = clickData[0].id
     } else {
-      redDiv[count.red].textContent = clickData[0].name
+      redDiv[count.red].textContent = clickData[0].id
     }
   })
 })
