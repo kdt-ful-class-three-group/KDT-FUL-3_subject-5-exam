@@ -6,7 +6,6 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 import { commitClickData } from "./function/commitClickData.js";
 import { saveFinalBanData } from "./function/saveFinalBanData.js";
 import { nextTurn } from "./function/nextTurn.js";
-import {autoRender} from "./function/renderHandler.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -59,7 +58,6 @@ choiceBtn.addEventListener('click', () => {
     commitClickData(list,clickData, finalClick);
     nextTurn(count);
     saveFinalBanData(CHAMPOBJ, finalClick);
-    autoRender();
     alert('밴 완료했습니다');
   } else {
     alert('완료')
