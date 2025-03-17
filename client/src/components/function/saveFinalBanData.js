@@ -1,4 +1,4 @@
-import { sendBanPickData } from "../sendBanPickData";
+import {sendBanPickData} from "../sendBanPickData.js";
 
 /**
  * 최종 확정된 목록들을 데이터에 담는 함수
@@ -10,5 +10,6 @@ export function saveFinalBanData(CHAMPOBJ,finalClick){
 
   CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
   CHAMPOBJ.banPickData.red.ban = finalClick.filter((_, i) => i % 2 !== 0);
+  // blue와 red의 BanPickData를 저장하기 위한 function
   sendBanPickData(CHAMPOBJ.banPickData);
 }

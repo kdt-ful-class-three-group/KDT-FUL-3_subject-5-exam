@@ -4,7 +4,7 @@ function sendBanPickData() {
   fetch("/save", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/javascript",
     },
     body: JSON.stringify(CHAMPOBJ.banPickData),
   })
@@ -13,4 +13,4 @@ function sendBanPickData() {
     .catch((err) => console.log(`${err} 에러발생`));
 }
 
-export { sendBanPickData };
+export {sendBanPickData}
