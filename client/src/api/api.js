@@ -1,60 +1,53 @@
+// 정렬한 이름 가져오기
+function sortNameGet(champKorName, apiData){
+  let champCombine = [];
 
+  // 챔피언 영어, 한글 이름
+  for (let outerIndex = 0; outerIndex < apiData.length; outerIndex++) {
+    for (let innerIndex = 0; innerIndex < apiData.length; innerIndex++) {
+      // 가, 나, 다 정렬된 한글이름과 API의 한글 이름과 같으면 실행
+      if (champKorName.sort()[outerIndex] === apiData[innerIndex].name) {
+        // 한글 이름과 영어 이름을 객체로 삽입 name : 한글이름, id : 영어 이름
+        champCombine.push({ korName: apiData[innerIndex].name, engName: apiData[innerIndex].id });
+      }
+    }
+  }
+  return champCombine;
+}
+
+// 원본 API에서 한글 이름 가져오기
+function korNameGet(apiData){
+  let champKorName = [];
+  // 원본 데이터에서 한글 이름을 가져옴
+  for (let index = 0; index < apiData.length; index++) {
+    champKorName.push(apiData[index].name)
+  }
+  console.log(champKorName);
+  return champKorName
+}
 
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
   // apiData = JSON구조 내에 data 객체 접근하여 values로 전부 배열로 만듬
-  // sortedName = 한글이름 가, 나, 다 순으로 이름 정렬 
-  // champPotrait = 챔피언 초상화 -> Aatrox.png
-  // champSplash = 챔피언 스플래쉬 아트 이름 -> Aatrox_0.jpg
-  // champKorName = 챔피언의 한글 이름 -> 아트록스
+  // champKorName =  원본에서 한글 이름을 가져옴
+  // champCombine = [{korName : "가렌", engName : "Garen"}] 형식으로 저장한 배열
   let apiData = Object.values(data.data)
-  let champPotrait = [];
-  let champSplash = [];
   let champKorName = [];
   let champCombine = [];
 
-  // 원본 데이터 한글 이름 
-  for(let index = 0; index < apiData.length ; index++){
-    champKorName.push(apiData[index].name)
-  }
-
-  // 챔피언 영어, 한글 이름
-    for(let index = 0 ; index < apiData.length ; index++){
-      
-      for(let j = 0 ; j < apiData.length ; j++){
-        if(champKorName.sort()[index] === apiData[j].name){
-          champCombine.push({korName : apiData[j].name, engName : apiData[j].id});
-        }  
-      }
-    }
-
-
-  console.log(champCombine);
-  //* console.log(apiData[0].image.full) -> 초상화 이미지의 이름 확인 "Aatrox.png"
-
-  /* JSON 챔피언 특성 파일 구조
-    data : {
-      Aatrox : {
-        name : 아트록스
-      }
-    }  
-  }
- 
-    data 내에 각 챔피언 마다 Object를 가져옴
-    
-      상세 구조
-
-      0 = {id : 'Aatrox' , name : "아트록스", img : { full : "Aatrox.png"}},
-      1 = {id : 'Ahri' , name : "아리", img : {full : "Ahri.png"}},
-  */
-
+  // 원본 데이터에서 한글 가져옴
+  champKorName = korNameGet(apiData);
+  // 가나다로 정렬 후 [{korName : "가렌", engName : "Garen"}] 형식으로 저장
+  champCombine = sortNameGet(champKorName, apiData);
+  
   // 챔피언의 초상화, 챔피언의 스플래쉬 아트, 챔피언의 한글 이름을 처리
   for (let index = 0; index < apiData.length; index++) {
-    // champPotrait.push(apiData[index].image.full)
-    // champSplash.push(apiData[index].id)
+    // localstorge 사용 key : 챔피언 영어 이름 , value : 스플래쉬 아트 링크
+    // example => key : Ahri, value : 스플래쉬 아트 링크
+    localStorage.setItem(champCombine[index].engName, `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg`)
 
-    // localstorge key : 챔피언 이름 , value : 스플래쉬 아트 링크
-    localStorage.setItem(champSplash[index], `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champSplash[index]}_0.jpg`)
+    // <div id="champlist"></div> 
+    const ul = document.getElementById('champList');
 
     /*
     <div>
@@ -63,19 +56,27 @@ function champLoad(data) {
     <p></p> => 챔피언 한글이름 표출
     </div>
     */
-    const ul = document.getElementById('champList');
-
     ul.innerHTML += `<div>
         <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png>
         <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg>
-        <p>${champKorName[index]}</p></div>`
+        <p>${champCombine[index].korName}}</p></div>`
   }
-  console.log(apiData[0].name);
-
-  console.log(champCombine)
 }
 
+  /* JSON 챔피언 특성 파일 구조
+    data : {
+      {id : Aatrox
+        name : 아트록스
+      }
+    }
+ 
+    data 내에 각 챔피언 마다 Object를 가져옴
+    
+      상세 구조
 
+      0 = {id : 'Aatrox' , name : "아트록스", img : { full : "Aatrox.png"}},
+      1 = {id : 'Ahri' , name : "아리", img : {full : "Ahri.png"}},
+  */
 
 // API 처리 함수
 function dataHandle() {
