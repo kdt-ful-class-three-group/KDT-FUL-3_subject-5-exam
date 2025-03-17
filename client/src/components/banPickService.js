@@ -28,6 +28,9 @@ const blueDiv = document.querySelectorAll('div#blue > div')
 const redDiv = document.querySelectorAll('div#red > div')
 
 const list = document.getElementById('list').children
+
+
+
 console.log(list)
 //section#list
 //짝수일 때는 blueDiv에
@@ -35,10 +38,18 @@ console.log(list)
 //숫자 사용을 위해 for문 사용
 
 Array.from(list).forEach(div=>{
+
+  div.setAttribute('style','cursor:pointer')
+
+
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
+
     //click한 div의 속성값 배열에 넣기
     clickData.push({id : div.getAttribute('id'), name : div.getAttribute('name')})
+
+
+
     //마지막 요소만 남기기
     if(clickData.length>1){
       clickData.shift()
