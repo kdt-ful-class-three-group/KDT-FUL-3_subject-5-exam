@@ -113,15 +113,3 @@ choiceBtn.addEventListener('click',()=>{
   console.log('last',finalClick)
 
 })
-
-
-
-
-
-//[ ] 일단) 무조건 번갈아가면서 담기 blue -> red -> blue -> red
-
-//[ ] 중복 안됨
-
-//[ ] 클릭하면 담기, 선택안하면 걍 안한 거 : null, "noBan"
-
-//[ ] 최대 10번

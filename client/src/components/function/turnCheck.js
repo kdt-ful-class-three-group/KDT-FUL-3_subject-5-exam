@@ -1,4 +1,5 @@
 import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
+import { turn } from "./turn.js";
 
 /**
  * 
@@ -26,6 +27,8 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
   else {
     fincalClickData.push(CHAMPOBJ.noneClick)
   }
+  
+  turn();
 }
 
 
