@@ -1,15 +1,20 @@
+
+
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
   // apiData = JSON구조 내에 data 객체 접근하여 values로 전부 배열로 만듬
+  // sortedName = 한글이름 가, 나, 다 순으로 이름 정렬 
   // champPotrait = 챔피언 초상화 -> Aatrox.png
   // champSplash = 챔피언 스플래쉬 아트 이름 -> Aatrox_0.jpg
-  // champName = 챔피언의 한글 이름 -> 아트록스
+  // champKorName = 챔피언의 한글 이름 -> 아트록스
   let apiData = Object.values(data.data)
+  let sortedName = [];
   let champPotrait = [];
   let champSplash = [];
   let champKorName = [];
+  let champCombine = [];
 
-  console.log(apiData)
+  console.log(apiData[0])
   //* console.log(apiData[0].image.full) -> 초상화 이미지의 이름 확인 "Aatrox.png"
 
   /* JSON 챔피언 특성 파일 구조
@@ -33,20 +38,39 @@ function champLoad(data) {
     champPotrait.push(apiData[index].image.full)
     champKorName.push(apiData[index].name)
     champSplash.push(apiData[index].id)
-    const ul = document.getElementById('champList');
+
+    // localstorge key : 챔피언 이름 , value : 스플래쉬 아트 링크
+    localStorage.setItem(champSplash[index], `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champSplash[index]}_0.jpg`)
+
     /*
     <div>
-      <img> => 챔피언 초상화 표출
-      <img> => 챔피언 스플래쉬 아트 표출
-      <p></p> => 챔피언 한글이름 표출
+    <img> => 챔피언 초상화 표출
+    <img> => 챔피언 스플래쉬 아트 표출
+    <p></p> => 챔피언 한글이름 표출
     </div>
     */
-    ul.innerHTML += `<div>
-        <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champPotrait[index]}>
-        <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champSplash[index]}_0.jpg>
-        <p>${champKorName[index]}</p></div>`
+    //  const ul = document.getElementById('champList');
+    // ul.innerHTML += `<img src = ${test}>`
+    // ul.innerHTML += `<div>
+    //     <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champPotrait[index]}>
+    //     <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champSplash[index]}_0.jpg>
+    //     <p>${champKorName[index]}</p></div>`
   }
+  console.log(apiData[0].name);
+  // 챔피언 영어, 한글 이름
+
+  for(let index = 0 ; index < apiData.length ; index++){
+    for(let j = 0 ; j < apiData.length ; j++){
+      if(champKorName.sort()[index] === apiData[j].name){
+        champCombine.push({korName : apiData[j].name, engName : apiData[j].id});
+      }  
+    }
+  }
+  console.log(champCombine)
 }
+
+
+
 // API 처리 함수
 function dataHandle() {
   const xhr = new XMLHttpRequest();
