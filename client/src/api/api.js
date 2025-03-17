@@ -47,11 +47,11 @@ function champLoad(data) {
     // example => key : Ahri, value : 스플래쉬 아트 링크
     localStorage.setItem(champCombine[index].engName, `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg`)
 
-    // <div id="champlist"></div> 
+    // <section id="list"></section>
     const section = document.getElementById('list');
 
     /*
-    <div>
+    <div id='영어이름' name='한국이름'>
     <img> => 챔피언 초상화 표출
     <img> => 챔피언 스플래쉬 아트 표출
     <p></p> => 챔피언 한글이름 표출
