@@ -11,5 +11,6 @@ export function saveFinalBanData(CHAMPOBJ,finalClick){
   CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
   CHAMPOBJ.banPickData.red.ban = finalClick.filter((_, i) => i % 2 !== 0);
   // blue와 red의 BanPickData를 저장하기 위한 function
+  console.log(CHAMPOBJ.banPickData);
   sendBanPickData(CHAMPOBJ.banPickData);
 }
