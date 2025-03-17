@@ -5,7 +5,6 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 // src/function에 들어있는 모듈
 import { showList } from "./function/showList.js";
 import { divListClick } from "./function/divListClick.js";
-// import { banPickClickEvent } from "./function/banPickClickEvent.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
