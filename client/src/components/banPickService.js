@@ -3,7 +3,6 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
-import { changeBtn } from "./function/changeBtn.js";
 import { showList } from "./function/showList.js";
 import { divListClick } from "./function/divListClick.js";
 // import { banPickClickEvent } from "./function/banPickClickEvent.js";
