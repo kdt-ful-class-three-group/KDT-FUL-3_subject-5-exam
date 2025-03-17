@@ -6,6 +6,7 @@ console.log('obj확인',CHAMPOBJ.banPickData)
 import { commitClickData } from "./function/commitClickData.js";
 import { saveFinalBanData } from "./function/saveFinalBanData.js";
 import { nextTurn } from "./function/nextTurn.js";
+import { changeBtn } from "./function/changeBtn.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -18,6 +19,7 @@ let finalClick = []; //최종 배열
 const blueDiv = document.querySelectorAll('#ban > div#blue > div') //blue팀 ban리스트 목록
 const redDiv = document.querySelectorAll('#ban > div#red > div') //red팀 ban리스트 목록
 const list = document.getElementById('list').children //중앙 챔피언 리스트
+
 
 //중앙챔피언리스트 클릭이벤트
 Array.from(list).forEach(div=>{
@@ -39,9 +41,9 @@ Array.from(list).forEach(div=>{
 
     //각 팀 ban리스트 보여주기
     if(count.all%2===0){
-      blueDiv[count.blue].textContent = clickData[0].id
+      blueDiv[count.blue].innerHTML = `<img src = 'https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${clickData[0].id}.png'>`
     } else {
-      redDiv[count.red].textContent = clickData[0].id
+      redDiv[count.red].innerHTML = `<img src = 'https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${clickData[0].id}.png'>`
     }
   })
 })
@@ -63,6 +65,7 @@ choiceBtn.addEventListener('click', () => {
     nextTurn(count);
     saveFinalBanData(CHAMPOBJ, finalClick);
     alert('밴 완료했습니다');
+    changeBtn('choice','select','pick선택')
   } 
   //11번 눌렀을 때
   else {
