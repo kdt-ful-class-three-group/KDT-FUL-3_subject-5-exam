@@ -3,12 +3,10 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
-import { commitClickData } from "./function/commitClickData.js";
-import { saveFinalData } from "./function/saveFinalData.js";
-import { nextTurn } from "./function/nextTurn.js";
 import { changeBtn } from "./function/changeBtn.js";
 import { showList } from "./function/showList.js";
 import { divListClick } from "./function/divListClick.js";
+import { banPickClickEvent } from "./function/banPickClickEvent.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -26,56 +24,44 @@ const list = document.getElementById('list').children //중앙 챔피언 리스�
 Array.from(list).forEach(div=>{
   div.setAttribute('style','cursor:pointer')
 
+  // div.setAttribute('style','opacity:0.5')
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
+
+    div.setAttribute('style','opacity:0.5')
 
     divListClick(div,clickData)
     
     //클릭 카운트 확인
     console.log('count',count)
 
-    //각 팀 ban리스트 보여주기
-    showList(count, clickData, blueDiv, redDiv)
+    if(document.getElementsByTagName('button')[0].id === 'choice'){
+      //각 팀 ban리스트 보여주기
+      showList(count, clickData, blueDiv, redDiv)
+    } else if(document.getElementsByTagName('button')[0].id === 'select'){
+      showList(count,clickData, bluePickDiv, redPickDiv)
+    }
   })
 })
 
-function banPickClickEvent(button,count,type,listDiv,clickData,finalClick){
-  button.addEventListener('click',()=>{
-    if(count.total < 9) {
-      commitClickData(listDiv, clickData, finalClick);
-      nextTurn(count);
-    } 
-    else if(count.total === 9){
-      commitClickData(listDiv,clickData, finalClick);
-      nextTurn(count);
-      saveFinalData(CHAMPOBJ,type,finalClick);
-      alert('완료했습니다');
-      changeBtn('choice','select','pick선택')
-    }
-  })
+//ban버튼 클릭 이벤트
+const banBtn = document.getElementById('choice')
+
+banPickClickEvent(banBtn,count,'ban',list,clickData,finalClick)
+changeBtn('choice','select','pick선택')
+
+console.log('last', finalClick);
+
+function resetCount(count){
+  count.blue = 0;
+  count.red = 0;
+  count.total = 0;
 }
-//버튼
-const choiceBtn = document.getElementById('choice')
-//버튼 클릭 이벤트
-choiceBtn.addEventListener('click', () => {
 
-  //1-9번 진행
-  if (count.total < 9) {
-    commitClickData(list, clickData, finalClick);
-    nextTurn(count);
-  }
+resetCount(count)
 
-  //10번 : 최종 ban리스트 데이터 (CHAMPOBJ.banpickData.color.ban)에 담기
-  else if (count.total === 9) {
-    commitClickData(list,clickData, finalClick);
-    nextTurn(count);
-    saveFinalData(CHAMPOBJ,'ban',finalClick);
-    alert('밴 완료했습니다');
-    changeBtn('choice','select','pick선택')
-  } 
-  //11번 눌렀을 때
-  else {
-    alert('완료')
-  }
-  console.log('last', finalClick);
-});
+const bluePickDiv = document.querySelectorAll('#pick > div#blue > div')
+const redPickDiv = document.querySelectorAll('#pick > div#red > div')
+const pickBtn = document.getElementById('select')
+
+banPickClickEvent(pickBtn,count,'pick',list,clickData,finalClick)

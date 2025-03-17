@@ -4,7 +4,7 @@
  * @param {string} type ban / pick 으로 들어갈 데이터 선택
  * @param {array} finalClick 마지막으로 선택한 요소
  */
-export function saveFinalBanData(CHAMPOBJ,type,finalClick){
+export function saveFinalData(CHAMPOBJ,type,finalClick){
 
   if(type === 'ban'){
     CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
