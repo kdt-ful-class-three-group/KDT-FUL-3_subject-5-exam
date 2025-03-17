@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/public/styles.css">
   <title>League of Legend</title>
 </head>
+
 <body>
   <main>
     <!-- <section id="blue"></section> -->
@@ -28,6 +29,19 @@
         <div>ㅇ</div>
         <div>ㅇ</div>
       </div>
+      <div id="blue-pick">
+        <p>blue-pick</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section id="event">
+      <div id="champList"></div>
+    </section>
+    <section>
       <div id="red-ban">
         <p>red</p>
         <div>ㄱ</div>
@@ -36,31 +50,20 @@
         <div>ㄱ</div>
         <div>ㄱ</div>
       </div>
+
+      <div id="red-pick">
+        <p>red-pick</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </section>
-    <section>
-    <div id="blue-pick">
-      <p>blue-pick</p>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div id="red-pick">
-      <p>red-pick</p>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    </section>
-        <section id="event">
-          <div id="champList"></div>
-        </section>
+
     <!-- <section id="list"></section> -->
     <!-- <section id="list"> -->
-      <!-- 예시 <div id="" name="">name</div> -->
+    <!-- 예시 <div id="" name="">name</div> -->
     <!-- </section> -->
   </div>
   <!-- script -->
@@ -74,25 +77,23 @@
     //   if (xhr.status == 200) {
     //     const data = JSON.parse(xhr.responseText);
 
-    //     // [x] data로 section#list 안에 div 구성
-    //     for(let key in data.data){
-    //       let id = data.data[key].id
-    //       let name = data.data[key].name
+    // 클릭 했을 때 > 상단에 네임 생성?
+    //[x] data로 section#list 안에 div 구성
+    // for(let key in data.data){
+    //   let id = data.data[key].id
+    //   let name = data.data[key].name
 
-    //       //data의 id, name 가져옴
-    //       const div = document.createElement('div')
-    //       div.setAttribute('id',id);
-    //       div.setAttribute('name',name)
-    //     //   div.textContent = name
-    //       document.getElementById('list').appendChild(div)
-    //     }
-    //   }
-    // });
-        // }
-    //   }
-    //   });
+        //   //data의 id, name 가져옴
+        //   const div = document.createElement('div')
+        //   div.setAttribute('id',id);
+        //   div.setAttribute('name',name)
+        //   div.textContent = name
+        //   document.getElementById('list').appendChild(div)
+        }
 
-    xhr.send();
+      });
+
+    // xhr.send();
   </script>
 
 </body>
