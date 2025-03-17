@@ -2,6 +2,9 @@ import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
 
 /**
  * 
+ * @param {*} listElement   div#list의 자식요소
+ * @param {*} clickLiveData   클릭한 데이터
+ * @param {*} fincalClickData   최종 데이터
  */
 export function turnCheck(listElement,clickLiveData, fincalClickData ){
   //clickLiveData의 값이 있을 때
@@ -26,6 +29,7 @@ export function turnCheck(listElement,clickLiveData, fincalClickData ){
   else {
     fincalClickData.push(CHAMPOBJ.noneClick)
   }
+  
 }
 
 
