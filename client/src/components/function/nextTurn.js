@@ -1,8 +1,8 @@
-import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
-
-let count = CHAMPOBJ.count
-
-export function nextTurn() {
+/**
+ * blue, red 번갈아 실행하도록 하는 함수
+ * @param {object} count blue, red, total이 들어있는 객체
+ */
+export function nextTurn(count) {
   if (count.total % 2 === 0) {
     count.blue++;
   } else {

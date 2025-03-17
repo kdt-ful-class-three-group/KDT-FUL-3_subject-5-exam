@@ -1,13 +1,10 @@
-
 /**
- * 최종데이터에 마지막으로 클릭한 요소 담기
- * @param {Array} blueDataArray blue팀의 데이터가 담길 배열, banPickData.blue.ban / banPickData.blue.pick
- * @param {Array} redDataArray red팀의 데이터가 담길 배열, banPickData.red.ban / banPickData.red.pick
- * @param {Array} finalClickData 최종 선택
- * @returns blueDataArray, redDataArray
+ * 최종 확정된 목록들을 데이터에 담는 함수
+ * @param {Object} CHAMPOBJ 데이터가 들어있는 객체
+ * @param {array} finalClick 마지막으로 선택한 요소
  */
-export function saveFinalBanData(blueDataArray,redDataArray,finalClick){
+export function saveFinalBanData(CHAMPOBJ,finalClick){
 
-  blueDataArray = finalClick.filter((_, i) => i % 2 === 0);
-  redDataArray = finalClick.filter((_, i) => i % 2 !== 0);
+  CHAMPOBJ.banPickData.blue.ban = finalClick.filter((_, i) => i % 2 === 0);
+  CHAMPOBJ.banPickData.red.ban = finalClick.filter((_, i) => i % 2 !== 0);
 }

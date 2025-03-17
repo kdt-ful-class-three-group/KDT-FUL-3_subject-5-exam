@@ -1,14 +1,12 @@
-
 console.log("연결")
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js"
 console.log('obj확인',CHAMPOBJ.banPickData)
 
 // src/function에 들어있는 모듈
-// import { putDataToArray } from "./function/putDataToArray.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { saveFinalBanData } from "./function/saveFinalBanData.js";
+import { nextTurn } from "./function/nextTurn.js";
 import {autoRender} from "./function/renderHandler.js";
-// import { nextTurn } from "./function/nextTurn.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -20,16 +18,6 @@ const blueDiv = document.querySelectorAll('div#blue > div')
 const redDiv = document.querySelectorAll('div#red > div')
 const list = document.getElementById('list').children
 
-function nextTurn() {
-  if (count.total % 2 === 0) {
-    count.blue++;
-  } else {
-    count.red++;
-  }
-  count.total++;
-}
-
-//section#list
 //짝수일 때는 blueDiv에
 //홀수 일 때는 redDiv에
 //숫자 사용을 위해 for문 사용
@@ -64,13 +52,13 @@ const choiceBtn = document.getElementById('choice')
 //버튼 클릭 이벤트
 choiceBtn.addEventListener('click', () => {
   if (count.total < 9) {
-    commitClickData(list, clickData,finalClick);
-    nextTurn();
+    commitClickData(list, [...clickData], finalClick);
+    nextTurn(count);
   }
   else if (count.total === 9) {
-    commitClickData(list, clickData,finalClick);
-    nextTurn();
-    saveFinalBanData(CHAMPOBJ.banPickData.blue.ban, CHAMPOBJ.banPickData.red.ban,finalClick);
+    commitClickData(list, [...clickData], finalClick);
+    nextTurn(count);
+    saveFinalBanData(CHAMPOBJ, finalClick);
     autoRender();
     alert('밴 완료했습니다');
   }
