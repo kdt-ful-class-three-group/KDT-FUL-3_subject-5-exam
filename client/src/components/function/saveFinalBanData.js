@@ -1,5 +1,3 @@
-import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
-import { turnCheck } from "./turnCheck.js";
 
 /**
  * 최종데이터에 마지막으로 클릭한 요소 담기
@@ -8,10 +6,8 @@ import { turnCheck } from "./turnCheck.js";
  * @param {Array} finalClickData 최종 선택
  * @returns blueDataArray, redDataArray
  */
-export function putDataToArray(blueDataArray,redDataArray,finalClickData){
+export function saveFinalBanData(blueDataArray,redDataArray,finalClick){
 
-  blueDataArray = finalClickData.filter((_,i)=> i%2 === 0)
-  redDataArray = finalClickData.filter((_,i)=> i%2 !==0)
-
-  return {blueDataArray, redDataArray}
+  blueDataArray = finalClick.filter((_, i) => i % 2 === 0);
+  redDataArray = finalClick.filter((_, i) => i % 2 !== 0);
 }
