@@ -10,39 +10,48 @@
 </head>
 
 <body>
-  <!-- <main>
-    <section id="blue"></section>
-    <section id="event">
-      <div id="champList"></div>
-    </section>
-    <section id="red"></section>
-  </main> -->
-
-
   <script type="module" src="/src/api/api.js"></script>
   <div id="root">
-    <button type="button" id="choice">선택</button>
-    <section>
+    <button type="button" id="choice">ban 선택</button>
+    <section id="ban">
+      <h1>ban</h1>
       <div id="blue">
         <p>blue</p>
-        <div>ㅇ</div>
-        <div>ㅇ</div>
-        <div>ㅇ</div>
-        <div>ㅇ</div>
-        <div>ㅇ</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
       </div>
       <div id="red">
         <p>red</p>
-        <div>ㄱ</div>
-        <div>ㄱ</div>
-        <div>ㄱ</div>
-        <div>ㄱ</div>
-        <div>ㄱ</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
       </div>
     </section>
-    <section id="list">
-      <div id="champList"></div>
+    <section id="pick">
+      <h1>pick</h1>
+      <div id="blue">
+        <p>blue</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
+      <div id="red">
+        <p>red</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
     </section>
+    <section id="list" style="display:flex; flex-wrap: wrap;"></section>
   </div>
   <!-- script -->
   <script type="module" src="/src/components/banPickService.js"></script>
