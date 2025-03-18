@@ -1,5 +1,5 @@
 import { deactivateClickedDiv } from "./deactivateClickedDiv.js";
-import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
+import { CHAMPOBJ } from "../../obj/CHAMPOBJ.js";
 
 /**
  * 마지막으로 선택한 요소를 배열에 담는 함수
@@ -10,12 +10,12 @@ import { CHAMPOBJ } from "../../obj/CHAMPOBJ_hyunjoon.js";
 export function commitClickData(list, clickData, finalClick) {
   let data = {};
 
-  if(clickData[0]){
-    data = clickData[0]
+  if (clickData[0]) {
+    data = clickData[0];
   } else {
-    data = CHAMPOBJ.noneClick
+    data = CHAMPOBJ.noneClick;
   }
-  
+
   finalClick.push(data);
 
   if (clickData.length > 0) {

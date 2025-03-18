@@ -1,5 +1,5 @@
 console.log("연결");
-import { CHAMPOBJ } from "../obj/CHAMPOBJ_hyunjoon.js";
+import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
 console.log("obj확인", CHAMPOBJ.banPickData);
 
 // src/function에 들어있는 모듈

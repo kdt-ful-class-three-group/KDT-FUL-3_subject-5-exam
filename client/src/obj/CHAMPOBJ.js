@@ -1,3 +1,20 @@
 export const CHAMPOBJ = {
-  //todo 폴더명 예시 CHAMPOBJ_jaesueng.js
-}
+  banPickData: {
+    blue: { ban: [], pick: [] },
+    red: { ban: [], pick: [] },
+  },
+  count: {
+    blue: 0,
+    red: 0,
+    get all() {
+      return this.blue + this.red;
+    },
+    total: 0,
+  },
+  noneClick: { id: "ban", name: "ban" },
+  time: {
+    second: 30,
+    intervalTime: 1000,
+    intervalName: "",
+  },
+};

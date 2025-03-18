@@ -1,4 +1,4 @@
-import { CHAMPOBJ } from "../obj/CHAMPOBJ_yunjonghwan.js";
+import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
 import { timerTag } from "./function/timerTag.js";
 
 /**
