@@ -1,0 +1,96 @@
+[
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Garen",
+          "name": "가렌"
+        },
+        {
+          "id": "Gangplank",
+          "name": "갱플랭크"
+        },
+        {
+          "id": "Rakan",
+          "name": "라칸"
+        },
+        {
+          "id": "Graves",
+          "name": "그레이브즈"
+        },
+        {
+          "id": "Gragas",
+          "name": "그라가스"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Galio",
+          "name": "갈리오"
+        },
+        {
+          "id": "Naafiri",
+          "name": "나피리"
+        },
+        {
+          "id": "Nautilus",
+          "name": "노틸러스"
+        },
+        {
+          "id": "Nami",
+          "name": "나미"
+        },
+        {
+          "id": "Gnar",
+          "name": "나르"
+        }
+      ]
+    }
+  }
+]
