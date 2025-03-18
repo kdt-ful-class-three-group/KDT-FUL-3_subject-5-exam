@@ -20,6 +20,7 @@
 .object-fit {object-fit: cover};
 .white-space-nowrap {white-space: nowrap;}
 
+.display-none {display: none;}
 
 .bg-color-blue {background-color: rgba(44, 44, 255, 0.641)}
 
@@ -58,7 +59,6 @@ main {
   display: flex;
   justify-content: center;
 }
-
 #champList {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -66,4 +66,9 @@ main {
   align-items: flex-start;
   height: 100%;
   overflow: auto;
+}
+#blue, #red {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
