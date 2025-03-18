@@ -13,14 +13,14 @@ function champLoad(data) {
     console.log(Object.keys(championData))
 
     // 영어 이름으로 되어있는 [Aatrox, Ahri, ...] 에서 map으로 배열 진입
-    const championDataArray = Object.keys(championData).map(index =>{
+    let championDataArray = Object.keys(championData).map(index => {
       // 결과 : 아트록스, championData[Aatrox].name
-      console.log(championData[index].name)
+      // console.log(championData[index].name)
       // 결과 : Aatrox, [Aatrox, Ahri, ....]
-      console.log(index)
+      // console.log(index)
       
-     
-      
+      // 객체로 넣어주기, korName : 아트록스 , engName : Aatrox
+      return {korName : championData[index].name, engName : index}
 
     })
     console.log(championDataArray);
