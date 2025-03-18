@@ -23,10 +23,14 @@ export function showPickList(count, clickData, bluePickList, redPickList) {
   if (count.all % 2 === 0) {
     bluePickList[
       count.blue
-    ].innerHTML = `<img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg>`;
+    ].style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
+    bluePickList[count.blue].style.backgroundSize = "cover"; // 필요에 따라 추가
+    bluePickList[count.blue].style.backgroundPosition = "center top";
   } else {
     redPickList[
       count.red
-    ].innerHTML = `<img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg > `;
+    ].style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
+    redPickList[count.red].style.backgroundSize = "cover";
+    redPickList[count.red].backgroundPosition = "center top";
   }
 }

@@ -34,6 +34,5 @@ function dataHandle() {
     }
   });
 }
-
 // API 처리 함수 시작
 dataHandle();
