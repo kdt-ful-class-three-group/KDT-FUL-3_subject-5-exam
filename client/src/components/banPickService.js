@@ -23,7 +23,7 @@ const blueDiv = document.getElementById("blueBan"); //blue팀 ban리스트 목�
 const redDiv = document.getElementById("redBan"); //red팀 ban리스트 목록
 const bluePickDiv = document.querySelectorAll("#bluePick > div"); //red팀 ban리스트 목록
 const redPickDiv = document.querySelectorAll("#redPick > div"); //red팀 ban리스트 목록
-const list = document.getElementById("list"); //중앙 챔피언 리스트
+const list = document.getElementById("list").children; //중앙 챔피언 리스트
 const pickBtn = document.getElementById("pickBtn");
 const restartBtn = document.getElementById("restart");
 
