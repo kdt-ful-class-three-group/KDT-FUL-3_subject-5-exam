@@ -3,486 +3,80 @@
     "blue": {
       "ban": [
         {
-          "id": "Garen",
-          "name": "가렌"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "Lulu",
-          "name": "룰루"
-        },
-        {
-          "id": "Leblanc",
-          "name": "르블랑"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Naafiri",
-          "name": "나피리"
-        },
-        {
-          "id": "Lucian",
-          "name": "루시안"
-        },
-        {
-          "id": "LeeSin",
-          "name": "리 신"
-        },
-        {
-          "id": "Veigar",
-          "name": "베이가"
-        },
-        {
-          "id": "Velkoz",
-          "name": "벨코즈"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "Riven",
-          "name": "리븐"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Renekton",
-          "name": "레넥톤"
-        },
-        {
-          "id": "RekSai",
-          "name": "렉사이"
-        },
-        {
-          "id": "Briar",
-          "name": "브라이어"
-        },
-        {
-          "id": "Vladimir",
-          "name": "블라디미르"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Lulu",
-          "name": "룰루"
-        },
-        {
           "id": "Nautilus",
           "name": "노틸러스"
-        },
-        {
-          "id": "LeeSin",
-          "name": "리 신"
-        },
-        {
-          "id": "Renata",
-          "name": "레나타 글라스크"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Lucian",
-          "name": "루시안"
-        },
-        {
-          "id": "Leblanc",
-          "name": "르블랑"
-        },
-        {
-          "id": "Diana",
-          "name": "다이애나"
-        },
-        {
-          "id": "Riven",
-          "name": "리븐"
-        },
-        {
-          "id": "Leona",
-          "name": "레오나"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Garen",
-          "name": "가렌"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Renekton",
-          "name": "레넥톤"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "MasterYi",
-          "name": "마스터 이"
-        },
-        {
-          "id": "Veigar",
-          "name": "베이가"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Leona",
-          "name": "레오나"
-        },
-        {
-          "id": "Renata",
-          "name": "레나타 글라스크"
-        },
-        {
-          "id": "RekSai",
-          "name": "렉사이"
-        },
-        {
-          "id": "Lillia",
-          "name": "릴리아"
-        },
-        {
-          "id": "Velkoz",
-          "name": "벨코즈"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Nasus",
-          "name": "나서스"
-        },
-        {
-          "id": "Lux",
-          "name": "럭스"
-        },
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        },
-        {
-          "id": "Darius",
-          "name": "다리우스"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Draven",
-          "name": "드레이븐"
-        },
-        {
-          "id": "Diana",
-          "name": "다이애나"
-        },
-        {
-          "id": "Naafiri",
-          "name": "나피리"
-        },
-        {
-          "id": "RekSai",
-          "name": "렉사이"
-        },
-        {
-          "id": "Riven",
-          "name": "리븐"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Ryze",
-          "name": "라이즈"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nidalee",
-          "name": "니달리"
-        },
-        {
-          "id": "Nunu",
-          "name": "누누와 윌럼프"
-        },
-        {
-          "id": "Leona",
-          "name": "레오나"
-        },
-        {
-          "id": "LeeSin",
-          "name": "리 신"
-        },
-        {
-          "id": "Lissandra",
-          "name": "리산드라"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Nami",
-          "name": "나미"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "RekSai",
-          "name": "렉사이"
-        },
-        {
-          "id": "Rengar",
-          "name": "렝가"
-        },
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        },
-        {
-          "id": "Nidalee",
-          "name": "니달리"
-        },
-        {
-          "id": "Draven",
-          "name": "드레이븐"
-        },
-        {
-          "id": "Renata",
-          "name": "레나타 글라스크"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
         },
         {
           "id": "Rell",
           "name": "렐"
         },
         {
+          "id": "Lux",
+          "name": "럭스"
+        },
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        },
+        {
+          "id": "Rakan",
+          "name": "라칸"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Neeko",
+          "name": "니코"
+        },
+        {
+          "id": "Renata",
+          "name": "레나타 글라스크"
+        },
+        {
+          "id": "Nilah",
+          "name": "닐라"
+        },
+        {
+          "id": "Diana",
+          "name": "다이애나"
+        },
+        {
+          "id": "Nunu",
+          "name": "누누와 윌럼프"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "RekSai",
+          "name": "렉사이"
+        },
+        {
           "id": "Leona",
           "name": "레오나"
         },
         {
-          "id": "Lux",
-          "name": "럭스"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Ryze",
-          "name": "라이즈"
+          "id": "Rengar",
+          "name": "렝가"
         },
         {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "Nunu",
-          "name": "누누와 윌럼프"
+          "id": "Rumble",
+          "name": "럼블"
         },
         {
           "id": "Renekton",
           "name": "레넥톤"
-        },
-        {
-          "id": "Diana",
-          "name": "다이애나"
         }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
+      ],
+      "pick": [
         {
-          "id": "Garen",
-          "name": "가렌"
+          "id": "Ryze",
+          "name": "라이즈"
         },
         {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "Lux",
-          "name": "럭스"
+          "id": "Draven",
+          "name": "드레이븐"
         },
         {
           "id": "Darius",
@@ -491,262 +85,10 @@
         {
           "id": "Nidalee",
           "name": "니달리"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nunu",
-          "name": "누누와 윌럼프"
-        },
-        {
-          "id": "Diana",
-          "name": "다이애나"
-        },
-        {
-          "id": "Nautilus",
-          "name": "노틸러스"
         },
         {
           "id": "Naafiri",
           "name": "나피리"
-        },
-        {
-          "id": "Gangplank",
-          "name": "갱플랭크"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        },
-        {
-          "id": "Ryze",
-          "name": "라이즈"
-        },
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        },
-        {
-          "id": "Draven",
-          "name": "드레이븐"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nami",
-          "name": "나미"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Nasus",
-          "name": "나서스"
-        },
-        {
-          "id": "Graves",
-          "name": "그레이브즈"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Nami",
-          "name": "나미"
-        },
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "Lux",
-          "name": "럭스"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        },
-        {
-          "id": "Darius",
-          "name": "다리우스"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nunu",
-          "name": "누누와 윌럼프"
-        },
-        {
-          "id": "Naafiri",
-          "name": "나피리"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        },
-        {
-          "id": "Nautilus",
-          "name": "노틸러스"
-        },
-        {
-          "id": "Gwen",
-          "name": "그웬"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        },
-        {
-          "id": "Ryze",
-          "name": "라이즈"
-        },
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        },
-        {
-          "id": "Draven",
-          "name": "드레이븐"
-        },
-        {
-          "id": "Nidalee",
-          "name": "니달리"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nasus",
-          "name": "나서스"
-        },
-        {
-          "id": "Diana",
-          "name": "다이애나"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Graves",
-          "name": "그레이브즈"
-        },
-        {
-          "id": "Gnar",
-          "name": "나르"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Galio",
-          "name": "갈리오"
-        },
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "Darius",
-          "name": "다리우스"
-        },
-        {
-          "id": "Ryze",
-          "name": "라이즈"
-        },
-        {
-          "id": "Nilah",
-          "name": "닐라"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Nautilus",
-          "name": "노틸러스"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Nasus",
-          "name": "나서스"
-        },
-        {
-          "id": "Gnar",
-          "name": "나르"
-        },
-        {
-          "id": "Nunu",
-          "name": "누누와 윌럼프"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        },
-        {
-          "id": "Lux",
-          "name": "럭스"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        },
-        {
-          "id": "Nidalee",
-          "name": "니달리"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Diana",
-          "name": "다이애나"
-        },
-        {
-          "id": "Naafiri",
-          "name": "나피리"
-        },
-        {
-          "id": "Nami",
-          "name": "나미"
-        },
-        {
-          "id": "Draven",
-          "name": "드레이븐"
-        },
-        {
-          "id": "Gragas",
-          "name": "그라가스"
         }
       ]
     }
