@@ -6,15 +6,13 @@ export function nextTurn(count) {
   const blue = document.getElementById('blue');
   const red = document.getElementById('red');
   if (count.total % 2 === 0) {
-    count.blue++;
-    red.classList.remove('bg-[#FF000040]');
-    blue.classList.add('bg-[#004F9D40]');
-    console.log(blue);
-  } else {
-    count.red++;
     blue.classList.remove('bg-[#004F9D40]');
     red.classList.add('bg-[#FF000040]');
-    console.log(red);
+    count.blue++;
+  } else {
+    count.red++;
+    red.classList.remove('bg-[#FF000040]');
+    blue.classList.add('bg-[#004F9D40]');
   }
   count.total++;
 }
