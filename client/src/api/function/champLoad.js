@@ -1,5 +1,3 @@
-
-
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
 
@@ -34,7 +32,17 @@ function champLoad(data) {
     // [0] = [{korName : "가렌", engName : "Garen"}, [1] = {korName : "갈리오", engName : "Galio"}
     console.log(championDataArray)
   
-    // 챔피언의 초상화, 챔피언의 스플래쉬 아트, 챔피언의 한글 이름을 처리
+    // localStorage에서 key는 챔피언 영어이름, value는 splash 아트 CDN 주소 저장
+    // 챔피언의 초상화
+    // 챔피언의 스플래쉬 아트
+
+    championDataArray.forEach((element) => {
+      // 챔피언 한글이름 전체 출력
+      console.log(element.korName);
+      // 챔피언 영어이름 전체 출력
+      console.log(element.engName);
+    })
+
     // for (let index = 0; index < apiData.length; index++) {
     //   // localstorge 사용 key : 챔피언 영어 이름 , value : 스플래쉬 아트 링크
     //   // example => key : Ahri, value : 스플래쉬 아트 링크
