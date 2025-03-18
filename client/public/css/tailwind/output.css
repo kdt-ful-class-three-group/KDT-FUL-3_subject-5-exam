@@ -554,19 +554,22 @@ video {
   display: none;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.grid {
+  display: grid;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.h-full {
+  height: 100%;
 }
 
-.font-bold {
-  font-weight: 700;
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.underline {
-  text-decoration-line: underline;
+.items-start {
+  align-items: flex-start;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
