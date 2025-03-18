@@ -15,8 +15,8 @@
 
   <div id="root" class="flex gap-2">
     <!-- <section id="ban" > -->
-    <section id="blue" class="w-[25.5rem] h-[54rem] bg-[#004F9D40]">
-      <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-3">
+    <section id="blue" class="w-[25.5rem] h-[100vh] bg-[#004F9D40]">
+      <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-[5%]">
         <img src="/public/img/ban.png" alt="ban Image">
         <img src="/public/img/ban.png" alt="ban Image">
         <img src="/public/img/ban.png" alt="ban Image">
@@ -32,16 +32,16 @@
         <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
       </div>
     </section>
-    <section class="w-[54rem] bg-[#44444466]">
+    <section class="w-[54rem] bg-[#44444466] flex items-center flex-col">
       <section id="timer">
-        <h1 style="font-size: 50px;">30초</h1>
+        <h1 class="text-[32px] text-white p-[24px] pb-0">30초</h1>
       </section>
       <section id="list" class="grid grid-cols-6 items-start overflow-auto h-[80vh] scrollbar-none"></section>
-      <button type="button" id="banBtn">ban 선택</button>
+      <button type="button" id="banBtn" class="w-[45%] text-center mt-[3%] py-[2%] text-white">ban 선택</button>
       <button type="button" id="pickBtn" class="hidden">pick 선택</button>
       <button type="button" id="restart" class="hidden">다시하기</button>
     </section>
-    <section id="red" class="w-[25.5rem] h-[54rem] bg-[#00000066]">
+    <section id="red" class="w-[25.5rem] h-[100vh] bg-[#00000066]">
       <div id="redBan" class="grid grid-cols-5 m-[1rem] gap-3">
 
         <img src="/public/img/ban.png" alt="ban Image">
@@ -57,13 +57,6 @@
       </div>
       <!-- 레드팀 챔피언 픽 -->
       <div id="redPick">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-      </div>
-      <div>
         <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
         <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
         <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
