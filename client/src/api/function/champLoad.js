@@ -2,10 +2,7 @@
 
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
-    // apiData = JSON구조 내에 data 객체 접근하여 values로 전부 배열로 만듬
-    // champKorName =  원본에서 한글 이름을 가져옴
-    // champCombine = [{korName : "가렌", engName : "Garen"}] 형식으로 저장한 배열
-    
+
     const championData = data.data
     // {Aatrox :{name : "아트록스", id : "Aatrox"}}
     console.log(championData)
@@ -19,15 +16,23 @@ function champLoad(data) {
       // 결과 : Aatrox, [Aatrox, Ahri, ....]
       // console.log(index)
       
-      // 객체로 넣어주기, korName : 아트록스 , engName : Aatrox
+      // 객체로 넣어주기
+      // {korName : 아트록스 , engName : Aatrox}
       return {korName : championData[index].name, engName : index}
 
     })
+
+    // map 메서드 사용 한 후 
+    // [{korName : "아트록스", engName : "Aatrox"}, ...] 확인
     console.log(championDataArray);
 
-  
-    // 원본 데이터에서 한글 가져옴
-    // 가나다로 정렬 후 [{korName : "가렌", engName : "Garen"}] 형식으로 저장
+    // localeCompare를 사용한 배열 내에서 정렬이 가능 -> 공식 문서 참조
+    // 한국어 기준으로 정렬 할 것이기 때문에 a의 korName 순서와 b의 korName 순서를 확인하여 정렬. 설정 언어는 "kr"
+    championDataArray.sort((a, b) => a.korName.localeCompare(b.korName,"kr"));
+
+    // Array 내에서 정렬 완료
+    // [0] = [{korName : "가렌", engName : "Garen"}, [1] = {korName : "갈리오", engName : "Galio"}
+    console.log(championDataArray)
   
     // 챔피언의 초상화, 챔피언의 스플래쉬 아트, 챔피언의 한글 이름을 처리
     // for (let index = 0; index < apiData.length; index++) {
