@@ -6,23 +6,24 @@ function champLoad(data) {
     // champKorName =  원본에서 한글 이름을 가져옴
     // champCombine = [{korName : "가렌", engName : "Garen"}] 형식으로 저장한 배열
     
-    const champion = data.data
+    const championData = data.data
     // {Aatrox :{name : "아트록스", id : "Aatrox"}}
-    console.log(champion)
+    console.log(championData)
     // [Aatrox, Ahri, ....]
-    console.log(Object.keys(champion))
+    console.log(Object.keys(championData))
 
-    const championArray = Object.keys(champion).map(index =>{
-      // 아트록스
-      console.log(champion[index].name)
-      // Aatrox
+    // 영어 이름으로 되어있는 [Aatrox, Ahri, ...] 에서 map으로 배열 진입
+    const championDataArray = Object.keys(championData).map(index =>{
+      // 결과 : 아트록스, championData[Aatrox].name
+      console.log(championData[index].name)
+      // 결과 : Aatrox, [Aatrox, Ahri, ....]
       console.log(index)
       
      
       
 
     })
-    console.log(championArray);
+    console.log(championDataArray);
 
   
     // 원본 데이터에서 한글 가져옴
