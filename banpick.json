@@ -1,0 +1,96 @@
+[
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "RekSai",
+          "name": "렉사이"
+        },
+        {
+          "id": "Leona",
+          "name": "레오나"
+        },
+        {
+          "id": "Renekton",
+          "name": "레넥톤"
+        },
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        },
+        {
+          "id": "Malzahar",
+          "name": "말자하"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Lissandra",
+          "name": "리산드라"
+        },
+        {
+          "id": "MissFortune",
+          "name": "미스 포츈"
+        },
+        {
+          "id": "Malphite",
+          "name": "말파이트"
+        },
+        {
+          "id": "LeeSin",
+          "name": "리 신"
+        },
+        {
+          "id": "DrMundo",
+          "name": "문도 박사"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "Rell",
+          "name": "렐"
+        },
+        {
+          "id": "Lux",
+          "name": "럭스"
+        },
+        {
+          "id": "Rakan",
+          "name": "라칸"
+        },
+        {
+          "id": "Rengar",
+          "name": "렝가"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Maokai",
+          "name": "마오카이"
+        },
+        {
+          "id": "Milio",
+          "name": "밀리오"
+        },
+        {
+          "id": "Mel",
+          "name": "멜"
+        },
+        {
+          "id": "Riven",
+          "name": "리븐"
+        },
+        {
+          "id": "Bard",
+          "name": "바드"
+        }
+      ]
+    }
+  }
+]
