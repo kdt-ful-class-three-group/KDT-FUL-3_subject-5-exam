@@ -16,7 +16,8 @@ import champLoad from './function/champLoad.js'
   */
 
 // API 처리 함수
-const xhr = new XMLHttpRequest();
+async function dataHandle(){
+  const xhr = new XMLHttpRequest();
 // 챔피언 특성이 담긴 JSON 한글 버전
 xhr.open(
   "GET",
@@ -32,3 +33,6 @@ xhr.addEventListener("load", () => {
     champLoad(data);
   }
 });
+}
+dataHandle()
+alert("시작");

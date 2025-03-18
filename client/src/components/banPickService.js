@@ -140,5 +140,5 @@ restartBtn.addEventListener("click", () => {
 });
 
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
-alert("시작");
+// alert("시작");
 startTimer(banBtn, pickBtn);
