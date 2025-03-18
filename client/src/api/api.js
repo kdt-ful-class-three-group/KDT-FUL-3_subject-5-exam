@@ -15,7 +15,6 @@ function sortNameGet(champKorName, apiData){
   return champCombine;
 }
 
-
 // 원본 API에서 한글 이름 가져오기
 function korNameGet(apiData){
   let champKorName = [];
