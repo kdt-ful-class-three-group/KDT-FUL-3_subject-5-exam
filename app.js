@@ -32,6 +32,17 @@ if(!fs.existsSync('banpick.json')) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+
+
+app.use((req, res) => {
+  res.status(404).send(`<script>
+    alert('잘못된 접근입니다.');
+    location.href = '/';
+</script>`);
+
+
+});
+
 // * /save경로로 post요청이 오면,
 app.post("/save", (req,res) => {
   // * req.body의 내용을 banPickData라는 변수에 담고,
@@ -51,6 +62,9 @@ app.post("/save", (req,res) => {
   // * 위의 행동이 실행되면, 데이터 저장 성공이라는 메시지를 콘솔에 찍어라.
   res.json({ message: "데이터 저장 성공!" });
 })
+
+
+
 
 app.listen(process.env.PORT, () => {
   console.log(`loading... http://localhost:${process.env.PORT}`);
