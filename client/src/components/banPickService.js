@@ -96,11 +96,13 @@ const restartBtn = document.getElementById('restart')
 //pick버튼 클릭
 pickBtn.addEventListener('click',()=>{
 
+  //리스트 선택안하고 pick버튼 눌렀을 때
   if(clickData.length === 0){
     alert('픽을 진행해주세요')
     return
   }
 
+  //타이머 시작
   startTimer(banBtn)
 
   //1-9번
@@ -143,6 +145,6 @@ restartBtn.addEventListener('click', () => {
   location.reload();
 })
 
-//시작한다는 창에 확인 버튼 눌러야 시간초 시작
+//시작한다는 창에 확인 버튼 눌러야 타이머 시작
 alert('시작')
 startTimer(banBtn, pickBtn)
