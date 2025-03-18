@@ -23,7 +23,7 @@ const blueDiv = document.getElementById("blueBan"); //blue팀 ban리스트 목�
 const redDiv = document.getElementById("redBan"); //red팀 ban리스트 목록
 const bluePickDiv = document.querySelectorAll("#bluePick > div"); //red팀 ban리스트 목록
 const redPickDiv = document.querySelectorAll("#redPick > div"); //red팀 ban리스트 목록
-const list = document.getElementById("list").children; //중앙 챔피언 리스트
+const list = document.getElementById("list"); //중앙 챔피언 리스트
 const pickBtn = document.getElementById("pickBtn");
 const restartBtn = document.getElementById("restart");
 
@@ -36,28 +36,30 @@ function resetCount(count) {
 }
 
 //중앙챔피언리스트 클릭이벤트
-Array.from(list).forEach((div) => {
-  div.setAttribute("style", "cursor:pointer");
+export function setClickEvent() {
+  Array.from(list).forEach((div) => {
+    div.setAttribute("style", "cursor:pointer");
 
-  //div 클릭 이벤트
+    //div 클릭 이벤트
 
-  div.addEventListener("click", () => {
-    //clickData에 선택한 목록 넣기
-    divListClick(div, clickData);
-    //클릭 카운트 확인
-    console.log("count", count);
+    div.addEventListener("click", () => {
+      //clickData에 선택한 목록 넣기
+      divListClick(div, clickData);
+      //클릭 카운트 확인
+      console.log("count", count);
 
-    //팀 리스트에 목록 보여주는 함수
-    //ban 버튼 > ban리스트
-    //pick 버튼 > pick리스트
-    if (!document.getElementById("banBtn").classList.contains("hidden")) {
-      //각 팀 ban리스트 보여주기
-      showBanList(count, clickData, blueDiv, redDiv);
-    } else {
-      showPickList(count, clickData, bluePickDiv, redPickDiv);
-    }
+      //팀 리스트에 목록 보여주는 함수
+      //ban 버튼 > ban리스트
+      //pick 버튼 > pick리스트
+      if (!document.getElementById("banBtn").classList.contains("hidden")) {
+        //각 팀 ban리스트 보여주기
+        showBanList(count, clickData, blueDiv, redDiv);
+      } else {
+        showPickList(count, clickData, bluePickDiv, redPickDiv);
+      }
+    });
   });
-});
+}
 
 //ban버튼 클릭 이벤트
 const banBtn = document.getElementById("banBtn");
