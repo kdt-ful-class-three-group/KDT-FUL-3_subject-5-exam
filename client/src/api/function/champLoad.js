@@ -1,3 +1,4 @@
+import { setClickEvent } from "../../components/banPickService.js";
 import korNameGet from "./korNameGet.js";
 import sortNameGet from "./sortNameGet.js";
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
@@ -37,6 +38,8 @@ function champLoad(data) {
           <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png class= "w-full h-full object-fit">
           <p class="font-[14px] text-[#ffffff]">${champCombine[index].korName}</p></div>`;
   }
+
+  setClickEvent();
 }
 // <img src = https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champCombine[index].engName}_0.jpg>
 
