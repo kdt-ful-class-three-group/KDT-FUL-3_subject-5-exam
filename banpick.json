@@ -92,5 +92,99 @@
         }
       ]
     }
+  },
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Nilah",
+          "name": "닐라"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Rumble",
+          "name": "럼블"
+        },
+        {
+          "id": "Lulu",
+          "name": "룰루"
+        },
+        {
+          "id": "Nautilus",
+          "name": "노틸러스"
+        },
+        {
+          "id": "LeeSin",
+          "name": "리 신"
+        },
+        {
+          "id": "Renata",
+          "name": "레나타 글라스크"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Lucian",
+          "name": "루시안"
+        },
+        {
+          "id": "Leblanc",
+          "name": "르블랑"
+        },
+        {
+          "id": "Diana",
+          "name": "다이애나"
+        },
+        {
+          "id": "Riven",
+          "name": "리븐"
+        },
+        {
+          "id": "Leona",
+          "name": "레오나"
+        }
+      ]
+    }
   }
 ]
