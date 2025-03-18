@@ -1,34 +1,5 @@
-// 정렬한 이름 가져오기
-function sortNameGet(champKorName, apiData) {
-    let champCombine = [];
-  
-    // 챔피언 영어, 한글 이름
-    for (let outerIndex = 0; outerIndex < apiData.length; outerIndex++) {
-      for (let innerIndex = 0; innerIndex < apiData.length; innerIndex++) {
-        // 가, 나, 다 정렬된 한글이름과 API의 한글 이름과 같으면 실행
-        if (champKorName.sort()[outerIndex] === apiData[innerIndex].name) {
-          // 한글 이름과 영어 이름을 객체로 삽입 name : 한글이름, id : 영어 이름
-          champCombine.push({
-            korName: apiData[innerIndex].name,
-            engName: apiData[innerIndex].id,
-          });
-        }
-      }
-    }
-    return champCombine;
-  }
-  
-  // 원본 API에서 한글 이름 가져오기
-  function korNameGet(apiData) {
-    let champKorName = [];
-    // 원본 데이터에서 한글 이름을 가져옴
-    for (let index = 0; index < apiData.length; index++) {
-      champKorName.push(apiData[index].name);
-    }
-    console.log(champKorName);
-    return champKorName;
-  }
-
+import korNameGet from "./korNameGet.js";
+import sortNameGet from "./sortNameGet.js";
 
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
