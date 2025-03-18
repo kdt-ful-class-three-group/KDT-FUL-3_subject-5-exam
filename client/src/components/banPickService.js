@@ -8,6 +8,7 @@ import { divListClick } from "./function/divListClick.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
+import { startTimer } from "./startTimer.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -145,3 +146,5 @@ restartBtn.addEventListener('click', () => {
 //30초 감소하는 걸 화면에 보여줘야함
 //30초 지나면 버튼이 클릭되어야 함
 //pick안하면 완전 처음부터 => 리셋버튼 눌림 + 'pick안해서 돌아감'
+
+startTimer()

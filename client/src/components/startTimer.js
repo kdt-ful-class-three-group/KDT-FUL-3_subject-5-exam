@@ -1,4 +1,5 @@
 import { CHAMPOBJ } from "../obj/CHAMPOBJ_yunjonghwan.js"
+import { timerTag } from "./function/timerTag.js";
 
 /**
  * @description 타이머가 동작하며 초가 0이 되면 다시 동작한다.
@@ -17,6 +18,8 @@ function startTimer() {
     if(time.second === 0) {
       startTimer();
     }
+    console.log(time.second)
+    timerTag(time)
   }, time.intervalTime);
 }
 
