@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./public/css/tailwind/output.css">
+  <title>League of Legend</title>
+</head>
+
+<body>
+  <script type="module" src="/src/api/api.js"></script>
+  <div id="root">
+    <button type="button" id="banBtn">ban 선택</button>
+    <button type="button" id="pickBtn" class="hidden">pick 선택</button>
+    <button type="button" id="restart" class="hidden">다시하기</button>
+    <section id="ban">
+      <h1>ban</h1>
+      <div id="blue">
+        <p>blue</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
+      <div id="red">
+        <p>red</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
+    </section>
+    <section id="pick">
+      <h1>pick</h1>
+      <div id="blue">
+        <p>blue</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
+      <div id="red">
+        <p>red</p>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+      </div>
+    </section>
+    <section id="list" class="grid grid-cols-6 items-start h-full overflow-auto"></section>
+  </div>
+  <!-- script -->
+  <script type="module" src="/src/components/banPickService.js"></script>
+
+</body>
+
+</html>

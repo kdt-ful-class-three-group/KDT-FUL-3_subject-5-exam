@@ -62,8 +62,8 @@ function champLoad(data) {
     <p></p> => 챔피언 한글이름 표출
     </div>
     */
-    section.innerHTML += `<div id='${champCombine[index].engName}' name='${champCombine[index].korName}'class= "w-full cursor-pointer">
-        <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png class= "w-full h-full object-fit ">
+    section.innerHTML += `<div id='${champCombine[index].engName}' name='${champCombine[index].korName}'class= "w-full cursor-pointer p-[20px] text-center">
+        <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png class= "w-full h-full object-fit">
         <p class="font-[14px] text-[#ffffff]">${champCombine[index].korName}</p></div>`;
   }
 }
