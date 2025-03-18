@@ -18,7 +18,6 @@ function startTimer() {
     if(time.second === 0) {
       startTimer();
     }
-    console.log(time.second)
     timerTag(time)
   }, time.intervalTime);
 }
