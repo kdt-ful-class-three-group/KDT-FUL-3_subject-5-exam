@@ -1,7 +1,7 @@
 // 정렬한 이름 가져오기
 function sortNameGet(champKorName, apiData) {
     let champCombine = [];
-  
+
     // champCombine 담겨질 배열 index를 증가
     for (let outerIndex = 0; outerIndex < apiData.length; outerIndex++) {
       // 전체 챔피언 하나하나씩 비교
@@ -18,5 +18,4 @@ function sortNameGet(champKorName, apiData) {
     }
     return champCombine;
   }
-
   export default sortNameGet;

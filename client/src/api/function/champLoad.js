@@ -7,7 +7,16 @@ function champLoad(data) {
   // champCombine = [{korName : "가렌", engName : "Garen"}] 형식으로 저장한 배열
   let apiData = Object.values(data.data);
   let champKorName = [];
-  let champCombine = [];
+  let champCombine = []
+
+
+
+  let korean = apiData.map((e)=>(e.name));
+  console.log("한글",korean);
+
+  korean.sort();
+
+  console.log("한글1",korean);
 
   // 원본 데이터에서 한글 가져옴
   champKorName = korNameGet(apiData);
