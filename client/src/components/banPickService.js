@@ -44,7 +44,6 @@ Array.from(list).forEach((div) => {
   div.addEventListener("click", () => {
     //clickData에 선택한 목록 넣기
     divListClick(div, clickData);
-
     //클릭 카운트 확인
     console.log("count", count);
 

@@ -1,6 +1,5 @@
 import korNameGet from "./korNameGet.js";
 import sortNameGet from "./sortNameGet.js";
-
 // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
 function champLoad(data) {
   // apiData = JSON구조 내에 data 객체 접근하여 values로 전부 배열로 만듬
@@ -26,7 +25,7 @@ function champLoad(data) {
 
     // <section id="list"></section>
     const section = document.getElementById("list");
-
+    // section.innerHTML = ""
     /*
       <div id='영어이름' name='한국이름'>
       <img> => 챔피언 초상화 표출
@@ -34,7 +33,7 @@ function champLoad(data) {
       <p></p> => 챔피언 한글이름 표출
       </div>
       */
-    section.innerHTML += `<div id='${champCombine[index].engName}' name='${champCombine[index].korName}'class= "w-full cursor-pointer p-[15%] text-center">
+    section.innerHTML += `<div id='${champCombine[index].engName}' name='${champCombine[index].korName}' class= "w-full cursor-pointer p-[15%] text-center">
           <img src = https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champCombine[index].engName}.png class= "w-full h-full object-fit">
           <p class="font-[14px] text-[#ffffff]">${champCombine[index].korName}</p></div>`;
   }
