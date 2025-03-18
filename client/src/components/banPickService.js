@@ -9,6 +9,7 @@ import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
 import { startTimer } from "./startTimer.js";
+import { onTimerExpired } from "./onTimerExpired.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count
@@ -36,11 +37,8 @@ function resetCount(count){
 Array.from(list).forEach(div=>{
   div.setAttribute('style','cursor:pointer')
 
-  // div.setAttribute('style','opacity:0.5')
   //div 클릭 이벤트
   div.addEventListener('click',()=>{
-
-    // div.setAttribute('style','opacity:0.5')
 
     //clickData에 선택한 목록 넣기
     divListClick(div,clickData)
@@ -65,7 +63,7 @@ const banBtn = document.getElementById('banBtn')
 
 
 banBtn.addEventListener('click',()=>{
-
+    startTimer(banBtn)
     //1-9번
     if(count.total < 9) {
       //마지막으로 선택한 요소 담기
@@ -90,9 +88,7 @@ banBtn.addEventListener('click',()=>{
       //변수 초기화
       resetCount(count)
     }
-
 })
-
 
 const pickBtn = document.getElementById('pickBtn')
 const restartBtn = document.getElementById('restart')
@@ -105,6 +101,7 @@ pickBtn.addEventListener('click',()=>{
     return
   }
 
+  startTimer(banBtn)
 
   //1-9번
   if(count.total < 9) {
@@ -133,7 +130,11 @@ pickBtn.addEventListener('click',()=>{
     console.log(CHAMPOBJ.banPickData)
     console.log('last', finalClick);
 
+    //count에 사용한 변수 리셋
     resetCount(count)
+
+    //20번 다 고르면 타이머 스탑
+    onTimerExpired()
   }
 })
 
@@ -142,9 +143,6 @@ restartBtn.addEventListener('click', () => {
   location.reload();
 })
 
-
-//30초 감소하는 걸 화면에 보여줘야함
-//30초 지나면 버튼이 클릭되어야 함
-//pick안하면 완전 처음부터 => 리셋버튼 눌림 + 'pick안해서 돌아감'
-
-startTimer()
+//시작한다는 창에 확인 버튼 눌러야 시간초 시작
+alert('시작')
+startTimer(banBtn, pickBtn)
