@@ -16,24 +16,19 @@ import champLoad from './function/champLoad.js'
   */
 
 // API 처리 함수
-function dataHandle() {
-  const xhr = new XMLHttpRequest();
-  // 챔피언 특성이 담긴 JSON 한글 버전
-  xhr.open(
-    "GET",
-    "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json"
-  );
-  xhr.send();
-  xhr.addEventListener("load", () => {
-    if (xhr.status === 200);
-    {
-      let data = JSON.parse(xhr.responseText);
+const xhr = new XMLHttpRequest();
+// 챔피언 특성이 담긴 JSON 한글 버전
+xhr.open(
+  "GET",
+  "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json"
+);
+xhr.send();
+xhr.addEventListener("load", () => {
+  if (xhr.status === 200);
+  {
+    let data = JSON.parse(xhr.responseText);
 
-      // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
-      champLoad(data);
-    }
-  });
-}
-
-// API 처리 함수 시작
-dataHandle();
+    // 챔피언 초상화, 스플래쉬 아트, 한글이름 불러오기
+    champLoad(data);
+  }
+});
