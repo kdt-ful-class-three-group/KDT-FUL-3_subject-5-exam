@@ -9,13 +9,13 @@
   <title>League of Legend</title>
 </head>
 
-<body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#333]'>
+<body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#000000]'>
   <script type="module" src="/src/api/api.js"></script>
   <!-- <<<<<<< HEAD -->
   <div id="root" class="flex gap-2">
     <!-- <section id="ban" > -->
-    <section id="blue" class="w-[25.5rem] h-[54rem] bg-[#004F9D] bg-opacity-40">
-      <div id="blueBan" class="grid grid-cols-5 m-[1rem]">
+    <section id="blue" class="w-[25.5rem] h-[54rem] bg-[#004F9D40]">
+      <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-3">
         <img src="/public/img/ban.png" alt="ban Image">
         <img src="/public/img/ban.png" alt="ban Image">
         <img src="/public/img/ban.png" alt="ban Image">
@@ -24,22 +24,23 @@
       </div>
       <!-- 블루팀 챔피언 픽 -->
       <div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
       </div>
     </section>
     <!-- </section> -->
-    <section class="w-[54rem] bg-[#44444466]">
-      <section id="list" class="grid grid-cols-6 items-start overflow-auto  h-[80vh] "></section>
+    <section class="w-[54rem] bg-[#00000080]">
+      <div class="text-white p-[23px] text-[32px] text-center ">30초</div>
+      <section id="list" class="grid grid-cols-6 items-start overflow-auto h-[80vh] p-[20px] "></section>
       <button type="button" id="banBtn">ban 선택</button>
       <button type="button" id="pickBtn" class="hidden">pick 선택</button>
       <button type="button" id="restart" class="hidden">다시하기</button>
     </section>
     <section id="red" class="w-[25.5rem] h-[54rem] bg-[#00000066]">
-      <div id="redBan" class="grid grid-cols-5 mt-[1rem]">
+      <div id="redBan" class="grid grid-cols-5 m-[1rem] gap-3">
 
         <img src="/public/img/ban.png" alt="ban Image">
 
@@ -54,11 +55,11 @@
       </div>
       <!-- 레드팀 챔피언 픽 -->
       <div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
       </div>
     </section>
   </div>
