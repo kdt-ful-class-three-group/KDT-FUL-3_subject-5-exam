@@ -33,14 +33,19 @@ function champLoad(data) {
     console.log(championDataArray)
   
     // localStorage에서 key는 챔피언 영어이름, value는 splash 아트 CDN 주소 저장
-    // 챔피언의 초상화
-    // 챔피언의 스플래쉬 아트
-
+    // 챔피언의 초상화, 챔피언의 스플래쉬 아트 list에 출력 하는 곳
     championDataArray.forEach((element) => {
       // 챔피언 한글이름 전체 출력
-      console.log(element.korName);
+      // console.log(element.korName);
       // 챔피언 영어이름 전체 출력
-      console.log(element.engName);
+      // console.log(element.engName);
+
+        // key : Garen , value : .../splash/Garen_0.jpg
+        // 모든 챔피언 로컬스토리지 저장
+        localStorage.setItem(
+        element.engName,
+        `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${element.engName}_0.jpg`
+      );
     })
 
     // for (let index = 0; index < apiData.length; index++) {
