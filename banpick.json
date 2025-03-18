@@ -1,0 +1,96 @@
+[
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Garen",
+          "name": "가렌"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "Lulu",
+          "name": "룰루"
+        },
+        {
+          "id": "Leblanc",
+          "name": "르블랑"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Naafiri",
+          "name": "나피리"
+        },
+        {
+          "id": "Lucian",
+          "name": "루시안"
+        },
+        {
+          "id": "LeeSin",
+          "name": "리 신"
+        },
+        {
+          "id": "Veigar",
+          "name": "베이가"
+        },
+        {
+          "id": "Velkoz",
+          "name": "벨코즈"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "Riven",
+          "name": "리븐"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Nocturne",
+          "name": "녹턴"
+        },
+        {
+          "id": "Renekton",
+          "name": "레넥톤"
+        },
+        {
+          "id": "RekSai",
+          "name": "렉사이"
+        },
+        {
+          "id": "Briar",
+          "name": "브라이어"
+        },
+        {
+          "id": "Vladimir",
+          "name": "블라디미르"
+        }
+      ]
+    }
+  }
+]

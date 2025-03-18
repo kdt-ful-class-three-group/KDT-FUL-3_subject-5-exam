@@ -5,31 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/public/styles.css">
+  <link rel="stylesheet" href="./public/css/tailwind/output.css">
   <title>League of Legend</title>
 </head>
 
-<body>
+<body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#333]'>
   <script type="module" src="/src/api/api.js"></script>
-  <div id="root">
-    <button type="button" id="banBtn">ban 선택</button>
-    <button type="button" id="pickBtn" class="display-none">pick 선택</button>
-    <button type="button" id="restart" class="display-none">다시하기</button>
-    <section id="timer">
-      <h1 style="font-size: 50px;">30초</h1>
-    </section>
-    <section id="ban">
-      <h1>ban</h1>
-      <div id="blue">
-        <p>blue</p>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+  <!-- <<<<<<< HEAD -->
+  <div id="root" class="flex gap-2">
+    <!-- <section id="ban" > -->
+    <section id="blue" class="w-[25.5rem] h-[54rem] bg-[#004F9D] bg-opacity-40">
+      <div id="blueBan" class="grid grid-cols-5 m-[1rem]">
+        <img src="/public/img/ban.png" alt="ban Image">
+        <img src="/public/img/ban.png" alt="ban Image">
+        <img src="/public/img/ban.png" alt="ban Image">
+        <img src="/public/img/ban.png" alt="ban Image">
+        <img src="/public/img/ban.png" alt="ban Image">
       </div>
-      <div id="red">
-        <p>red</p>
+      <!-- 블루팀 챔피언 픽 -->
+      <div id="bluePick">
         <div>-</div>
         <div>-</div>
         <div>-</div>
@@ -37,18 +31,30 @@
         <div>-</div>
       </div>
     </section>
-    <section id="pick">
-      <h1>pick</h1>
-      <div id="blue">
-        <p>blue</p>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+    <!-- </section> -->
+    <section class="w-[54rem] bg-[#44444466]">
+      <section id="timer"><h1>30초</h1></section>
+      <section id="list" class="grid grid-cols-6 items-start overflow-auto  h-[80vh] "></section>
+      <button type="button" id="banBtn">ban 선택</button>
+      <button type="button" id="pickBtn" class="hidden">pick 선택</button>
+      <button type="button" id="restart" class="hidden">다시하기</button>
+    </section>
+    <section id="red" class="w-[25.5rem] h-[54rem] bg-[#00000066]">
+      <div id="redBan" class="grid grid-cols-5 mt-[1rem]">
+
+        <img src="/public/img/ban.png" alt="ban Image">
+
+        <img src="/public/img/ban.png" alt="ban Image">
+
+        <img src="/public/img/ban.png" alt="ban Image">
+
+        <img src="/public/img/ban.png" alt="ban Image">
+
+        <img src="/public/img/ban.png" alt="ban Image">
+
       </div>
-      <div id="red">
-        <p>red</p>
+      <!-- 레드팀 챔피언 픽 -->
+      <div id="redPick">
         <div>-</div>
         <div>-</div>
         <div>-</div>
@@ -56,7 +62,6 @@
         <div>-</div>
       </div>
     </section>
-    <section id="list" style="display:flex; flex-wrap: wrap;"></section>
   </div>
   <!-- script -->
   <script type="module" src="/src/components/banPickService.js"></script>

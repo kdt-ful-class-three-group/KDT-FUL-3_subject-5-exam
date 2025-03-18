@@ -27,7 +27,7 @@ function startTimer(banBtn) {
       //버튼이 눌림
       //ban일 땐 banBtn
       //pick일 땐 페이지 새로고침
-      if(!banBtn.classList.contains('display-none')){
+      if(!banBtn.classList.contains('hidden')){
         banBtn.click()
       } else {
         location.reload()

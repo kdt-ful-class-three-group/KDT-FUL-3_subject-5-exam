@@ -1,3 +1,5 @@
+import { sendBanPickData } from "../sendBanPickData.js";
+
 /**
  * 최종 확정된 목록들을 데이터에 담는 함수
  * @param {Object} CHAMPOBJ 데이터가 들어있는 객체
@@ -14,5 +16,6 @@ export function saveFinalData(CHAMPOBJ,type,finalClick){
     CHAMPOBJ.banPickData.blue.pick = finalClick.filter((_, i) => i % 2 === 0);
     CHAMPOBJ.banPickData.red.pick = finalClick.filter((_, i) => i % 2 !== 0);
     console.log('pick',CHAMPOBJ.banPickData)
+    sendBanPickData(CHAMPOBJ.banPickData);
   }
 }
