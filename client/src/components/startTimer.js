@@ -15,8 +15,8 @@ function startTimer(banBtn) {
 
   //타이머 시작
   time.intervalName = setInterval(() => {
-    time.second--;
     timerTag(time);
+    time.second--;
     //브라우저에 시간초 보여줌
 
     //0초가 되면

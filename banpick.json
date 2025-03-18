@@ -186,5 +186,99 @@
         }
       ]
     }
+  },
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Garen",
+          "name": "가렌"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Renekton",
+          "name": "레넥톤"
+        },
+        {
+          "id": "Rumble",
+          "name": "럼블"
+        },
+        {
+          "id": "Nilah",
+          "name": "닐라"
+        },
+        {
+          "id": "MasterYi",
+          "name": "마스터 이"
+        },
+        {
+          "id": "Veigar",
+          "name": "베이가"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Leona",
+          "name": "레오나"
+        },
+        {
+          "id": "Renata",
+          "name": "레나타 글라스크"
+        },
+        {
+          "id": "RekSai",
+          "name": "렉사이"
+        },
+        {
+          "id": "Lillia",
+          "name": "릴리아"
+        },
+        {
+          "id": "Velkoz",
+          "name": "벨코즈"
+        }
+      ]
+    }
   }
 ]

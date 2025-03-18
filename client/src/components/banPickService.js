@@ -91,45 +91,11 @@ banBtn.addEventListener("click", () => {
 });
 
 //pick버튼 클릭
-// pickBtn.addEventListener("click", () => {
-//리스트 선택안하고 pick버튼 눌렀을 때
-if (clickData.length === 0) {
-  alert("픽을 진행해주세요");
-  // return;
-}
-
-//타이머 시작
-startTimer(banBtn);
-
-banBtn.addEventListener("click", () => {
-  //1-9번
-  if (count.total < 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-  }
-  //10번
-  else if (count.total === 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-    //banpickData.color.ban에 데이터 담기
-    saveFinalData(CHAMPOBJ, "ban", finalClick);
-
-    //ban버튼 안보임 + pick버튼 보임
-    banBtn.classList.toggle("hidden");
-    pickBtn.classList.toggle("hidden");
-    alert("ban 완료했습니다");
-
-    //변수 초기화
-    resetCount(count);
-  }
-});
 
 //pick버튼 클릭
 pickBtn.addEventListener("click", () => {
+  startTimer(banBtn);
+  //리스트 선택안하고 pick버튼 눌렀을 때
   if (clickData.length === 0) {
     alert("픽을 진행해주세요");
     return;
@@ -176,4 +142,3 @@ restartBtn.addEventListener("click", () => {
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
 alert("시작");
 startTimer(banBtn, pickBtn);
-// });
