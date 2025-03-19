@@ -11,10 +11,25 @@ export const CHAMPOBJ = {
     },
     total: 0,
   },
+  dataArray: {
+    clickData: [],
+    finalClick: []
+  }
+  ,
   noneClick: { id: "ban", name: "ban" },
   time: {
     second: 30,
     intervalTime: 1000,
     intervalName: "",
   },
+  ELEMENT: {
+    blueDiv: document.getElementById('blueBan'),
+    redDiv: document.getElementById('redBan'),
+    bluePickDiv: document.querySelectorAll('#bluePick > div'),
+    redPickDiv: document.querySelectorAll('#redPick > div'),
+    list: document.querySelectorAll('#list > div'),
+    pickBtn: document.getElementById('pickBtn'),
+    restartBtn: document.getElementById('restart'),
+    banBtn : document.getElementById('banBtn')
+  }
 };

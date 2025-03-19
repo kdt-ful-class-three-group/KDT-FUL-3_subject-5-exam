@@ -3,66 +3,66 @@
     "blue": {
       "ban": [
         {
-          "id": "RekSai",
-          "name": "렉사이"
+          "id": "Naafiri",
+          "name": "나피리"
         },
         {
-          "id": "Leona",
-          "name": "레오나"
+          "id": "ban",
+          "name": "ban"
         },
         {
-          "id": "Renekton",
-          "name": "레넥톤"
+          "id": "ban",
+          "name": "ban"
         },
         {
-          "id": "Rammus",
-          "name": "람머스"
+          "id": "ban",
+          "name": "ban"
         },
         {
-          "id": "Malzahar",
-          "name": "말자하"
+          "id": "ban",
+          "name": "ban"
         }
       ],
       "pick": [
         {
-          "id": "Lissandra",
-          "name": "리산드라"
-        },
-        {
-          "id": "MissFortune",
-          "name": "미스 포츈"
-        },
-        {
-          "id": "Malphite",
-          "name": "말파이트"
-        },
-        {
-          "id": "LeeSin",
-          "name": "리 신"
-        },
-        {
-          "id": "DrMundo",
-          "name": "문도 박사"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rell",
-          "name": "렐"
+          "id": "Rammus",
+          "name": "람머스"
         },
         {
           "id": "Lux",
           "name": "럭스"
         },
         {
+          "id": "Braum",
+          "name": "브라움"
+        },
+        {
+          "id": "Samira",
+          "name": "사미라"
+        },
+        {
+          "id": "Viego",
+          "name": "비에고"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
           "id": "Rakan",
           "name": "라칸"
         },
         {
-          "id": "Rengar",
-          "name": "렝가"
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
         },
         {
           "id": "ban",
@@ -71,118 +71,24 @@
       ],
       "pick": [
         {
-          "id": "Maokai",
-          "name": "마오카이"
-        },
-        {
-          "id": "Milio",
-          "name": "밀리오"
-        },
-        {
-          "id": "Mel",
-          "name": "멜"
-        },
-        {
-          "id": "Riven",
-          "name": "리븐"
-        },
-        {
-          "id": "Bard",
-          "name": "바드"
-        }
-      ]
-    }
-  },
-  {
-    "blue": {
-      "ban": [
-        {
-          "id": "Rell",
-          "name": "렐"
-        },
-        {
-          "id": "Rammus",
-          "name": "람머스"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        },
-        {
-          "id": "Leona",
-          "name": "레오나"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Gangplank",
-          "name": "갱플랭크"
+          "id": "Nautilus",
+          "name": "노틸러스"
         },
         {
           "id": "Ryze",
           "name": "라이즈"
         },
         {
-          "id": "Nilah",
-          "name": "닐라"
+          "id": "Poppy",
+          "name": "뽀삐"
         },
         {
-          "id": "Nautilus",
-          "name": "노틸러스"
+          "id": "Viktor",
+          "name": "빅토르"
         },
         {
-          "id": "Draven",
-          "name": "드레이븐"
-        }
-      ]
-    },
-    "red": {
-      "ban": [
-        {
-          "id": "Rakan",
-          "name": "라칸"
-        },
-        {
-          "id": "RekSai",
-          "name": "렉사이"
-        },
-        {
-          "id": "Renekton",
-          "name": "레넥톤"
-        },
-        {
-          "id": "Darius",
-          "name": "다리우스"
-        },
-        {
-          "id": "ban",
-          "name": "ban"
-        }
-      ],
-      "pick": [
-        {
-          "id": "Lux",
-          "name": "럭스"
-        },
-        {
-          "id": "Rengar",
-          "name": "렝가"
-        },
-        {
-          "id": "Neeko",
-          "name": "니코"
-        },
-        {
-          "id": "Nocturne",
-          "name": "녹턴"
-        },
-        {
-          "id": "Rumble",
-          "name": "럼블"
+          "id": "Sion",
+          "name": "사이온"
         }
       ]
     }
