@@ -33,6 +33,6 @@ async function dataHandle() {
       champLoad(data);
     }
   });
+  alert("시작");
 }
-alert("시작");
 dataHandle();
