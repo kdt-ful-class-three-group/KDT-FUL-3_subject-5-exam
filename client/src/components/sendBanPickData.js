@@ -22,4 +22,4 @@ function sendBanPickData(banPickData) {
     .catch((err) => console.log(`${err} 에러발생`));
 }
 
-export {sendBanPickData}
+export default sendBanPickData;

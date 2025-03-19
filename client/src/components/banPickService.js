@@ -10,7 +10,7 @@ import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
 import { startTimer } from "./startTimer.js";
 import { onTimerExpired } from "./onTimerExpired.js";
-
+import { banBtnEvent } from "./clickEvent./banBtnEvent.js";
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
 
@@ -25,6 +25,7 @@ const bluePickDiv = document.querySelectorAll("#bluePick > div"); //red팀 ban�
 const redPickDiv = document.querySelectorAll("#redPick > div"); //red팀 ban리스트 목록
 const list = document.getElementById("list").children; //중앙 챔피언 리스트
 const pickBtn = document.getElementById("pickBtn");
+const banBtn = document.getElementById("banBtn");
 const restartBtn = document.getElementById("restart");
 
 //변수 초기화
@@ -58,37 +59,36 @@ function resetCount(count) {
       }
     });
   });
-
+  banBtn.addEventListener('click', banBtnEvent);
 
 //ban버튼 클릭 이벤트
-const banBtn = document.getElementById("banBtn");
 
-banBtn.addEventListener("click", () => {
-  startTimer(banBtn);
-  //1-9번
-  if (count.total < 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-  }
-  //10번
-  else if (count.total === 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-    //banpickData.color.ban에 데이터 담기
-    saveFinalData(CHAMPOBJ, "ban", finalClick);
+// banBtn.addEventListener("click", () => {
+//   startTimer(banBtn);
+//   //1-9번
+//   if (count.total < 9) {
+//     //마지막으로 선택한 요소 담기
+//     commitClickData(list, clickData, finalClick);
+//     //blue, red 번갈아 진행
+//     nextTurn(count);
+//   }
+//   //10번
+//   else if (count.total === 9) {
+//     //마지막으로 선택한 요소 담기
+//     commitClickData(list, clickData, finalClick);
+//     //blue, red 번갈아 진행
+//     nextTurn(count);
+//     //banpickData.color.ban에 데이터 담기
+//     saveFinalData(CHAMPOBJ, "ban", finalClick);
 
-    //ban버튼 안보임 + pick버튼 보임
-    banBtn.classList.toggle("hidden");
-    pickBtn.classList.toggle("hidden");
-    alert("ban 완료했습니다");
-    //변수 초기화
-    resetCount(count);
-  }
-});
+//     //ban버튼 안보임 + pick버튼 보임
+//     banBtn.classList.toggle("hidden");
+//     pickBtn.classList.toggle("hidden");
+//     alert("ban 완료했습니다");
+//     //변수 초기화
+//     resetCount(count);
+//   }
+// });
 
 //pick버튼 클릭
 
