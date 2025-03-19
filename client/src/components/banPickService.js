@@ -13,6 +13,7 @@ import { onTimerExpired } from "./onTimerExpired.js";
 
 //분리하는 함수
 import { resetCount } from "./function/resetCount.js";
+import { buttonChange } from "./function/buttonChange.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
@@ -59,8 +60,7 @@ ELEMENT.banBtn.addEventListener("click", () => {
     saveFinalData(CHAMPOBJ, "ban", finalClick);
 
     //ban버튼 안보임 + pick버튼 보임
-    ELEMENT.banBtn.classList.toggle("hidden");
-    ELEMENT.pickBtn.classList.toggle("hidden");
+    buttonChange(ELEMENT.banBtn, ELEMENT.pickBtn)
     alert("ban 완료했습니다");
     //변수 초기화
     resetCount(count, finalClick);
@@ -92,8 +92,7 @@ ELEMENT.pickBtn.addEventListener("click", () => {
       
       //pick버튼 안보임
       //다시하기 버튼 보임
-      ELEMENT.pickBtn.classList.toggle("hidden");
-      ELEMENT.restartBtn.classList.toggle("hidden");
+      buttonChange(ELEMENT.pickBtn, ELEMENT.restartBtn)
       alert("완료했습니다");
       
       //console로 확인
