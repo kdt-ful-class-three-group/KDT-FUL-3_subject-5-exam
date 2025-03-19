@@ -12,11 +12,12 @@ function startTimer(banBtn) {
     clearInterval(time.intervalName);
     time.second = 30;
   }
+  timerTag(time);
 
   //타이머 시작
   time.intervalName = setInterval(() => {
-    timerTag(time);
     time.second--;
+    timerTag(time);
     //브라우저에 시간초 보여줌
 
     //0초가 되면
