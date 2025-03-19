@@ -10,7 +10,7 @@ function startTimer(banBtn) {
   //intervalName을 멈춤, 30초로 초기화
   if (time.intervalName !== "") {
     clearInterval(time.intervalName);
-    time.second = 30;
+    time.second = 5;
   }
 
   //타이머 시작
