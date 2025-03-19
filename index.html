@@ -9,10 +9,11 @@
   <!-- <link rel="stylesheet" href="./public/css/styles.css"> -->
   <title>League of Legend</title>
 </head>
+<script type="module" src="/src/api/api.js"></script>
+<script type="module" src="/src/api/function/champLoad.js"></script>
 
 <body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#000000]'>
-  <script type="module" src="/src/api/api.js"></script>
-  <script type="module" src="/src/api/function/champLoad.js"></script>
+
   <div id="root" class="flex gap-2">
     <!-- <section id="ban" > -->
     <section id="blue" class="w-[25.5rem] h-[100vh] bg-[#004F9D40]">
@@ -37,9 +38,12 @@
         <h1 class="text-[32px] text-white p-[24px] pb-0">30초</h1>
       </section>
       <section id="list" class="grid grid-cols-6 items-start overflow-auto h-[80vh] scrollbar-none p-[20px]"></section>
-      <button type="button" id="banBtn" class="w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">ban 선택</button>
-      <button type="button" id="pickBtn" class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">pick 선택</button>
-      <button type="button" id="restart" class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">다시하기</button>
+      <button type="button" id="banBtn" class="w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">ban
+        선택</button>
+      <button type="button" id="pickBtn" class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">pick
+        선택</button>
+      <button type="button" id="restart"
+        class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">다시하기</button>
     </section>
     <section id="red" class="w-[25.5rem] h-[100vh] ">
       <div id="redBan" class="grid grid-cols-5 m-[1rem] gap-3">

@@ -36,28 +36,29 @@ function resetCount(count) {
 }
 
 //중앙챔피언리스트 클릭이벤트
-Array.from(list).forEach((div) => {
-  div.setAttribute("style", "cursor:pointer");
+  Array.from(list).forEach((div) => {
+    div.setAttribute("style", "cursor:pointer");
 
-  //div 클릭 이벤트
+    //div 클릭 이벤트
 
-  div.addEventListener("click", () => {
-    //clickData에 선택한 목록 넣기
-    divListClick(div, clickData);
-    //클릭 카운트 확인
-    console.log("count", count);
+    div.addEventListener("click", () => {
+      //clickData에 선택한 목록 넣기
+      divListClick(div, clickData);
+      //클릭 카운트 확인
+      console.log("count", count);
 
-    //팀 리스트에 목록 보여주는 함수
-    //ban 버튼 > ban리스트
-    //pick 버튼 > pick리스트
-    if (!document.getElementById("banBtn").classList.contains("hidden")) {
-      //각 팀 ban리스트 보여주기
-      showBanList(count, clickData, blueDiv, redDiv);
-    } else {
-      showPickList(count, clickData, bluePickDiv, redPickDiv);
-    }
+      //팀 리스트에 목록 보여주는 함수
+      //ban 버튼 > ban리스트
+      //pick 버튼 > pick리스트
+      if (!document.getElementById("banBtn").classList.contains("hidden")) {
+        //각 팀 ban리스트 보여주기
+        showBanList(count, clickData, blueDiv, redDiv);
+      } else {
+        showPickList(count, clickData, bluePickDiv, redPickDiv);
+      }
+    });
   });
-});
+
 
 //ban버튼 클릭 이벤트
 const banBtn = document.getElementById("banBtn");
@@ -93,43 +94,44 @@ banBtn.addEventListener("click", () => {
 
 //pick버튼 클릭
 pickBtn.addEventListener("click", () => {
-  startTimer(banBtn);
   //리스트 선택안하고 pick버튼 눌렀을 때
   if (clickData.length === 0) {
+    // startTimer(banBtn);
     alert("픽을 진행해주세요");
-    return;
-  }
+    // return;
+  } else {
+    startTimer(banBtn);
+    //1-9번
+    if (count.total < 9) {
+      //마지막으로 선택한 요소 담기
+      commitClickData(list, clickData, finalClick);
+      //blue, red 번갈아 진행
+      nextTurn(count);
+    }
+    //10번
+    else if (count.total === 9) {
+      //마지막으로 선택한 요소 담기
+      commitClickData(list, clickData, finalClick);
+      //blue red 번갈아 진행
+      nextTurn(count);
+      //banpickData.color.pick에 데이터 담기
+      saveFinalData(CHAMPOBJ, "pick", finalClick);
 
-  //1-9번
-  if (count.total < 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-  }
-  //10번
-  else if (count.total === 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
-    //blue red 번갈아 진행
-    nextTurn(count);
-    //banpickData.color.pick에 데이터 담기
-    saveFinalData(CHAMPOBJ, "pick", finalClick);
+      //pick버튼 안보임
+      //다시하기 버튼 보임
+      pickBtn.classList.toggle("hidden");
+      restartBtn.classList.toggle("hidden");
+      alert("완료했습니다");
 
-    //pick버튼 안보임
-    //다시하기 버튼 보임
-    pickBtn.classList.toggle("hidden");
-    restartBtn.classList.toggle("hidden");
-    alert("완료했습니다");
+      //console로 확인
+      console.log(CHAMPOBJ.banPickData);
+      console.log("last", finalClick);
+      //count에 사용한 변수 리셋
+      resetCount(count);
 
-    //console로 확인
-    console.log(CHAMPOBJ.banPickData);
-    console.log("last", finalClick);
-    //count에 사용한 변수 리셋
-    resetCount(count);
-
-    //20번 다 고르면 타이머 스탑
-    onTimerExpired();
+      //20번 다 고르면 타이머 스탑
+      onTimerExpired();
+    }
   }
 });
 
@@ -139,5 +141,5 @@ restartBtn.addEventListener("click", () => {
 });
 
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
-alert("시작");
+// alert("시작");
 startTimer(banBtn, pickBtn);
