@@ -91,7 +91,7 @@ banBtn.addEventListener("click", () => {
   }
 });
 
-//pick버튼 클릭
+//pick버튼 클릭 이벤트
 
 //pick버튼 클릭
 pickBtn.addEventListener("click", () => {
@@ -139,6 +139,11 @@ pickBtn.addEventListener("click", () => {
 restartBtn.addEventListener("click", () => {
   //리스트 초기화
   location.reload();
+});
+
+// DOMContentLoaded 이벤트에서 setClickEvent 호출
+document.addEventListener("DOMContentLoaded", () => {
+  setClickEvent();
 });
 
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
