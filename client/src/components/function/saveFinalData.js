@@ -1,4 +1,5 @@
-import sendBanPickData from "../sendBanPickData.js"
+import { sendBanPickData } from "../../sendBanPickData.js";
+
 /**
  * 최종 확정된 목록들을 데이터에 담는 함수
  * @param {Object} CHAMPOBJ 데이터가 들어있는 객체

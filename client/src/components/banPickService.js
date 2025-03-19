@@ -10,7 +10,7 @@ import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
 import { startTimer } from "./startTimer.js";
 import { onTimerExpired } from "./onTimerExpired.js";
-import { banBtnEvent } from "./clickEvent./banBtnEvent.js";
+import { banBtnEvent } from "./clickEvent/banBtnEvent.js";
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
 
