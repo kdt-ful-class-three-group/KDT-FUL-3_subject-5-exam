@@ -13,7 +13,7 @@ export const CHAMPOBJ = {
   },
   noneClick: { id: "ban", name: "ban" },
   time: {
-    second: 5,
+    second: 30,
     intervalTime: 1000,
     intervalName: "",
   },

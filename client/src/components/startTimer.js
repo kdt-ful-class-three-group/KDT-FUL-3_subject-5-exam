@@ -10,13 +10,14 @@ function startTimer(banBtn) {
   //intervalName을 멈춤, 30초로 초기화
   if (time.intervalName !== "") {
     clearInterval(time.intervalName);
-    time.second = 5;
+    time.second = 30;
   }
+  timerTag(time);
 
   //타이머 시작
   time.intervalName = setInterval(() => {
-    timerTag(time);
     time.second--;
+    timerTag(time);
     //브라우저에 시간초 보여줌
 
     //0초가 되면
