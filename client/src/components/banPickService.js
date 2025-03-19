@@ -22,7 +22,7 @@ ELEMENT.list.forEach((div) => {
   listDivClick(div,clickData,count,ELEMENT)
 });
 
-
+//ban버튼 클릭
 ELEMENT.banBtn.addEventListener("click", () => {
   buttonClick('ban', ELEMENT.banBtn, ELEMENT.pickBtn)
 });
@@ -37,10 +37,11 @@ ELEMENT.pickBtn.addEventListener("click", () => {
   }
 });
 
+//다시하기 버튼 클릭
 ELEMENT.restartBtn.addEventListener("click", () => {
   //리스트 초기화
   location.reload();
 });
 
 //alert후 타이머 실행
-startTimer(ELEMENT.banBtn);
+startTimer();
