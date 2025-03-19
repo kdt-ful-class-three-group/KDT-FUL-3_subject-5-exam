@@ -3,7 +3,7 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
 console.log("obj확인", CHAMPOBJ.banPickData);
 
 // src/function에 들어있는 모듈
-import { showBanList, showPickList } from "./function/showList.js";
+import {showList } from "./function/showList.js";
 import { divListClick } from "./function/divListClick.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
@@ -36,14 +36,7 @@ ELEMENT.list.forEach((div) => {
     console.log("count", count);
 
     //팀 리스트에 목록 보여주는 함수
-    //ban 버튼 > ban리스트
-    //pick 버튼 > pick리스트
-    if (!ELEMENT.banBtn.classList.contains("hidden")) {
-      //각 팀 ban리스트 보여주기
-      showBanList(count, clickData, ELEMENT.blueDiv, ELEMENT.redDiv);
-    } else {
-      showPickList(count, clickData, ELEMENT.bluePickDiv, ELEMENT.redPickDiv);
-    }
+    showList(count, clickData, ELEMENT)
   });
 });
 
