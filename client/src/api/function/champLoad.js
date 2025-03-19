@@ -3,9 +3,9 @@ function champLoad(data) {
 
   const championData = data.data
   // {Aatrox :{name : "아트록스", id : "Aatrox"}}
-  console.log(championData)
+  // console.log(championData)
   // [Aatrox, Ahri, ....]
-  console.log(Object.keys(championData))
+  // console.log(Object.keys(championData))
 
   // 영어 이름으로 되어있는 [Aatrox, Ahri, ...] 에서 map으로 배열 진입
   let championDataArray = Object.keys(championData).map(index => {
@@ -22,7 +22,7 @@ function champLoad(data) {
 
   // map 메서드 사용 한 후 
   // [{korName : "아트록스", engName : "Aatrox"}, ...] 확인
-  console.log(championDataArray);
+  // console.log(championDataArray);
 
   // localeCompare를 사용한 배열 내에서 정렬이 가능 -> 공식 문서 참조
   // 한국어 기준으로 정렬 할 것이기 때문에 a의 korName 순서와 b의 korName 순서를 확인하여 정렬. 설정 언어는 "kr"
@@ -30,7 +30,7 @@ function champLoad(data) {
 
   // Array 내에서 정렬 완료
   // [0] = [{korName : "가렌", engName : "Garen"}, [1] = {korName : "갈리오", engName : "Galio"}
-  console.log(championDataArray)
+  // console.log(championDataArray)
 
   // localStorage에서 key는 챔피언 영어이름, value는 splash 아트 CDN 주소 저장
   // 챔피언의 초상화, 챔피언의 스플래쉬 아트 list에 출력 하는 곳

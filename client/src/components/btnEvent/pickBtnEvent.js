@@ -22,7 +22,7 @@ export function pickBtnEvent() {
   if (clickData.length === 0) {
     alert("픽을 진행해주세요");
   } else {
-    startTimer(ELEMENT.banBtn);
+    startTimer();
     //1-9번
     if (count.total < 9) {
       //마지막으로 선택한 요소 담기
@@ -46,7 +46,7 @@ export function pickBtnEvent() {
 
       //console로 확인
       console.log(CHAMPOBJ.banPickData);
-      console.log("last", finalClick);
+      // console.log("last", finalClick);
       //count에 사용한 변수 리셋
       resetCount(count, finalClick);
 

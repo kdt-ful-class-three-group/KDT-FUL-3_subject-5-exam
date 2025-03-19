@@ -33,8 +33,6 @@ export function startFun() {
   ELEMENT.pickBtn.addEventListener("click", pickBtnEvent);
   ELEMENT.restartBtn.addEventListener("click", restartBtnEvent);
 }
-
-
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
 // alert("시작");
-startTimer(ELEMENT.banBtn, ELEMENT.pickBtn);
+startTimer();

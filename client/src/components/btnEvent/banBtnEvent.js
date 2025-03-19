@@ -17,7 +17,7 @@ const ELEMENT = CHAMPOBJ.ELEMENT;
 
 // ban버튼 클릭 이벤트 함수
 export function banBtnEvent() {
-  startTimer(ELEMENT.banBtn);
+  startTimer();
   //1-9번
   if (count.total < 9) {
     //마지막으로 선택한 요소 담기

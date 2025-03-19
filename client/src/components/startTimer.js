@@ -3,10 +3,11 @@ import { timerTag } from "./function/timerTag.js";
 
 /**
  * @description 타이머가 동작하며 초가 0이 되면 다시 동작한다.
- * @param banBtn document.getElementId('banBtn')
+ * 
  */
-function startTimer(banBtn) {
+function startTimer() {
   const time = CHAMPOBJ.time;
+  let banBtn = CHAMPOBJ.ELEMENT.banBtn;
   //intervalName을 멈춤, 30초로 초기화
   if (time.intervalName !== "") {
     clearInterval(time.intervalName);
