@@ -3,19 +3,12 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
 console.log("obj확인", CHAMPOBJ.banPickData);
 
 // src/function에 들어있는 모듈
-import { commitClickData } from "./function/commitClickData.js";
-import { nextTurn } from "./function/nextTurn.js";
-import { saveFinalData } from "./function/saveFinalData.js";
 import { startTimer } from "./startTimer.js";
 import { onTimerExpired } from "./onTimerExpired.js";
 
-//분리하는 함수
-import { resetCount } from "./function/resetCount.js";
-import { buttonChange } from "./function/buttonChange.js";
-
 //함수 실행 묶기
 import { listDivClick } from "./function/listDivClick.js";
-import { getData, lastGetData } from "./function/buttonClick.js";
+import { getData, lastGetData, buttonClick } from "./function/buttonClick.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
@@ -35,16 +28,7 @@ ELEMENT.list.forEach((div) => {
 
 
 ELEMENT.banBtn.addEventListener("click", () => {
-  startTimer(ELEMENT.banBtn);
-  //1-9번
-  if (count.total < 9) {
-    getData();
-  }
-  //10번
-  else if (count.total === 9) {
-    lastGetData('ban',ELEMENT.banBtn, ELEMENT.pickBtn)
-    alert("ban 완료했습니다");
-  }
+  buttonClick('ban', ELEMENT.banBtn, ELEMENT.pickBtn)
 });
 
 //pick버튼 클릭
@@ -78,11 +62,5 @@ ELEMENT.restartBtn.addEventListener("click", () => {
   location.reload();
 });
 
-// // DOMContentLoaded 이벤트에서 setClickEvent 호출
-// document.addEventListener("DOMContentLoaded", () => {
-//   setClickEvent();
-// });
-
-//시작한다는 창에 확인 버튼 눌러야 시간초 시작
-// alert("시작");
+//alert후 타이머 실행
 startTimer(ELEMENT.banBtn);

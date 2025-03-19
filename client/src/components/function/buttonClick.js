@@ -4,6 +4,7 @@ import { nextTurn } from "./nextTurn.js";
 import { resetCount } from "./resetCount.js";
 import { saveFinalData } from "./saveFinalData.js";
 import { CHAMPOBJ } from "../../obj/CHAMPOBJ.js";
+import { startTimer } from "../startTimer.js";
 
 /**
  * 마지막 선택한 요소를 담고 blue, red 번갈아가면서 실행하는 함수
@@ -28,4 +29,21 @@ export function lastGetData(type, existButton, nextButton) {
   saveFinalData(CHAMPOBJ, type, finalClick)
   buttonChange(existButton, nextButton)
   resetCount(count, finalClick)
+}
+
+/**
+ * ban, pick버튼 클릭 이벤트
+ * @param {String} type 'ban' / 'pick' 작성 
+ * @param {Element} existButton 현재 버튼
+ * @param {Element} nextButton 다음 진행할 버튼
+ */
+export function buttonClick(type, existButton, nextButton) {
+  let count = CHAMPOBJ.count
+  startTimer(existButton)
+  if (count.total < 9) {
+    getData()
+  } else if (count.total === 9) {
+    lastGetData(type, existButton, nextButton)
+    alert(type+' 완료했습니다.')
+  }
 }
