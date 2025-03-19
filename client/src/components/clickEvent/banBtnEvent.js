@@ -18,6 +18,7 @@ const pickBtn = document.getElementById("pickBtn");
 const banBtn = document.getElementById('banBtn');
 
 
+
 export function banBtnEvent() {
 startTimer(banBtn);
   //1-9번

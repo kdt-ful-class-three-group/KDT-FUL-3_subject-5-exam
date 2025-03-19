@@ -1,5 +1,5 @@
-import { CHAMPOBJ } from "../../obj/CHAMPOBJ";
-
+import { deactivateClickedDiv } from "./deactivateClickedDiv.js";
+import { CHAMPOBJ } from "../../obj/CHAMPOBJ.js";
 
 /**
  * 마지막으로 선택한 요소를 배열에 담는 함수
