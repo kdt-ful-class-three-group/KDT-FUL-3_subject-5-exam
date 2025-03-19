@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import axios from "axios";
 
 /**
  * @description banpick.json에 들어갈 초기 데이터 빈 배열
@@ -57,6 +58,86 @@ app.post("/save", (req, res) => {
   // * 위의 행동이 실행되면, 데이터 저장 성공이라는 메시지를 콘솔에 찍어라.
   res.json({ message: "데이터 저장 성공!" });
 });
+
+const championUrl = `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json`;
+
+async function fetchChampionData() {
+  try {
+    const championName = await axios({
+      url: championUrl,
+      method: "GET",
+      responseType: "json",
+    });
+    const championData = championName.data.data;
+    Object.keys(championData).map((index) => {
+      downloadImage(index);
+      console.log(index);
+    });
+    console.log("챔피언 데이터 요청 성공");
+  } catch (error) {
+    console.error(`챔피언 데이터 요청 실패: ${error.message}`);
+  }
+}
+
+fetchChampionData();
+const downloadImage = async (imageName) => {
+  //* 이미지 이름 찾아오는 로직 변수
+  // const championUrl = `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json`;
+  //* 이미지 저장 로직 변수
+  const imageUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${imageName}_0.jpg`;
+  const imageDir = path.join(__dirname, "images");
+  const imagePath = path.join(imageDir, `${imageName}.jpg`);
+
+  // images 폴더가 존재하지 않으면 생성
+  if (!fs.existsSync(imageDir)) {
+    fs.mkdirSync(imageDir);
+  }
+
+  // 이미지가 이미 존재하면 다운로드를 건너뜀
+  if (fs.existsSync(imagePath)) {
+    console.log(`이미지가 이미 존재합니다.`);
+    return;
+  }
+
+  console.log("챔피언 데이터를 요청합니다...");
+
+  // try {
+  //   const championName = await axios({
+  //     url: championUrl,
+  //     method: "GET",
+  //     responseType: "json",
+  //   });
+  //   console.log("챔피언 데이터 요청 성공");
+  //   console.log(championName); // 전체 응답 객체 출력
+  //   console.log(championName.data); // 받아온 데이터 출력
+  // } catch (error) {
+  //   console.error(`챔피언 데이터 요청 실패: ${error.message}`);
+  // }
+
+  console.log("이미지 다운로드를 시작합니다...");
+
+  try {
+    const imageDownload = await axios({
+      url: imageUrl,
+      method: "GET",
+      responseType: "stream",
+    });
+
+    imageDownload.data.pipe(fs.createWriteStream(imagePath));
+
+    imageDownload.data.on("end", () => {
+      console.log(`이미지 ${imageName} 다운로드 성공!`);
+    });
+
+    imageDownload.data.on("error", (err) => {
+      console.error(`이미지 ${imageName} 다운로드 실패: ${err.message}`);
+    });
+  } catch (error) {
+    console.error(`이미지 ${imageName} 다운로드 실패: ${error.message}`);
+  }
+};
+// 서버 시작 시 이미지 다운로드
+// const imageName = "Gragas_0"; // 다운로드할 이미지 이름
 
 app.use((req, res) => {
   res.status(404).send(`

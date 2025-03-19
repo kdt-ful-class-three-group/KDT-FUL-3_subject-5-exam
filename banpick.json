@@ -562,5 +562,99 @@
         }
       ]
     }
+  },
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Naafiri",
+          "name": "나피리"
+        },
+        {
+          "id": "Neeko",
+          "name": "니코"
+        },
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        },
+        {
+          "id": "Leona",
+          "name": "레오나"
+        },
+        {
+          "id": "Leblanc",
+          "name": "르블랑"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Ryze",
+          "name": "라이즈"
+        },
+        {
+          "id": "Lulu",
+          "name": "룰루"
+        },
+        {
+          "id": "MissFortune",
+          "name": "미스 포츈"
+        },
+        {
+          "id": "Briar",
+          "name": "브라이어"
+        },
+        {
+          "id": "Poppy",
+          "name": "뽀삐"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "Darius",
+          "name": "다리우스"
+        },
+        {
+          "id": "Nilah",
+          "name": "닐라"
+        },
+        {
+          "id": "Rengar",
+          "name": "렝가"
+        },
+        {
+          "id": "Riven",
+          "name": "리븐"
+        },
+        {
+          "id": "Lissandra",
+          "name": "리산드라"
+        }
+      ],
+      "pick": [
+        {
+          "id": "LeeSin",
+          "name": "리 신"
+        },
+        {
+          "id": "Malphite",
+          "name": "말파이트"
+        },
+        {
+          "id": "Milio",
+          "name": "밀리오"
+        },
+        {
+          "id": "Brand",
+          "name": "브랜드"
+        },
+        {
+          "id": "Samira",
+          "name": "사미라"
+        }
+      ]
+    }
   }
 ]

@@ -28,7 +28,7 @@ function showBanList(count, clickData, blueList, redList) {
 export function showPickList(count, clickData, bluePickList, redPickList) {
   const pickList = count.all % 2 === 0 ? bluePickList : redPickList; //* 짝수면 bluePickList 반환 // 홀수면 redPickList 반환
   const index = count.all % 2 === 0 ? count.blue : count.red; // * 짝수면 count.blue 반환 // 홀수면 count.red 반환
-  const imgElement = pickList[index]; // 
+  const imgElement = pickList[index]; // * bluePickList[count.blue] or redPickList[count.red]
 
   // imgElement.style.opacity = 0; // 초기 투명도 0
   // imgElement.style.transition = 'opacity 0.5s ease-in-out'; // 트랜지션 설정
@@ -41,6 +41,7 @@ export function showPickList(count, clickData, bluePickList, redPickList) {
     // imgElement.style.opacity = 1; // 로딩 완료 후 투명도 1로 변경
   };
   img.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg`;
+  console.log(img);
 }
 
 /**
