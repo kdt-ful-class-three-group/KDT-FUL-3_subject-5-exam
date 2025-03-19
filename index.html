@@ -15,11 +15,12 @@
 
 <body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#000000]'>
   <article
-    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-[#000000] p-[20px] rounded-[10px]" id="startBanContainer">
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-[#000000] p-[20px] rounded-[10px]"
+    id="startBanContainer">
     <h2 class="text-white mb-[20px]">롤 모의 밴픽 시뮬레이터</h2>
-    <button onclick="startBanPick(this)" class="w-[100%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]"">시작</button>
+    <button id="startBanPickBtn" class="w-[100%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]"">시작</button>
   </article>
-  <div id="root" class="flex gap-2 hidden">
+  <div class=" flex gap-2 hidden" id="root">
       <!-- <section id="ban" > -->
       <section id="blue" class="w-[25.5rem] h-[100vh] bg-[#004F9D40]">
         <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-[5%]">
@@ -79,7 +80,7 @@
       </div>
       <!-- script -->
       <script type="module" src="/src/components/banPickService.js"></script>
-      <script src="/src/components/startBanPick.js"></script>
+      <script type="module" src="/src/components/startBanPick.js"></script>
 
 </body>
 
