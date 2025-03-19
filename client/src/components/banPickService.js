@@ -15,7 +15,7 @@ import { buttonChange } from "./function/buttonChange.js";
 
 //함수 실행 묶기
 import { listDivClick } from "./function/listDivClick.js";
-import { getData } from "./function/buttonClick.js";
+import { getData, lastGetData } from "./function/buttonClick.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
@@ -38,22 +38,12 @@ ELEMENT.banBtn.addEventListener("click", () => {
   startTimer(ELEMENT.banBtn);
   //1-9번
   if (count.total < 9) {
-    getData(clickData,finalClick,count);
+    getData();
   }
   //10번
   else if (count.total === 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(ELEMENT.list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
-    //banpickData.color.ban에 데이터 담기
-    saveFinalData(CHAMPOBJ, "ban", finalClick);
-
-    //ban버튼 안보임 + pick버튼 보임
-    buttonChange(ELEMENT.banBtn, ELEMENT.pickBtn)
+    lastGetData('ban',ELEMENT.banBtn, ELEMENT.pickBtn)
     alert("ban 완료했습니다");
-    //변수 초기화
-    resetCount(count, finalClick);
   }
 });
 
@@ -66,30 +56,16 @@ ELEMENT.pickBtn.addEventListener("click", () => {
     startTimer(ELEMENT.banBtn);
     //1-9번
     if (count.total < 9) {
-      //마지막으로 선택한 요소 담기
-      commitClickData(ELEMENT.list, clickData, finalClick);
-      //blue, red 번갈아 진행
-      nextTurn(count);
+      getData()
     }
     //10번
     else if (count.total === 9) {
-      //마지막으로 선택한 요소 담기
-      commitClickData(ELEMENT.list, clickData, finalClick);
-      //blue red 번갈아 진행
-      nextTurn(count);
-      //banpickData.color.pick에 데이터 담기
-      saveFinalData(CHAMPOBJ, "pick", finalClick);
-      
-      //pick버튼 안보임
-      //다시하기 버튼 보임
-      buttonChange(ELEMENT.pickBtn, ELEMENT.restartBtn)
+      lastGetData('pick',ELEMENT.pickBtn, ELEMENT.restartBtn)
       alert("완료했습니다");
       
       //console로 확인
       console.log(CHAMPOBJ.banPickData);
       console.log("last", finalClick);
-      //count에 사용한 변수 리셋
-      resetCount(count,finalClick);
 
       //20번 다 고르면 타이머 스탑
       onTimerExpired();
@@ -109,4 +85,4 @@ ELEMENT.restartBtn.addEventListener("click", () => {
 
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
 // alert("시작");
-startTimer(ELEMENT.banBtn, ELEMENT.pickBtn);
+startTimer(ELEMENT.banBtn);
