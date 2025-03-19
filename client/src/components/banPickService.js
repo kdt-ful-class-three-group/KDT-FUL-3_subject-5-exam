@@ -133,6 +133,9 @@ pickBtn.addEventListener("click", () => {
   }
 });
 
+
+setClickEvent();
+
 restartBtn.addEventListener("click", () => {
   //리스트 초기화
   location.reload();
