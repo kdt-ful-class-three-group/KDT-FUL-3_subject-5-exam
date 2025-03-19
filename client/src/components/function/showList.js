@@ -9,6 +9,7 @@
 function showBanList(count, clickData, blueList, redList) {
   // const imgStyle ="width: 50px; height: 50px; display:inline-block; justify-content:row; "
   if (count.all % 2 === 0) {
+    console.log(clickData[0].id);
     blueList.querySelectorAll("img")[
       count.blue
     ].src = `https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${clickData[0].id}.png`;
@@ -35,12 +36,12 @@ export function showPickList(count, clickData, bluePickList, redPickList) {
 
   const img = new Image();
   img.onload = () => {
-    imgElement.style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
+    imgElement.style.backgroundImage = `url('../public/images/${clickData[0].id}.jpg')`;
     imgElement.style.backgroundSize = "cover";
     imgElement.style.backgroundPosition = "center top";
     // imgElement.style.opacity = 1; // 로딩 완료 후 투명도 1로 변경
   };
-  img.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg`;
+  img.src = `../public/images/${clickData[0].id}.jpg`;
   console.log(img);
 }
 
