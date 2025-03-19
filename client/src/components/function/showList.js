@@ -25,20 +25,22 @@ function showBanList(count, clickData, blueList, redList) {
  * @param {Element} blueList blue팀 pick 리스트
  * @param {Element} redList red팀 pick 리스트
  */
-function showPickList(count, clickData, bluePickList, redPickList) {
-  if (count.all % 2 === 0) {
-    bluePickList[
-      count.blue
-    ].style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
-    bluePickList[count.blue].style.backgroundSize = "cover"; // 필요에 따라 추가
-    bluePickList[count.blue].style.backgroundPosition = "center top";
-  } else {
-    redPickList[
-      count.red
-    ].style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
-    redPickList[count.red].style.backgroundSize = "cover";
-    redPickList[count.red].backgroundPosition = "center top";
-  }
+export function showPickList(count, clickData, bluePickList, redPickList) {
+  const pickList = count.all % 2 === 0 ? bluePickList : redPickList;
+  const index = count.all % 2 === 0 ? count.blue : count.red;
+  const imgElement = pickList[index];
+
+  imgElement.style.opacity = 0; // 초기 투명도 0
+  imgElement.style.transition = 'opacity 0.5s ease-in-out'; // 트랜지션 설정
+
+  const img = new Image();
+  img.onload = () => {
+    imgElement.style.backgroundImage = `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg')`;
+    imgElement.style.backgroundSize = "cover";
+    imgElement.style.backgroundPosition = "center top";
+    imgElement.style.opacity = 1; // 로딩 완료 후 투명도 1로 변경
+  };
+  img.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${clickData[0].id}_0.jpg`;
 }
 
 /**
