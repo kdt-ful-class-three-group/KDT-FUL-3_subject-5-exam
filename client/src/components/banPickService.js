@@ -3,8 +3,6 @@ import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
 console.log("obj확인", CHAMPOBJ.banPickData);
 
 // src/function에 들어있는 모듈
-import {showList } from "./function/showList.js";
-import { divListClick } from "./function/divListClick.js";
 import { commitClickData } from "./function/commitClickData.js";
 import { nextTurn } from "./function/nextTurn.js";
 import { saveFinalData } from "./function/saveFinalData.js";
@@ -14,6 +12,9 @@ import { onTimerExpired } from "./onTimerExpired.js";
 //분리하는 함수
 import { resetCount } from "./function/resetCount.js";
 import { buttonChange } from "./function/buttonChange.js";
+
+//함수 실행 묶기
+import { listDivClick } from "./function/listDivClick.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
@@ -27,17 +28,8 @@ const ELEMENT = CHAMPOBJ.ELEMENT
 
 //중앙챔피언리스트 클릭이벤트
 ELEMENT.list.forEach((div) => {
-  div.setAttribute("style", "cursor:pointer");
-  //div 클릭 이벤트
-  div.addEventListener("click", () => {
-    //clickData에 선택한 목록 넣기
-    divListClick(div, clickData);
-    //클릭 카운트 확인
-    console.log("count", count);
-
-    //팀 리스트에 목록 보여주는 함수
-    showList(count, clickData, ELEMENT)
-  });
+  div.setAttribute('style','cursor:pointer')
+  listDivClick(div,clickData,count,ELEMENT)
 });
 
 
