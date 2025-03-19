@@ -27,7 +27,6 @@ const ELEMENT = CHAMPOBJ.ELEMENT
 //중앙챔피언리스트 클릭이벤트
 ELEMENT.list.forEach((div) => {
   div.setAttribute("style", "cursor:pointer");
-
   //div 클릭 이벤트
   div.addEventListener("click", () => {
     //clickData에 선택한 목록 넣기
