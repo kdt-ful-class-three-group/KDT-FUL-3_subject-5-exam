@@ -24,15 +24,6 @@ let finalClick = CHAMPOBJ.dataArray.finalClick; //최종 배열
 //div 요소
 const ELEMENT = CHAMPOBJ.ELEMENT
 
-
-// //변수 초기화
-// function resetCount(count) {
-//   count.blue = 0;
-//   count.red = 0;
-//   count.total = 0;
-//   finalClick = [];
-// }
-
 //중앙챔피언리스트 클릭이벤트
 ELEMENT.list.forEach((div) => {
   div.setAttribute("style", "cursor:pointer");
