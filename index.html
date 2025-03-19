@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./public/css/tailwind/output.css">
+  <link rel="icon" href="public/favicon.ico" type="image/x-icon">
   <!-- <link rel="stylesheet" href="./public/css/styles.css"> -->
   <title>League of Legend</title>
 </head>
@@ -13,65 +14,72 @@
 <script type="module" src="/src/api/function/champLoad.js"></script>
 
 <body class='bg-[url("../../img/background.png")] bg-no-repeat bg-center bg-cover h-[100vh] bg-[#000000]'>
-
-  <div id="root" class="flex gap-2">
-    <!-- <section id="ban" > -->
-    <section id="blue" class="w-[25.5rem] h-[100vh] bg-[#004F9D40]">
-      <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-[5%]">
-        <img src="/public/img/ban.png" alt="ban Image">
-        <img src="/public/img/ban.png" alt="ban Image">
-        <img src="/public/img/ban.png" alt="ban Image">
-        <img src="/public/img/ban.png" alt="ban Image">
-        <img src="/public/img/ban.png" alt="ban Image">
-      </div>
-      <!-- 블루팀 챔피언 픽 -->
-      <div id="bluePick">
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-      </div>
-    </section>
-    <section class="w-[54rem] bg-[#44444466] flex items-center flex-col">
-      <section id="timer">
-        <h1 class="text-[32px] text-white p-[24px] pb-0">30초</h1>
+  <article
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-[#000000] p-[20px] rounded-[10px]" id="startBanContainer">
+    <h2 class="text-white mb-[20px]">롤 모의 밴픽 시뮬레이터</h2>
+    <button onclick="startBanPick(this)" class="w-[100%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]"">시작</button>
+  </article>
+  <div id="root" class="flex gap-2 hidden">
+      <!-- <section id="ban" > -->
+      <section id="blue" class="w-[25.5rem] h-[100vh] bg-[#004F9D40]">
+        <div id="blueBan" class="grid grid-cols-5 m-[1rem] gap-[5%]">
+          <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
+        </div>
+        <!-- 블루팀 챔피언 픽 -->
+        <div id="bluePick">
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+        </div>
       </section>
-      <section id="list" class="grid grid-cols-6 items-start overflow-auto h-[80vh] scrollbar-none p-[20px]"></section>
-      <button type="button" id="banBtn" class="w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">ban
-        선택</button>
-      <button type="button" id="pickBtn" class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">pick
-        선택</button>
-      <button type="button" id="restart"
-        class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">다시하기</button>
-    </section>
-    <section id="red" class="w-[25.5rem] h-[100vh] ">
-      <div id="redBan" class="grid grid-cols-5 m-[1rem] gap-3">
+      <section class="w-[54rem] bg-[#44444466] flex items-center flex-col">
+        <section id="timer">
+          <h1 class="text-[32px] text-white p-[24px] pb-0">30초</h1>
+        </section>
+        <section id="list" class="grid grid-cols-6 items-start overflow-auto h-[80vh] scrollbar-none p-[20px]">
+        </section>
+        <button type="button" id="banBtn" class="w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">ban
+          선택</button>
+        <button type="button" id="pickBtn"
+          class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">pick
+          선택</button>
+        <button type="button" id="restart"
+          class="hidden w-[45%] text-center mt-[3%] py-[2%] text-white bg-[#3131FF]">다시하기</button>
+      </section>
+      <section id="red" class="w-[25.5rem] h-[100vh] ">
+        <div id="redBan" class="grid grid-cols-5 m-[1rem] gap-3">
 
-        <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
 
-        <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
 
-        <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
 
-        <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
 
-        <img src="/public/img/ban.png" alt="ban Image">
+          <img src="/public/img/ban.png" alt="ban Image">
 
+        </div>
+        <!-- 레드팀 챔피언 픽 -->
+        <div id="redPick">
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
+          <!-- >>>>>>> YunJonghwan/issue23-1 -->
+        </div>
+      </section>
       </div>
-      <!-- 레드팀 챔피언 픽 -->
-      <div id="redPick">
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <div class="border-b-white border-b-[1px] h-[8rem] mx-[10px] bg-[#00000032]"></div>
-        <!-- >>>>>>> YunJonghwan/issue23-1 -->
-      </div>
-    </section>
-  </div>
-  <!-- script -->
-  <script type="module" src="/src/components/banPickService.js"></script>
+      <!-- script -->
+      <script type="module" src="/src/components/banPickService.js"></script>
+      <script src="/src/components/startBanPick.js"></script>
 
 </body>
 

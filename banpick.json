@@ -186,5 +186,99 @@
         }
       ]
     }
+  },
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Gragas",
+          "name": "그라가스"
+        },
+        {
+          "id": "Ryze",
+          "name": "라이즈"
+        },
+        {
+          "id": "Nilah",
+          "name": "닐라"
+        },
+        {
+          "id": "Nidalee",
+          "name": "니달리"
+        },
+        {
+          "id": "Veigar",
+          "name": "베이가"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Aphelios",
+          "name": "아펠리오스"
+        },
+        {
+          "id": "Yasuo",
+          "name": "야스오"
+        },
+        {
+          "id": "Aatrox",
+          "name": "아트록스"
+        },
+        {
+          "id": "Shen",
+          "name": "쉔"
+        },
+        {
+          "id": "Senna",
+          "name": "세나"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "Rakan",
+          "name": "라칸"
+        },
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        },
+        {
+          "id": "Neeko",
+          "name": "니코"
+        },
+        {
+          "id": "Briar",
+          "name": "브라이어"
+        },
+        {
+          "id": "Belveth",
+          "name": "벨베스"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Alistar",
+          "name": "알리스타"
+        },
+        {
+          "id": "Ekko",
+          "name": "에코"
+        },
+        {
+          "id": "Ivern",
+          "name": "아이번"
+        },
+        {
+          "id": "Shyvana",
+          "name": "쉬바나"
+        },
+        {
+          "id": "Sejuani",
+          "name": "세주아니"
+        }
+      ]
+    }
   }
 ]
