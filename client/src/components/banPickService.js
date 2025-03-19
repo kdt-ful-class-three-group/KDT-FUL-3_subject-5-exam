@@ -15,6 +15,7 @@ import { buttonChange } from "./function/buttonChange.js";
 
 //함수 실행 묶기
 import { listDivClick } from "./function/listDivClick.js";
+import { getData } from "./function/buttonClick.js";
 
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
@@ -37,10 +38,7 @@ ELEMENT.banBtn.addEventListener("click", () => {
   startTimer(ELEMENT.banBtn);
   //1-9번
   if (count.total < 9) {
-    //마지막으로 선택한 요소 담기
-    commitClickData(ELEMENT.list, clickData, finalClick);
-    //blue, red 번갈아 진행
-    nextTurn(count);
+    getData(clickData,finalClick,count);
   }
   //10번
   else if (count.total === 9) {
