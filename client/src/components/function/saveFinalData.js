@@ -1,4 +1,4 @@
-import { sendBanPickData } from "../../sendBanPickData.js";
+import { sendBanPickData } from "../sendBanPickData.js";
 
 /**
  * 최종 확정된 목록들을 데이터에 담는 함수

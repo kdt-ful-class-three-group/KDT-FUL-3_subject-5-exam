@@ -1,9 +1,10 @@
 import { CHAMPOBJ } from "../../obj/CHAMPOBJ.js";
 // src/function에 들어있는 모듈
 import { commitClickData } from "../function/commitClickData.js";
-import { saveFinalData } from "./function/saveFinalData.js";
+import { saveFinalData } from "../function/saveFinalData.js";
 import { nextTurn } from "../function/nextTurn.js";
 import { startTimer } from "../startTimer.js";
+import { resetCount } from "../banPickService.js";
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
 
