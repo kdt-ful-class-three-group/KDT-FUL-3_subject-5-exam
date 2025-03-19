@@ -15,17 +15,12 @@ import { onTimerExpired } from "./onTimerExpired.js";
 let count = CHAMPOBJ.count;
 
 //중앙 챔피언 리스트 클릭할 때 사용하는 배열
-let clickData = []; //실시간으로 담기는 배열
-let finalClick = []; //최종 배열
+let clickData = CHAMPOBJ.dataArray.clickData; //실시간으로 담기는 배열
+let finalClick = CHAMPOBJ.dataArray.finalClick; //최종 배열
 
 //div 요소
-const blueDiv = document.getElementById("blueBan"); //blue팀 ban리스트 목록
-const redDiv = document.getElementById("redBan"); //red팀 ban리스트 목록
-const bluePickDiv = document.querySelectorAll("#bluePick > div"); //red팀 ban리스트 목록
-const redPickDiv = document.querySelectorAll("#redPick > div"); //red팀 ban리스트 목록
-const list = document.getElementById("list").children; //중앙 챔피언 리스트
-const pickBtn = document.getElementById("pickBtn");
-const restartBtn = document.getElementById("restart");
+const ELEMENT = CHAMPOBJ.ELEMENT
+
 
 //변수 초기화
 function resetCount(count) {
@@ -36,7 +31,7 @@ function resetCount(count) {
 }
 
 //중앙챔피언리스트 클릭이벤트
-  Array.from(list).forEach((div) => {
+  ELEMENT.list.forEach((div) => {
     div.setAttribute("style", "cursor:pointer");
 
     //div 클릭 이벤트
@@ -50,68 +45,61 @@ function resetCount(count) {
       //팀 리스트에 목록 보여주는 함수
       //ban 버튼 > ban리스트
       //pick 버튼 > pick리스트
-      if (!document.getElementById("banBtn").classList.contains("hidden")) {
+      if (!ELEMENT.banBtn.classList.contains("hidden")) {
         //각 팀 ban리스트 보여주기
-        showBanList(count, clickData, blueDiv, redDiv);
+        showBanList(count, clickData, ELEMENT.blueDiv, ELEMENT.redDiv);
       } else {
-        showPickList(count, clickData, bluePickDiv, redPickDiv);
+        showPickList(count, clickData, ELEMENT.bluePickDiv, ELEMENT.redPickDiv);
       }
     });
   });
 
 
-//ban버튼 클릭 이벤트
-const banBtn = document.getElementById("banBtn");
-
-banBtn.addEventListener("click", () => {
-  startTimer(banBtn);
+ELEMENT.banBtn.addEventListener("click", () => {
+  startTimer(ELEMENT.banBtn);
   //1-9번
   if (count.total < 9) {
     //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
+    commitClickData(ELEMENT.list, clickData, finalClick);
     //blue, red 번갈아 진행
     nextTurn(count);
   }
   //10번
   else if (count.total === 9) {
     //마지막으로 선택한 요소 담기
-    commitClickData(list, clickData, finalClick);
+    commitClickData(ELEMENT.list, clickData, finalClick);
     //blue, red 번갈아 진행
     nextTurn(count);
     //banpickData.color.ban에 데이터 담기
     saveFinalData(CHAMPOBJ, "ban", finalClick);
 
     //ban버튼 안보임 + pick버튼 보임
-    banBtn.classList.toggle("hidden");
-    pickBtn.classList.toggle("hidden");
+    ELEMENT.banBtn.classList.toggle("hidden");
+    ELEMENT.pickBtn.classList.toggle("hidden");
     alert("ban 완료했습니다");
     //변수 초기화
     resetCount(count);
   }
 });
 
-//pick버튼 클릭 이벤트
-
 //pick버튼 클릭
-pickBtn.addEventListener("click", () => {
+ELEMENT.pickBtn.addEventListener("click", () => {
   //리스트 선택안하고 pick버튼 눌렀을 때
   if (clickData.length === 0) {
-    // startTimer(banBtn);
     alert("픽을 진행해주세요");
-    // return;
   } else {
-    startTimer(banBtn);
+    startTimer(ELEMENT.banBtn);
     //1-9번
     if (count.total < 9) {
       //마지막으로 선택한 요소 담기
-      commitClickData(list, clickData, finalClick);
+      commitClickData(ELEMENT.list, clickData, finalClick);
       //blue, red 번갈아 진행
       nextTurn(count);
     }
     //10번
     else if (count.total === 9) {
       //마지막으로 선택한 요소 담기
-      commitClickData(list, clickData, finalClick);
+      commitClickData(ELEMENT.list, clickData, finalClick);
       //blue red 번갈아 진행
       nextTurn(count);
       //banpickData.color.pick에 데이터 담기
@@ -119,8 +107,8 @@ pickBtn.addEventListener("click", () => {
 
       //pick버튼 안보임
       //다시하기 버튼 보임
-      pickBtn.classList.toggle("hidden");
-      restartBtn.classList.toggle("hidden");
+      ELEMENT.pickBtn.classList.toggle("hidden");
+      ELEMENT.restartBtn.classList.toggle("hidden");
       alert("완료했습니다");
 
       //console로 확인
@@ -135,16 +123,16 @@ pickBtn.addEventListener("click", () => {
   }
 });
 
-restartBtn.addEventListener("click", () => {
+ELEMENT.restartBtn.addEventListener("click", () => {
   //리스트 초기화
   location.reload();
 });
 
-// DOMContentLoaded 이벤트에서 setClickEvent 호출
-document.addEventListener("DOMContentLoaded", () => {
-  setClickEvent();
-});
+// // DOMContentLoaded 이벤트에서 setClickEvent 호출
+// document.addEventListener("DOMContentLoaded", () => {
+//   setClickEvent();
+// });
 
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
 // alert("시작");
-startTimer(banBtn, pickBtn);
+startTimer(ELEMENT.banBtn, ELEMENT.pickBtn);

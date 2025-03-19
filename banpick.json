@@ -186,5 +186,99 @@
         }
       ]
     }
+  },
+  {
+    "blue": {
+      "ban": [
+        {
+          "id": "Nocturne",
+          "name": "녹턴"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "Gwen",
+          "name": "그웬"
+        },
+        {
+          "id": "Rell",
+          "name": "렐"
+        },
+        {
+          "id": "Leona",
+          "name": "레오나"
+        },
+        {
+          "id": "Renata",
+          "name": "레나타 글라스크"
+        },
+        {
+          "id": "Rammus",
+          "name": "람머스"
+        }
+      ]
+    },
+    "red": {
+      "ban": [
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        },
+        {
+          "id": "Lux",
+          "name": "럭스"
+        },
+        {
+          "id": "ban",
+          "name": "ban"
+        }
+      ],
+      "pick": [
+        {
+          "id": "RekSai",
+          "name": "렉사이"
+        },
+        {
+          "id": "Rengar",
+          "name": "렝가"
+        },
+        {
+          "id": "Renekton",
+          "name": "레넥톤"
+        },
+        {
+          "id": "Rakan",
+          "name": "라칸"
+        },
+        {
+          "id": "Rumble",
+          "name": "럼블"
+        }
+      ]
+    }
   }
 ]
