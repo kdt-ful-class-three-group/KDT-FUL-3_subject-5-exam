@@ -1,5 +1,5 @@
-console.log("연결");
 import { CHAMPOBJ } from "../obj/CHAMPOBJ.js";
+console.log("연결");
 console.log("obj확인", CHAMPOBJ.banPickData);
 
 // src/function에 들어있는 모듈
@@ -23,16 +23,22 @@ let clickData = CHAMPOBJ.dataArray.clickData; //실시간으로 담기는 배열
 const ELEMENT = CHAMPOBJ.ELEMENT;
 
 //중앙챔피언리스트 클릭이벤트
+
 export function startFun() {
+  ELEMENT.list = document.querySelectorAll("#list > div");
   ELEMENT.list.forEach((div) => {
     div.setAttribute("style", "cursor:pointer");
     listDivClick(div, clickData, count, ELEMENT);
   });
-  // 각 버튼에 이벤트 추가
-  ELEMENT.banBtn.addEventListener("click", banBtnEvent);
-  ELEMENT.pickBtn.addEventListener("click", pickBtnEvent);
-  ELEMENT.restartBtn.addEventListener("click", restartBtnEvent);
+  startTimer();
 }
+// 각 버튼에 이벤트 추가
+ELEMENT.banBtn.addEventListener("click", banBtnEvent);
+ELEMENT.pickBtn.addEventListener("click", pickBtnEvent);
+ELEMENT.restartBtn.addEventListener("click", restartBtnEvent);
+// document.addEventListener("DOMContentLoaded", () => {
+//   startFun();
+// });
+
 //시작한다는 창에 확인 버튼 눌러야 시간초 시작
 // alert("시작");
-startTimer();

@@ -5,7 +5,7 @@ startBanBtn.addEventListener("click", () => {
   let startBanPick = document.getElementById("startBanContainer");
   banpick.style.display = "flex";
   startBanPick.style.display = "none";
-  startFun()
+  startFun();
   //lst for 함수 넣을 곳
 });
 

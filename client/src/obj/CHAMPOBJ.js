@@ -13,9 +13,8 @@ export const CHAMPOBJ = {
   },
   dataArray: {
     clickData: [],
-    finalClick: []
-  }
-  ,
+    finalClick: [],
+  },
   noneClick: { id: "ban", name: "ban" },
   time: {
     second: 30,
@@ -23,13 +22,13 @@ export const CHAMPOBJ = {
     intervalName: "",
   },
   ELEMENT: {
-    blueDiv: document.getElementById('blueBan'),
-    redDiv: document.getElementById('redBan'),
-    bluePickDiv: document.querySelectorAll('#bluePick > div'),
-    redPickDiv: document.querySelectorAll('#redPick > div'),
-    list: document.querySelectorAll('#list > div'),
-    pickBtn: document.getElementById('pickBtn'),
-    restartBtn: document.getElementById('restart'),
-    banBtn : document.getElementById('banBtn')
-  }
+    blueDiv: document.getElementById("blueBan"),
+    redDiv: document.getElementById("redBan"),
+    bluePickDiv: document.querySelectorAll("#bluePick > div"),
+    redPickDiv: document.querySelectorAll("#redPick > div"),
+    list: document.querySelectorAll("#list > div"),
+    pickBtn: document.getElementById("pickBtn"),
+    restartBtn: document.getElementById("restart"),
+    banBtn: document.getElementById("banBtn"),
+  },
 };
