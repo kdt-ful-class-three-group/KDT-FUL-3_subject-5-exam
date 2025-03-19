@@ -36,7 +36,6 @@ function resetCount(count) {
 }
 
 //중앙챔피언리스트 클릭이벤트
-export function setClickEvent() {
   Array.from(list).forEach((div) => {
     div.setAttribute("style", "cursor:pointer");
 
@@ -59,7 +58,7 @@ export function setClickEvent() {
       }
     });
   });
-}
+
 
 //ban버튼 클릭 이벤트
 const banBtn = document.getElementById("banBtn");
