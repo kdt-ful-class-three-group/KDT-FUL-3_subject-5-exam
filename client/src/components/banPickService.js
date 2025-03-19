@@ -11,6 +11,9 @@ import { saveFinalData } from "./function/saveFinalData.js";
 import { startTimer } from "./startTimer.js";
 import { onTimerExpired } from "./onTimerExpired.js";
 
+//분리하는 함수
+import { resetCount } from "./function/resetCount.js";
+
 //클릭 횟수, 배열에 담길 순서를 결정할 변수
 let count = CHAMPOBJ.count;
 
@@ -22,13 +25,13 @@ let finalClick = CHAMPOBJ.dataArray.finalClick; //최종 배열
 const ELEMENT = CHAMPOBJ.ELEMENT
 
 
-//변수 초기화
-function resetCount(count) {
-  count.blue = 0;
-  count.red = 0;
-  count.total = 0;
-  finalClick = [];
-}
+// //변수 초기화
+// function resetCount(count) {
+//   count.blue = 0;
+//   count.red = 0;
+//   count.total = 0;
+//   finalClick = [];
+// }
 
 //중앙챔피언리스트 클릭이벤트
 ELEMENT.list.forEach((div) => {
@@ -77,7 +80,7 @@ ELEMENT.banBtn.addEventListener("click", () => {
     ELEMENT.pickBtn.classList.toggle("hidden");
     alert("ban 완료했습니다");
     //변수 초기화
-    resetCount(count);
+    resetCount(count, finalClick);
   }
 });
 
@@ -103,18 +106,18 @@ ELEMENT.pickBtn.addEventListener("click", () => {
       nextTurn(count);
       //banpickData.color.pick에 데이터 담기
       saveFinalData(CHAMPOBJ, "pick", finalClick);
-
+      
       //pick버튼 안보임
       //다시하기 버튼 보임
       ELEMENT.pickBtn.classList.toggle("hidden");
       ELEMENT.restartBtn.classList.toggle("hidden");
       alert("완료했습니다");
-
+      
       //console로 확인
       console.log(CHAMPOBJ.banPickData);
       console.log("last", finalClick);
       //count에 사용한 변수 리셋
-      resetCount(count);
+      resetCount(count,finalClick);
 
       //20번 다 고르면 타이머 스탑
       onTimerExpired();
