@@ -29,7 +29,7 @@ export function banBtnEvent() {
   }
   //10번
   else if (count.total === 9) {
-    ELEMENT.bluePickDiv[0].classList.add("pick-background");
+    ELEMENT.bluePickDiv[0].classList.add("Pick-blue-border");
     //마지막으로 선택한 요소 담기
     commitClickData(ELEMENT.list, clickData, finalClick);
     //blue, red 번갈아 진행
@@ -38,6 +38,10 @@ export function banBtnEvent() {
     saveFinalData(CHAMPOBJ, "ban", finalClick);
 
     //ban버튼 안보임 + pick버튼 보임
+    ELEMENT.redDiv
+      .querySelectorAll("img")[4]
+      .classList.remove("Pick-red-border");
+
     buttonChange(ELEMENT.banBtn, ELEMENT.pickBtn);
     alert("ban 완료했습니다");
     //변수 초기화

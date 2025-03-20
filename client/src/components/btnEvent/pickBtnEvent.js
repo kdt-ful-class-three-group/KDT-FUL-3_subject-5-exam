@@ -52,7 +52,7 @@ export function pickBtnEvent() {
       // console.log("last", finalClick);
       //count에 사용한 변수 리셋
       resetCount(count, finalClick);
-
+      ELEMENT.redPickDiv[4].classList.remove("Pick-red-border");
       //20번 다 고르면 타이머 스탑
       onTimerExpired();
       if (ELEMENT.list) {

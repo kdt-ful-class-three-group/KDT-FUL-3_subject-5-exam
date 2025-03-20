@@ -783,18 +783,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.delay-150 {
-  transition-delay: 150ms;
-}
-
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -807,6 +795,14 @@ video {
   border: 1px solid #999;
 }
 
-.pick-background {
-  background-color: #91ff9789;
+.Pick-red-border {
+  border: 2px solid #b22222;
 }
+
+.Pick-blue-border {
+  border: 2px solid #00488e;
+}
+
+/* .pick-background {
+  border: 2px solid #00488e;
+} */

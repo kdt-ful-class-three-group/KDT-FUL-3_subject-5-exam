@@ -12,6 +12,12 @@
 .Pick-border {
   border: 1px solid #999;
 }
-.pick-background {
-  background-color: #91ff9789;
+.Pick-red-border {
+  border: 2px solid #b22222;
 }
+.Pick-blue-border {
+  border: 2px solid #00488e;
+}
+/* .pick-background {
+  border: 2px solid #00488e;
+} */
