@@ -22,7 +22,7 @@
   "homepage": "https://github.com/kdt-ful-class-three-group/KDT-FUL-3_subject-5-exam#readme",
   "description": "",
   "dependencies": {
-    "axios": "^1.8.3",
+    "axios": "^1.8.4",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "nodemon": "^3.1.9"

@@ -63,13 +63,13 @@ const downloadImage = async (imageName) => {
   const imageUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${imageName}_0.jpg`;
   const imageDir = path.join(__dirname, "client", "public", "images");
   const imagePath = path.join(imageDir, `${imageName}.jpg`);
-  console.log(imageDir);
+  // console.log(imageDir);
   // images 폴더가 존재하지 않으면 생성
   if (!fs.existsSync(imageDir)) {
     fs.mkdirSync(imageDir);
   } else if (fs.existsSync(imagePath)) {
     // 이미지가 이미 존재하면 다운로드를 건너뜀
-    console.log(`이미지가 이미 존재합니다.`);
+    // console.log(`이미지가 이미 존재합니다.`);
     return;
   }
   try {
