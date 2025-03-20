@@ -58,7 +58,7 @@ app.post("/save", (req, res) => {
   // * 위의 행동이 실행되면, 데이터 저장 성공이라는 메시지를 콘솔에 찍어라.
   res.json({ message: "데이터 저장 성공!" });
 });
-const downloadImage = async (imageName) => {
+const downloadImage = (imageName) => {
   //* 이미지 이름 찾아오는 로직 변수
   // const championUrl = `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json`;
   //* 이미지 저장 로직 변수
@@ -75,7 +75,7 @@ const downloadImage = async (imageName) => {
     return;
   }
   try {
-    const imageDownload = await axios({
+    const imageDownload = axios({
       url: imageUrl,
       method: "GET",
       responseType: "stream",
@@ -94,10 +94,10 @@ const downloadImage = async (imageName) => {
     console.error(`이미지 ${imageName} 다운로드 실패: ${error.message}`);
   }
 };
-async function fetchChampionData() {
+function fetchChampionData() {
   const championUrl = `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json`;
   try {
-    const championName = await axios({
+    const championName = axios({
       url: championUrl,
       method: "GET",
       responseType: "json",

@@ -6,6 +6,7 @@ import { buttonChange } from "../function/buttonChange.js";
 import { resetCount } from "../function/resetCount.js";
 import { startTimer } from "../startTimer.js";
 import { onTimerExpired } from "../onTimerExpired.js";
+import { pickEvent } from "../function/pickEvent.js";
 
 let count = CHAMPOBJ.count;
 
@@ -18,6 +19,7 @@ const ELEMENT = CHAMPOBJ.ELEMENT;
 
 //pick버튼 이벤트 함수
 export function pickBtnEvent() {
+  let banORpick = "pick";
   //리스트 선택안하고 pick버튼 눌렀을 때
   if (clickData.length === 0) {
     alert("픽을 진행해주세요");
@@ -29,6 +31,7 @@ export function pickBtnEvent() {
       commitClickData(ELEMENT.list, clickData, finalClick);
       //blue, red 번갈아 진행
       nextTurn(count);
+      pickEvent(count, banORpick);
     }
     //10번
     else if (count.total === 9) {
@@ -52,6 +55,14 @@ export function pickBtnEvent() {
 
       //20번 다 고르면 타이머 스탑
       onTimerExpired();
+      if (ELEMENT.list) {
+        for (let index = 0; index < ELEMENT.list.length; index++) {
+          ELEMENT.list[index].classList.add("pointer-events-none");
+        }
+      } else {
+        console.log(ELEMENT.list);
+      }
+      // ELEMENT.list.style.pointerEvents = "none";
     }
   }
-};
+}

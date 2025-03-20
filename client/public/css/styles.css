@@ -5,3 +5,13 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.Pick-border {
+  border: 1px solid #999;
+}
+.pick-background {
+  background-color: #91ff9789;
+}

@@ -5,7 +5,7 @@ import { saveFinalData } from "../function/saveFinalData.js";
 import { buttonChange } from "../function/buttonChange.js";
 import { resetCount } from "../function/resetCount.js";
 import { startTimer } from "../startTimer.js";
-
+import { pickEvent } from "../function/pickEvent.js";
 let count = CHAMPOBJ.count;
 
 //중앙 챔피언 리스트 클릭할 때 사용하는 배열
@@ -17,6 +17,7 @@ const ELEMENT = CHAMPOBJ.ELEMENT;
 
 // ban버튼 클릭 이벤트 함수
 export function banBtnEvent() {
+  let banORpick = "ban";
   startTimer();
   //1-9번
   if (count.total < 9) {
@@ -24,9 +25,11 @@ export function banBtnEvent() {
     commitClickData(ELEMENT.list, clickData, finalClick);
     //blue, red 번갈아 진행
     nextTurn(count);
+    pickEvent(count, banORpick);
   }
   //10번
   else if (count.total === 9) {
+    ELEMENT.bluePickDiv[0].classList.add("pick-background");
     //마지막으로 선택한 요소 담기
     commitClickData(ELEMENT.list, clickData, finalClick);
     //blue, red 번갈아 진행
@@ -40,4 +43,4 @@ export function banBtnEvent() {
     //변수 초기화
     resetCount(count, finalClick);
   }
-};
+}
