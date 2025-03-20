@@ -54,8 +54,6 @@ app.post("/save", (req, res) => {
       "utf-8"
     );
   }
-  // * 위의 행동이 실행되면, 데이터 저장 성공이라는 메시지를 콘솔에 찍어라.
-  res.json({ message: "데이터 저장 성공!" });
 });
 
 app.use((req, res) => {
