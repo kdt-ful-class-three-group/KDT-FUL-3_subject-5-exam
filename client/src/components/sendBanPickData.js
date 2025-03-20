@@ -10,7 +10,7 @@
  * @description POST로 /save 경로로 app.js에 banPickData를 보내기 위해서 만든 모듈
  */
 function sendBanPickData(banPickData) {
-  fetch("/save", {
+  fetch("http://localhost:8001/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,4 +22,4 @@ function sendBanPickData(banPickData) {
     .catch((err) => console.log(`${err} 에러발생`));
 }
 
-export {sendBanPickData}
+export { sendBanPickData }
