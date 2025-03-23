@@ -13,31 +13,50 @@ const __dirname = path.dirname(__filename);
 // db/database.js 안에서!
 const db = new sqlite3.Database(__dirname + '/mydatabase.db');
 
-db.serialize(() => {
-    db.run(
-        `CREATE TABLE IF NOT EXISTS bans (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            team_id INTEGER NOT NULL,
-            champion_id TEXT NOT NULL,
-            champion_name TEXT NOT NULL
-        )`
-    );
+// 생성자 함수를 사용하여 중복 column을 처리
 
-    db.run(
-        `CREATE TABLE IF NOT EXISTS picks (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            team_id INTEGER NOT NULL,
-            champion_id TEXT NOT NULL,
-            champion_name TEXT NOT NULL
-        )`
-    );
+function createTable(tableName, columns) {
+    const columnNames = columns.map (columns => `${columns.name} ${columns.type}`).join(',\n ');
+    const sql = `CREATE TABLE IF NOT EXISTS ${tableName} (
+        ${columnNames}
+    )`;
+    db.run(sql);
 
-    db.run(
-        `CREATE TABLE IF NOT EXISTS teams (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            team_color TEXT NOT NULL
-        )`
-    );
-});
+    const tables = [
+        {
+            tableName:'bans',
+            columns:[
+                {name:"team", type:"TEXT", NOTNULL: true},
+                {name:"champion_id", type:"TEXT", NOTNULL: true},
+                {name:"champion_name", type:"TEXT", NOTNULL: true},
+            ]
+
+        },
+        {
+            name: 'picks',
+            columns: [
+                { name: 'team_id', type: 'INTEGER NOT NULL' },
+                { name: 'champion_id', type: 'TEXT NOT NULL' },
+                { name: 'champion_name', type: 'TEXT NOT NULL' },
+            ]
+        },
+        {
+            name: 'teams',
+            columns: [
+                { name: 'team_color', type: 'TEXT NOT NULL' },
+            ]
+        }
+    ];
+
+    // 배열의 요소를 하나씩 꺼내서 써야할때는 for of 사용함
+    db.serialize(() => {
+       for(const table of tables) {
+           createTable(table.name, table.columns);
+       }
+    });
+
+
+}
+
 
 export default db
