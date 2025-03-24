@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 // POST /api/pick
-router.post('/', (req, res) => {
+router.post('/health', (req, res) => {
     const { team_id, champion_id, champion_name } = req.body;
     if (!team_id || !champion_id || !champion_name) {
         return res.status(400).json({ error: "모든 항목은 필수항목입니다." });

@@ -4,7 +4,7 @@ import db from"../db/database.js";
 const router = express.Router();
 
 
-router.get('/',(req,res)=>{
+router.get('/health',(req,res)=>{
     res.json({message: "team 라우터 정상 작동"});
 })
 
@@ -19,7 +19,7 @@ router.get('/',(req,res)=>{
 
 
 router.post('/',(req,res)=>{
-    const [team_color] = req.body;
+    const {team_color} = req.body;
     if(!team_color){
         return res.status(400).json({error:"팀 진영은 필수 데이터입니다."})
     }

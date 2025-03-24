@@ -7,7 +7,7 @@ const router = express.Router();
 
 //헬스체크
 
-router.get('/', (req, res) => {
+router.get('/health', (req, res) => {
     res.json({ message: "ban 라우터 정상 작동 중!" });
 });
 router.get('/', (req, res) => {
@@ -21,6 +21,8 @@ router.get('/', (req, res) => {
 
 // POST /api/ban
 router.post('/', (req, res) => {
+    console.log("ban 데이터 요청 들어옴");
+    console.log('서버에서 받은 req.body:', req.body);
     const { team_id, champion_id, champion_name } = req.body;
     if (!team_id || !champion_id || !champion_name) {
         return res.status(400).json({ error: "모든 항목은 필수항목입니다." });
