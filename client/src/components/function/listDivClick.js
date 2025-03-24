@@ -9,7 +9,7 @@ import { showList } from "./showList.js";
  */
 export function listDivClick(div,clickData,count,ELEMENT) {
   div.addEventListener('click', () => {
-    divListClick(div, clickData)
+    divListClick(div, clickData, count)
     console.log('count', count)
     showList(count,clickData,ELEMENT)
   })

@@ -7,13 +7,13 @@ import { CHAMPOBJ } from "../../obj/CHAMPOBJ.js";
  * @param {Array} clickData 선택한 목록
  * @param {Array} finalClick button 클릭으로 확정한 마지막 목록
  */
-export function commitClickData(list, clickData, finalClick) {
+export function commitClickData(list, clickData, finalClick, currentTeamId) {
   let data = {};
 
   if (clickData[0]) {
     data = clickData[0];
   } else {
-    data = CHAMPOBJ.noneClick;
+    data = { id: "ban", name: "ban", team_id: currentTeamId };
   }
 
   finalClick.push(data);

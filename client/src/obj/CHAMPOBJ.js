@@ -15,7 +15,7 @@ export const CHAMPOBJ = {
     clickData: [],
     finalClick: [],
   },
-  noneClick: { id: "ban", name: "ban" },
+  // noneClick: {team_id:"", id: "ban", name: "ban" },
   time: {
     second: 30,
     intervalTime: 1000,
